@@ -6,13 +6,12 @@ let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 "
 call plug#begin($NVIM_PLUGGED)
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
 "" Load custom configurations for plugins
 "
-
 for config in split(globpath($NVIM_CONFIG, '*.vim'), '\n')
     exe 'source' config
 endfor
