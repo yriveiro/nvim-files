@@ -6,6 +6,7 @@ let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 "
 call plug#begin($NVIM_PLUGGED)
 
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'zhaocai/GoldenView.Vim'
 
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
