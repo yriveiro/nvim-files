@@ -13,6 +13,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'mhinz/vim-startify'
 Plug 'trevordmiller/nova-vim'
 Plug 'neomake/neomake'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
