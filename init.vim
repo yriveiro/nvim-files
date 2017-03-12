@@ -21,6 +21,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+
 call plug#end()
 
 "" Load custom configurations for plugins
