@@ -9,6 +9,7 @@ call plug#begin($NVIM_PLUGGED)
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'zhaocai/GoldenView.Vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'terryma/vim-multiple-cursors'
 
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
