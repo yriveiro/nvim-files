@@ -6,6 +6,8 @@ let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 "
 call plug#begin($NVIM_PLUGGED)
 
+Plug 'zhaocai/GoldenView.Vim'
+
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 
