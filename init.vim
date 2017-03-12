@@ -16,3 +16,5 @@ call plug#end()
 for config in split(globpath($NVIM_CONFIG, '*.vim'), '\n')
     exe 'source' config
 endfor
+
+" vim:set ft=vim et sw=2:
