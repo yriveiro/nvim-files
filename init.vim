@@ -14,6 +14,7 @@ Plug 'mhinz/vim-startify'
 Plug 'trevordmiller/nova-vim'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
