@@ -18,10 +18,14 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'vim-airline/vim-airline'
+Plug 'mbbill/undotree'
+
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
 
 call plug#end()
 
