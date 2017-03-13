@@ -16,8 +16,8 @@ Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ryanoasis/vim-devicons'
-
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-sensible'
 Plug 'mbbill/undotree'
 
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
