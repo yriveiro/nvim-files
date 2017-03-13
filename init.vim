@@ -14,7 +14,7 @@ Plug 'mhinz/vim-startify'
 Plug 'trevordmiller/nova-vim'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'vim-airline/vim-airline'
