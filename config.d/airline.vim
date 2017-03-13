@@ -30,6 +30,4 @@ let g:airline#extensions#readonly#symbol = '⊘'
 let g:airline#extensions#linecolumn#prefix = '¶'
 let g:airline#extensions#paste#symbol = 'ρ'
 
-
-
-
+" vim:set ft=vim et sw=2:
