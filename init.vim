@@ -14,18 +14,25 @@ Plug 'mhinz/vim-startify'
 Plug 'trevordmiller/nova-vim'
 Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
-Plug 'Valloric/YouCompleteMe'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'mbbill/undotree'
+Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'jremmen/vim-ripgrep'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'shougo/neosnippet.vim' | Plug 'shougo/neosnippet-snippets'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'zchee/deoplete-clang', {'for': 'cpph'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+Plug 'joonty/vdebug', { 'for': 'php' }
 
 call plug#end()
 
