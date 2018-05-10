@@ -19,6 +19,7 @@ set dir=/tmp
 set wildmode=list:longest,list:full
 set completeopt=menuone,longest
 set autoread
+set exrc                          " load per project configuration if exists.
 
 hi NonText ctermfg=7 guifg=gray
 
@@ -43,4 +44,5 @@ autocmd BufWritePost,BufEnter * Neomake
 """ Experimental
 au FocusGained,BufEnter * :checktime
 
+set secure                        " prevent run autocmd not owned by you.
 " vim:set ft=vim et sw=2:

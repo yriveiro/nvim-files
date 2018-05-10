@@ -20,14 +20,14 @@ function g:Multiple_cursors_after()
 endfunction
 
 
-call deoplete#custom#set('padawan', 'mark', '⌁')
-call deoplete#custom#set('neosnippet', 'mark', '⌘')
-call deoplete#custom#set('buffer', 'mark', '∂')
-call deoplete#custom#set('tag', 'mark', 'Ω')
+call deoplete#custom#source('padawan', 'mark', '⌁')
+call deoplete#custom#source('neosnippet', 'mark', '⌘')
+call deoplete#custom#source('buffer', 'mark', '∂')
+call deoplete#custom#source('tag', 'mark', 'Ω')
 
-call deoplete#custom#set('neosnippet', 'rank', 500)
-call deoplete#custom#set('buffer', 'rank', 400)
-call deoplete#custom#set('padawan', 'rank', 300)
-call deoplete#custom#set('tag', 'rank', 200)
+call deoplete#custom#source('neosnippet', 'rank', 500)
+call deoplete#custom#source('buffer', 'rank', 400)
+call deoplete#custom#source('padawan', 'rank', 300)
+call deoplete#custom#source('tag', 'rank', 200)
 
 " vim:set ft=vim et sw=2:
