@@ -23,12 +23,16 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jremmen/vim-ripgrep'
 Plug 'scrooloose/nerdcommenter'
-
+Plug 'tpope/vim-fugitive'
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'shougo/neosnippet.vim' | Plug 'shougo/neosnippet-snippets'
+Plug 'wakatime/vim-wakatime'
+Plug 'rickhowe/diffchar.vim'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
 Plug 'zchee/deoplete-clang', {'for': 'cpph'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }

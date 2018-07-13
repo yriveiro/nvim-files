@@ -24,7 +24,6 @@ let g:airline#extensions#neomake#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
-let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#readonly#symbol = '⊘'

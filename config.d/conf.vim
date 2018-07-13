@@ -20,6 +20,9 @@ set wildmode=list:longest,list:full
 set completeopt=menuone,longest
 set autoread
 set exrc                          " load per project configuration if exists.
+set scrolloff=5                   " Make search result appear in the middle of
+                                  " the screen
+set listchars=eol:¬
 
 hi NonText ctermfg=7 guifg=gray
 

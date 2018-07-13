@@ -1,5 +1,5 @@
 let g:vdebug_options= {
- \    "port" : 9090,
+ \    "port" : 9001,
  \    "continuous_mode" : 1,
  \    "server" : '',
  \    "timeout" : 60,

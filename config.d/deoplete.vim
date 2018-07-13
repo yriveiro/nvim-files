@@ -1,11 +1,14 @@
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#auto_completion_start_length= 2
 
 let deoplete#tag#cache_limit_size = 5000000
 
 let g:deoplete#sources = get(g:, 'deoplete#sources', {})
+
 let g:deoplete#sources._    = ['neosnippet', 'buffer', 'file', 'tag']
-let g:deoplete#sources.php  = ['neosnippet', 'padawan', 'buffer', 'file', 'tag']
+"let g:deoplete#sources.php  = ['neosnippet', 'padawan', 'buffer', 'file', 'tag']
+let g:deoplete#sources.php  = ['neosnippet', 'buffer', 'file', 'tag']
+let g:deoplete#sources.rust  = ['neosnippet', 'rust', 'buffer', 'file', 'tag']
 
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 
@@ -20,7 +23,7 @@ function g:Multiple_cursors_after()
 endfunction
 
 
-call deoplete#custom#source('padawan', 'mark', '⌁')
+"call deoplete#custom#source('padawan', 'mark', '⌁')
 call deoplete#custom#source('neosnippet', 'mark', '⌘')
 call deoplete#custom#source('buffer', 'mark', '∂')
 call deoplete#custom#source('tag', 'mark', 'Ω')
