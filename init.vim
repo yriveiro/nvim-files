@@ -37,6 +37,8 @@ Plug 'zchee/deoplete-clang', {'for': 'cpph'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
 Plug 'joonty/vdebug', { 'for': 'php' }
+Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
 call plug#end()
 
