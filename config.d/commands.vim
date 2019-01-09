@@ -15,4 +15,6 @@ function! s:CloseHiddenBuffers()
   endfor
 endfunction
 
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
+
 " vim:set ft=vim et sw=2:

@@ -7,7 +7,7 @@ let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 call plug#begin($NVIM_PLUGGED)
 
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'zhaocai/GoldenView.Vim'
+"Plug 'zhaocai/GoldenView.Vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mhinz/vim-startify'
@@ -30,15 +30,23 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'shougo/neosnippet.vim' | Plug 'shougo/neosnippet-snippets'
 Plug 'wakatime/vim-wakatime'
 Plug 'rickhowe/diffchar.vim'
+Plug 'liuchengxu/vim-which-key'
+Plug 'pearofducks/ansible-vim'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'zchee/deoplete-clang', {'for': 'cpph'}
-Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+Plug 'jelera/vim-javascript-syntax', {'for': 'javascript' }
 Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+Plug 'ruanyl/vim-fixmyjs', { 'for': 'javascript' }
 Plug 'joonty/vdebug', { 'for': 'php' }
 Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
+Plug 'jodosha/vim-godebug', { 'for': 'go' }
+Plug 'sebdah/vim-delve', { 'for': 'go' }
 
 call plug#end()
 

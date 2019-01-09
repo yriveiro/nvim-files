@@ -31,7 +31,7 @@ hi NonText ctermfg=7 guifg=gray
 colorscheme nova
 
 if (exists('+colorcolumn'))
-  set colorcolumn=80
+  set colorcolumn=80,120
   highlight ColorColumn ctermbg=7 guibg=red
 endif
 

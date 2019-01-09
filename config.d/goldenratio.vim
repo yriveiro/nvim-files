@@ -1,6 +1,7 @@
 "" Bindings
 "
 let g:goldenview__enable_default_mapping = 0
+let g:golden_ratio_exclude_nonmodifiable = 1
 
 nmap <silent> <leader>gr <Plug>GoldenViewResize
 nmap <silent> <leader>gs <Plug>GoldenViewSplit
