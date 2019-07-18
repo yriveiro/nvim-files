@@ -7,7 +7,6 @@ let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 call plug#begin($NVIM_PLUGGED)
 
 Plug 'ntpeters/vim-better-whitespace'
-"Plug 'zhaocai/GoldenView.Vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mhinz/vim-startify'
@@ -32,6 +31,10 @@ Plug 'wakatime/vim-wakatime'
 Plug 'rickhowe/diffchar.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'pearofducks/ansible-vim'
+Plug 'TaDaa/vimade'
+Plug 'romainl/vim-qf' " Tame the quickfix window
+Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'rbong/vim-flog' " A lightweight and powerful git branch viewer for vim
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
