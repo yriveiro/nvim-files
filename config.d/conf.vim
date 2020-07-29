@@ -1,8 +1,6 @@
 "" Configurations
 "
 
-set guifont=Monaco\ for\ Powerline\ Nerd\ Font:11:cANSI
-
 set mouse=a                       " enable mouse
 set showcmd                       " Show (partial) command in status line.
 set number                        " Line numbers
@@ -15,7 +13,7 @@ set showmode                      " Show current mode.
 set cursorline                    " Highlight the screen line of the cursor.
 set splitbelow
 set splitright                    " Split configurations
-set dir=/tmp
+set dir=/tmp/neovim
 set wildmode=list:longest,list:full
 set completeopt=menuone,longest
 set autoread
@@ -23,6 +21,8 @@ set exrc                          " load per project configuration if exists.
 set scrolloff=5                   " Make search result appear in the middle of
                                   " the screen
 set listchars=eol:¬
+set viewoptions=cursor,folds,slash,unix
+set secure                        " prevent run autocmd not owned by you.
 
 hi NonText ctermfg=7 guifg=gray
 
@@ -47,5 +47,4 @@ autocmd BufWritePost,BufEnter * Neomake
 """ Experimental
 au FocusGained,BufEnter * :checktime
 
-set secure                        " prevent run autocmd not owned by you.
 " vim:set ft=vim et sw=2:

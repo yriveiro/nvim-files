@@ -19,6 +19,12 @@ augroup WhichKeyPHP
   autocmd Filetype php let g:which_key_map.f.f = 'format-file'
 augroup END
 
+augroup WhichKeyPython
+  autocmd!
+  autocmd Filetype python let g:which_key_map.y = { 'name' : '+YAPF format' }
+  autocmd Filetype python let g:which_key_map.y.f = 'format-file'
+augroup END
+
 call which_key#register('\', "g:which_key_map")
 
-" vim:set ft=vim et sw=2:
+" vim:set ft=vim et sw=2
