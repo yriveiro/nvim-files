@@ -1,5 +1,6 @@
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_completion_start_length= 2
+let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
 
 let deoplete#tag#cache_limit_size = 5000000
 
