@@ -4,30 +4,28 @@ let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
 
 let deoplete#tag#cache_limit_size = 5000000
 
-let g:deoplete#sources = get(g:, 'deoplete#sources', {})
+call deoplete#custom#option('sources', get(g:, 'deoplete#sources', {}))
 
-let g:deoplete#sources._    = ['neosnippet', 'buffer', 'file', 'tag']
-let g:deoplete#sources.php  = ['omni', 'phpactor', 'neosnippet', 'buffer', 'file', 'tag']
-let g:deoplete#sources.rust  = ['neosnippet', 'rust', 'buffer', 'file', 'tag']
-let g:deoplete#sources.go  = ['go', 'buffer', 'file', 'tag']
-let g:deoplete#sources.python  = ['jedi', 'neosnippet', 'buffer', 'file', 'tag']
+call deoplete#custom#option('sources', {
+\ '_': ['neosnippet', 'buffer', 'file', 'tag'],
+\ 'php': ['omni', 'phpactor', 'neosnippet', 'buffer', 'file', 'tag'],
+\ 'rust': ['neosnippet', 'rust', 'buffer', 'file', 'tag'],
+\ 'go': ['go', 'buffer', 'file', 'tag'],
+\ 'python': ['jedi', 'neosnippet', 'buffer', 'file', 'tag'],
+\})
 
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+call deoplete#custom#option('sources', {
+\ 'go': {'mark': '⌁', 'rank': 300},
+\ 'phpfactor': {'mark': '⌁'},
+\ 'php': {'rank': 300},
+\ 'jedi': {'mark': '⌁', 'rank': 300},
+\ 'neosnippet': {'mark': '⌘', 'rank': 500},
+\ 'buffer': {'mark': '∂', 'rank': 400},
+\ 'tag': {'mark': 'Ω', 'rank': 200},
+\})
+
+call deoplete#custom#option('ignore_sources', get(g:, 'deoplete#ignore_sources', {}))
 
 autocmd CompleteDone * silent! pclose!
-
-call deoplete#custom#source('go', 'mark', '⌁')
-call deoplete#custom#source('phpactor', 'mark', '⌁')
-call deoplete#custom#source('jedi', 'mark', '⌁')
-call deoplete#custom#source('neosnippet', 'mark', '⌘')
-call deoplete#custom#source('buffer', 'mark', '∂')
-call deoplete#custom#source('tag', 'mark', 'Ω')
-
-call deoplete#custom#source('neosnippet', 'rank', 500)
-call deoplete#custom#source('buffer', 'rank', 400)
-call deoplete#custom#source('go', 'rank', 300)
-call deoplete#custom#source('php', 'rank', 300)
-call deoplete#custom#source('jedi', 'rank', 300)
-call deoplete#custom#source('tag', 'rank', 200)
 
 " vim:set ft=vim et sw=2:
