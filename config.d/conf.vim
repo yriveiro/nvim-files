@@ -23,6 +23,7 @@ set scrolloff=5                   " Make search result appear in the middle of
 set listchars=eol:¬
 set viewoptions=cursor,folds,slash,unix
 set secure                        " prevent run autocmd not owned by you.
+set clipboard=unnamedplus
 
 hi NonText ctermfg=7 guifg=gray
 
