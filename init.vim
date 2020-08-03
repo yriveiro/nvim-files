@@ -18,7 +18,7 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 "" Navigation
 "
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'

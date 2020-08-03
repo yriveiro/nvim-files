@@ -16,14 +16,6 @@ let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 
 autocmd CompleteDone * silent! pclose!
 
-function g:Multiple_cursors_before()
-  let g:deoplete#disable_auto_complete = 1
-endfunction
-
-function g:Multiple_cursors_after()
-  let g:deoplete#disable_auto_complete = 0
-endfunction
-
 call deoplete#custom#source('go', 'mark', '⌁')
 call deoplete#custom#source('phpactor', 'mark', '⌁')
 call deoplete#custom#source('jedi', 'mark', '⌁')
