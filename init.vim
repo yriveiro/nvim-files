@@ -84,8 +84,9 @@ Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
 "" JavaScript
-Plug 'jelera/vim-javascript-syntax', {'for': 'javascript' }
 Plug 'ruanyl/vim-fixmyjs', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', {'for': 'javascript' }
+Plug 'leafgarland/typescript-vim', {'for': 'typescript' }
 
 "" TOML
 Plug 'cespare/vim-toml'
