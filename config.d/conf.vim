@@ -18,8 +18,6 @@ set wildmode=list:longest,list:full
 set completeopt=menuone,longest
 set autoread
 set exrc                          " load per project configuration if exists.
-set scrolloff=5                   " Make search result appear in the middle of
-                                  " the screen
 set listchars=eol:¬
 set viewoptions=cursor,folds,slash,unix
 set secure                        " prevent run autocmd not owned by you.
@@ -44,6 +42,10 @@ augroup END
 
 autocmd BufWritePost,BufEnter * Neomake
 
+" Make search result appear in the middle of the screen but not affect the
+" Terminal buffer
+au TermEnter * setlocal scrolloff=0
+au TermLeave * setlocal scrolloff=5
 
 """ Experimental
 au FocusGained,BufEnter * :checktime
