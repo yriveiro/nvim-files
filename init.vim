@@ -22,7 +22,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak/defx-icons' | Plug 'kristijanhusak/defx-git'
-Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 
 "" Async
