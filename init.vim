@@ -14,6 +14,7 @@ Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'Krasjet/auto.pairs'
+Plug 'embear/vim-localvimrc'
 
 
 "" Navigation
