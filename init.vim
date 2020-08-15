@@ -20,8 +20,6 @@ Plug 'Krasjet/auto.pairs'
 "
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-"Plug 'scrooloose/nerdtree' | Plug 'xuyuanp/nerdtree-git-plugin'
-"Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak/defx-icons' | Plug 'kristijanhusak/defx-git'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
