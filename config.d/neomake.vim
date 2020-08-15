@@ -1,6 +1,6 @@
 let g:neomake_open_list = 2
 let g:neomake_list_height = 10
-let g:neomake_logfile = '/tmp/neovim/neomake.log'
+let g:neomake_logfile = '/tmp/neomake.log'
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_erro = 1
 let g:neomake_php_enabled_makers = ['php']
