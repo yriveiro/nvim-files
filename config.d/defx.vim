@@ -74,15 +74,14 @@ function! s:defx_mappings() abort
   setlocal signcolumn=no expandtab
 
 
-  nnoremap <silent><buffer><expr> t       defx#do_action('open_tree', 'recursive')
   nnoremap <silent><buffer><expr> o       defx#do_action('open_tree', 'recursive')
   nnoremap <silent><buffer><expr> <CR>
   \ defx#is_directory() ?
-  \ defx#do_action('open_tree', 'recursive:10') :
+  \ defx#do_action('open_tree') :
   \ defx#do_action('multi', [['drop', 'vsplit']])
   nnoremap <silent><buffer><expr> t       defx#do_action('multi', [['drop', 'tabnew']])
-  nnoremap <silent><buffer><expr> s       defx#do_action('multi', [['drop', 'vsplit']])
-  nnoremap <silent><buffer><expr> v       defx#do_action('multi', [['drop', 'split']])
+  nnoremap <silent><buffer><expr> v       defx#do_action('multi', [['drop', 'vsplit']])
+  nnoremap <silent><buffer><expr> h       defx#do_action('multi', [['drop', 'split']])
   nnoremap <silent><buffer><expr> P       defx#do_action('preview')
   nnoremap <silent><buffer><expr> y       defx#do_action('yank_path')
   nnoremap <silent><buffer><expr> .       defx#do_action('toggle_ignored_files')

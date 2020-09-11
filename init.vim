@@ -71,7 +71,7 @@ Plug 'joonty/vdebug'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 Plug 'rickhowe/diffchar.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'TaDaa/vimade'
