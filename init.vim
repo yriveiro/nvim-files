@@ -84,6 +84,7 @@ Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 "" Python
 Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'petobens/poet-v'
 
 "" JavaScript
 Plug 'ruanyl/vim-fixmyjs', { 'for': 'javascript' }
