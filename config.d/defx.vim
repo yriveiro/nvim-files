@@ -5,7 +5,7 @@
 call defx#custom#option('_', {
   \ 'resume': 1,
   \ 'toggle': 1,
-  \ 'winwidth': 35,
+  \ 'winwidth': 40,
   \ 'split': 'vertical',
   \ 'direction': 'topleft',
   \ 'show_ignored_files': 0,
