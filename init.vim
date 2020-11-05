@@ -16,7 +16,6 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'Krasjet/auto.pairs'
 Plug 'embear/vim-localvimrc'
 
-
 "" Navigation
 "
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -37,6 +36,7 @@ Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ryanoasis/vim-devicons'
+Plug 'voldikss/vim-floaterm'
 
 "" Git
 "
@@ -47,7 +47,6 @@ Plug 'airblade/vim-gitgutter'
 "" Snippets
 "
 Plug 'shougo/neosnippet.vim' | Plug 'shougo/neosnippet-snippets'
-
 
 "" Search
 "
@@ -66,9 +65,10 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 "" Debug
 "
-
 Plug 'joonty/vdebug'
 
+"" Misc
+"
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdcommenter'
 Plug 'wakatime/vim-wakatime'
@@ -79,22 +79,27 @@ Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
 "" Markdown
+"
 Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 
 "" Python
+"
 Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'petobens/poet-v'
 
 "" JavaScript
+"
 Plug 'ruanyl/vim-fixmyjs', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', {'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', {'for': 'typescript' }
 
 " CSS
+" "
 Plug 'ap/vim-css-color', {'for': 'css' }
 
 "" TOML
+"
 Plug 'cespare/vim-toml'
 
 call plug#end()
