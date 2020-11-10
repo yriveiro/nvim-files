@@ -37,6 +37,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
+Plug 'connorholyday/vim-snazzy'
 
 "" Git
 "
@@ -102,6 +103,14 @@ Plug 'ap/vim-css-color', {'for': 'css' }
 "
 Plug 'cespare/vim-toml'
 
+"" Terraform
+"
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
+
+"" Helm
+"
+Plug 'towolf/vim-helm'
 call plug#end()
 
 "" Load custom configurations for plugins

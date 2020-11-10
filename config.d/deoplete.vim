@@ -12,6 +12,7 @@ call deoplete#custom#option('sources', {
 \ 'rust': ['neosnippet', 'rust', 'buffer', 'file', 'tag'],
 \ 'go': ['go', 'buffer', 'file', 'tag'],
 \ 'python': ['jedi', 'neosnippet', 'buffer', 'file', 'tag'],
+\ 'terraform': ['omni', 'buffer', 'file', 'tag'],
 \})
 
 call deoplete#custom#option('sources', {
@@ -22,6 +23,7 @@ call deoplete#custom#option('sources', {
 \ 'neosnippet': {'mark': '⌘', 'rank': 500},
 \ 'buffer': {'mark': '∂', 'rank': 400},
 \ 'tag': {'mark': 'Ω', 'rank': 200},
+\ 'omni': {'mark': '‰', 'rank': 200},
 \})
 
 call deoplete#custom#option('ignore_sources', get(g:, 'deoplete#ignore_sources', {}))

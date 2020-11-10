@@ -27,7 +27,7 @@ hi NonText ctermfg=7 guifg=gray
 
 " Themes
 "
-colorscheme nova
+colorscheme snazzy
 
 if (exists('+colorcolumn'))
   set colorcolumn=80,120
