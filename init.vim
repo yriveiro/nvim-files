@@ -67,7 +67,7 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 "
 Plug 'joonty/vdebug'
 
-"" Misc
+"" Others
 "
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdcommenter'
@@ -94,8 +94,8 @@ Plug 'ruanyl/vim-fixmyjs', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', {'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', {'for': 'typescript' }
 
-" CSS
-" "
+"" CSS
+"
 Plug 'ap/vim-css-color', {'for': 'css' }
 
 "" TOML
