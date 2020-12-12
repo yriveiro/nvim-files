@@ -1,4 +1,4 @@
-let g:go_snippet_engine = "neosnippet"
+let g:go_snippet_engine = "automatic"
 let g:go_list_height = 5
 let g:go_addtags_transform = "snakecase"
 let g:go_list_autoclose = 1

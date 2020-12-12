@@ -83,6 +83,11 @@ Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 "
 Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 
+""" Golang
+"
+Plug 'fatih/vim-go'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
 "" Python
 "
 Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }

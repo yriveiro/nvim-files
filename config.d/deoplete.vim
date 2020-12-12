@@ -27,6 +27,7 @@ call deoplete#custom#option('sources', {
 \})
 
 call deoplete#custom#option('ignore_sources', get(g:, 'deoplete#ignore_sources', {}))
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 autocmd CompleteDone * silent! pclose!
 
