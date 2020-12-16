@@ -71,6 +71,7 @@ Plug 'joonty/vdebug'
 "" Others
 "
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'preservim/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'wakatime/vim-wakatime'
 Plug 'rickhowe/diffchar.vim'
@@ -85,8 +86,8 @@ Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 
 """ Golang
 "
-Plug 'fatih/vim-go'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go', { 'for': 'go', 'do': 'GoInstallBinaries' }
+Plug 'sebdah/vim-delve', { 'for': 'go' }
 
 "" Python
 "

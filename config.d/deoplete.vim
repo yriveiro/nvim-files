@@ -10,13 +10,11 @@ call deoplete#custom#option('sources', {
 \ '_': ['neosnippet', 'buffer', 'file', 'tag'],
 \ 'php': ['omni', 'phpactor', 'neosnippet', 'buffer', 'file', 'tag'],
 \ 'rust': ['neosnippet', 'rust', 'buffer', 'file', 'tag'],
-\ 'go': ['go', 'buffer', 'file', 'tag'],
 \ 'python': ['jedi', 'neosnippet', 'buffer', 'file', 'tag'],
 \ 'terraform': ['omni', 'buffer', 'file', 'tag'],
 \})
 
 call deoplete#custom#option('sources', {
-\ 'go': {'mark': '⌁', 'rank': 300},
 \ 'phpfactor': {'mark': '⌁'},
 \ 'php': {'rank': 300},
 \ 'jedi': {'mark': '⌁', 'rank': 300},
@@ -27,7 +25,6 @@ call deoplete#custom#option('sources', {
 \})
 
 call deoplete#custom#option('ignore_sources', get(g:, 'deoplete#ignore_sources', {}))
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 autocmd CompleteDone * silent! pclose!
 
