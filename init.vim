@@ -1,22 +1,28 @@
+" Yago Riveiro's vim configuration
+
+"  Overarching Philosophy:
+" 1. Prefer the defaults
+" 2. Extend functionality where needed
+" 3. Change functionality only when it doesn't make sense
+
 let $NVIM_HOME="~/.config/nvim"
 let $NVIM_PLUGGED= join([$NVIM_HOME, "plugged"], "/")
 let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 
-"" Plug install packages¬
+" Plug install packages¬
 "
 call plug#begin($NVIM_PLUGGED)
 
-"" Sanitizers Linters Formaters and Code Style
+" Sanitizers Linters Formaters and Code Style
 "
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'Krasjet/auto.pairs'
 Plug 'embear/vim-localvimrc'
 
-"" Navigation
+" Navigation
 "
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -24,54 +30,33 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak
 Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 
-"" Async
+" UI
 "
-Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-"" UI
-"
+Plug 'glepnir/galaxyline.nvim'
 Plug 'mhinz/vim-startify'
-Plug 'trevordmiller/nova-vim'
-Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
 
-"" Git
+" Git
 "
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog' " A lightweight and powerful git branch viewer for vim
 Plug 'airblade/vim-gitgutter'
 
-"" Snippets
-"
-Plug 'shougo/neosnippet.vim' | Plug 'shougo/neosnippet-snippets'
 
-"" Search
+" Search
 "
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+"Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
-"" Folding
+" Folding
 "
-Plug 'tmhedberg/SimpylFold'
-Plug 'Konfekt/FastFold'
+Plug 'pierreglaser/folding-nvim'
 
-"" Deoplete Autocomplete plugins
+" Others
 "
-Plug 'zchee/deoplete-clang', {'for': 'cpph'}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-"" Debug
-"
-Plug 'joonty/vdebug'
-
-"" Others
-"
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'preservim/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'wakatime/vim-wakatime'
 Plug 'rickhowe/diffchar.vim'
@@ -79,47 +64,51 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'neomake/neomake'
 
-"" Markdown
+" Markdown
 "
-Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-""" Golang
+"" Golang
 "
-Plug 'fatih/vim-go', { 'for': 'go', 'do': 'GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': 'GoInstallBinaries' }
 Plug 'sebdah/vim-delve', { 'for': 'go' }
 
-"" Python
+" Python
 "
-Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'petobens/poet-v'
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' , 'for': 'markdown' }
 
-"" JavaScript
-"
-Plug 'ruanyl/vim-fixmyjs', { 'for': 'javascript' }
-Plug 'pangloss/vim-javascript', {'for': 'javascript' }
-Plug 'leafgarland/typescript-vim', {'for': 'typescript' }
-
-"" CSS
+" CSS
 "
 Plug 'ap/vim-css-color', {'for': 'css' }
 
-"" TOML
+" TOML
 "
 Plug 'cespare/vim-toml'
 
-"" Terraform
+" Terraform
 "
 Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
 
-"" Helm
+" Helm
 "
 Plug 'towolf/vim-helm'
+
+" LSP server
+Plug 'neovim/nvim-lspconfig'
+Plug 'anott03/nvim-lspinstall'
+Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'kristijanhusak/completion-tags'
+Plug 'steelsojka/completion-buffers'
+
 call plug#end()
 
-"" Load custom configurations for plugins
+lua require("")
+
+" Load custom configurations for plugins
 "
 for config in split(globpath($NVIM_CONFIG, '*.vim'), '\n')
     exe 'source' config

@@ -124,8 +124,6 @@ function! s:defx_mappings() abort
   " Tools
   nnoremap <silent><buffer><expr> w       defx#do_action('call', '<SID>toggle_width')
   nnoremap <silent><buffer><expr> gd      defx#async_action('multi', ['drop', 'quit', ['call', '<SID>git_diff']])
-  nnoremap <silent><buffer><expr> gr      defx#do_action('call', '<SID>grep')
-  nnoremap <silent><buffer><expr> gf      defx#do_action('call', '<SID>find_files')
 endfunction
 
 " TOOLS
@@ -135,33 +133,17 @@ function! s:git_diff(context) abort
   Gdiffsplit
 endfunction
 
-function! s:find_files(context) abort
-  " Find files in parent directory with Denite
-  let l:target = a:context['targets'][0]
-  let l:parent = fnamemodify(l:target, ':h')
-  silent execute 'wincmd w'
-  silent execute 'Denite file/rec:'.l:parent
-endfunction
-
-function! s:grep(context) abort
-        " Grep in parent directory with Denite
-        let l:target = a:context['targets'][0]
-        let l:parent = fnamemodify(l:target, ':h')
-        silent execute 'wincmd w'
-        silent execute 'Denite grep:'.l:parent
-endfunction
-
 function! s:toggle_width(context) abort
   " Toggle between defx window width and longest line
   let l:max = 0
   for l:line in range(1, line('$'))
           let l:len = strdisplaywidth(substitute(getline(l:line), '\s\+$', '', ''))
-          let l:max = max([l:len + 1, l:max])
+          let l:max = max([l:len + 5, l:max])
   endfor
   let l:new = l:max == winwidth(0) ? s:original_width : l:max
   call defx#call_action('resize', l:new)
 endfunction
 
-nnoremap <silent> <leader>n :Defx<cr>
+nnoremap <silent> <leader>§ :Defx<cr>
 
 " vim:set ft=vim et sw=2:
