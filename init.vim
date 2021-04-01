@@ -19,7 +19,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
-Plug 'Krasjet/auto.pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'embear/vim-localvimrc'
 
 " Navigation
@@ -33,7 +33,6 @@ Plug 'mbbill/undotree'
 " UI
 "
 Plug 'glepnir/galaxyline.nvim'
-Plug 'mhinz/vim-startify'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
@@ -48,7 +47,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Search
 "
-"Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
 " Folding
@@ -64,7 +62,6 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
-Plug 'neomake/neomake'
 
 " Markdown
 "
@@ -78,7 +75,7 @@ Plug 'sebdah/vim-delve', { 'for': 'go' }
 " Python
 "
 Plug 'petobens/poet-v'
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' , 'for': 'markdown' }
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' , 'for': 'python' }
 
 " CSS
 "
@@ -99,10 +96,8 @@ Plug 'towolf/vim-helm'
 " LSP server
 Plug 'neovim/nvim-lspconfig'
 Plug 'anott03/nvim-lspinstall'
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'kristijanhusak/completion-tags'
-Plug 'steelsojka/completion-buffers'
 
 call plug#end()
 

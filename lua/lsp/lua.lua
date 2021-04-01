@@ -1,30 +1,30 @@
 local lspconfig = require 'lspconfig'
 
--- function to attach completion when setting up lsp
-local on_attach = function(client)
-  require'completion'.on_attach(client)
-  require"folding".on_attach(client)
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+elseif vim.fn.has('win32') == 1 then
+  system_name = "Windows"
+else
+  print("Unsupported system for sumneko")
 end
 
+local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
+local sumneko_binary= sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 lspconfig.sumneko_lua.setup {
-  on_attach = on_attach,
-  cmd = {'lua-language-server'},
+  capabilities = capabilities,
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
   settings = {
     Lua = {
-      runtime = {
-        version = 'Lua 5.1',
-        path = {
-          '?.lua',
-          '?/init.lua',
-          vim.fn.expand'~/.luarocks/share/lua/5.1/?.lua',
-          vim.fn.expand'~/.luarocks/share/lua/5.1/?/init.lua',
-          '/usr/share/5.1/?.lua',
-          '/usr/share/lua/5.1/?/init.lua'
-        }
-      },
-      workspace = {
-        [vim.fn.expand'~/.luarocks/share/lua/5.1'] = true,
-        ['/usr/share/lua/5.1'] = true
+      diagnostics = {
+        enable = true,
+        globals = { 'vim' }
       }
     }
   }

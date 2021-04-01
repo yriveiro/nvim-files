@@ -10,4 +10,8 @@ function M.has_width_gt(cols)
   return vim.fn.winwidth(0) / 2 > cols
 end
 
+function M.replace_termcodes(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+ end
+
 return M

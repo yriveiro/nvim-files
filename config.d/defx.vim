@@ -144,6 +144,6 @@ function! s:toggle_width(context) abort
   call defx#call_action('resize', l:new)
 endfunction
 
-nnoremap <silent> <leader>§ :Defx<cr>
+nnoremap <silent> § :Defx<cr>
 
 " vim:set ft=vim et sw=2:
