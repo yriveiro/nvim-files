@@ -4,9 +4,9 @@ _G.tab_complete = function()
     if vim.fn.pumvisible() == 1 then
         return utils.replace_termcodes("<C-n><C-y>")
     elseif vim.fn.call("vsnip#available", {1}) == 1 then
-        return utils.replaec_termcodes("<Plug>(vsnip-expand-or-jump)")
+        return utils.replace_termcodes("<Plug>(vsnip-expand-or-jump)")
     else
-        return utils.replaec_termcodes("<Tab>")
+        return utils.replace_termcodes("<Tab>")
     end
 end
 

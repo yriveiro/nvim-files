@@ -37,6 +37,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
+Plug 'beauwilliams/focus.nvim'
 
 " Git
 "
@@ -98,6 +99,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'anott03/nvim-lspinstall'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 
