@@ -1,3 +1,3 @@
 local g = vim.g
 
-g.wakatime_PythonBinary='/usr/bin/python3'
+g.wakatime_PythonBinary='/usr/local/bin/python3'
