@@ -13,18 +13,6 @@ let g:which_key_map.h = {
   \ 'u' : ['hu'        , 'undo hunk']   ,
   \ }
 
-augroup WhichKeyPHP
-  autocmd!
-  autocmd Filetype php let g:which_key_map.f = { 'name' : '+phpCSFix' }
-  autocmd Filetype php let g:which_key_map.f.f = 'format-file'
-augroup END
-
-augroup WhichKeyPython
-  autocmd!
-  autocmd Filetype python let g:which_key_map.y = { 'name' : '+YAPF format' }
-  autocmd Filetype python let g:which_key_map.y.f = 'format-file'
-augroup END
-
 call which_key#register('\', "g:which_key_map")
 
 " vim:set ft=vim et sw=2

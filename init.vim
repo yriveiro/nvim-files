@@ -26,18 +26,17 @@ Plug 'embear/vim-localvimrc'
 "
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak/defx-icons' | Plug 'kristijanhusak/defx-git'
 Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
+Plug 'kyazdani42/nvim-web-devicons' | Plug 'kyazdani42/nvim-tree.lua'
 
 " UI
 "
 Plug 'glepnir/galaxyline.nvim'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
-Plug 'beauwilliams/focus.nvim'
+"Plug 'beauwilliams/focus.nvim'
 
 " Git
 "
@@ -95,12 +94,13 @@ Plug 'hashivim/vim-terraform'
 Plug 'towolf/vim-helm'
 
 " LSP server
-Plug 'neovim/nvim-lspconfig'
-Plug 'anott03/nvim-lspinstall'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'rafamadriz/friendly-snippets'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'onsails/lspkind-nvim'
+Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 
