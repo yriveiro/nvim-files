@@ -100,6 +100,7 @@ Plug 'anott03/nvim-lspinstall'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
