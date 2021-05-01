@@ -79,7 +79,7 @@ gls.left[2] = {
       return mode..' '
     end,
     highlight = { colors.bg, colors.bg },
-    separator = ' ',
+    separator = '  ',
     separator_highlight = {colors.bg, colors.section_bg},
   },
 }
@@ -95,7 +95,7 @@ gls.left[4] = {
     provider = { 'FileName', 'FileSize' },
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.section_bg },
-    separator = ' ',
+    separator = '  ',
     separator_highlight = {colors.section_bg, colors.bg},
   }
 }
@@ -125,7 +125,7 @@ gls.left[8] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = checkwidth,
-    icon = ' ',
+    icon = '   ',
     highlight = { colors.orange, colors.bg },
   }
 }
@@ -139,9 +139,9 @@ gls.left[9] = {
 }
 gls.left[10] = {
   LeftEnd = {
-    provider = function() return ' ' end,
+    provider = function() return ' ' end,
     condition = buffer_not_empty,
-    highlight = {colors.section_bg,colors.bg}
+    highlight = {colors.bg, colors.section_bg}
   }
 }
 gls.left[11] = {
@@ -183,10 +183,10 @@ gls.left[15] = {
 -- Right side
 gls.right[1]= {
   FileFormat = {
-    provider = function() return ' '..vim.bo.filetype end,
+    provider = function() return ''..vim.bo.filetype end,
     highlight = { colors.fg,colors.section_bg },
-    separator = ' ',
-    separator_highlight = { colors.section_bg, colors.bg },
+    separator = ' ',
+    separator_highlight = { colors.bg, colors.section_bg },
   }
 }
 gls.right[2] = {
@@ -220,8 +220,8 @@ gls.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
     highlight = { colors.yellow, colors.section_bg },
-    separator = ' ',
-    separator_highlight = { colors.section_bg, colors.bg },
+    separator = ' ',
+    separator_highlight = {colors.bg, colors.section_bg},
   }
 }
 

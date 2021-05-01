@@ -6,7 +6,7 @@ lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
   lsp.diagnostic.on_publish_diagnostics, {
     signs = true,
     underline = false,
-    update_in_insert = true,
+    update_in_insert = false,
     virtual_text = {
       spacing = 2,
     }

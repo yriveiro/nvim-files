@@ -65,7 +65,7 @@ Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
 " Markdown
 "
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 
 "" Golang
 "
