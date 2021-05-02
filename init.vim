@@ -36,7 +36,7 @@ Plug 'glepnir/galaxyline.nvim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
-"Plug 'beauwilliams/focus.nvim'
+Plug 'sindrets/diffview.nvim'
 
 " Git
 "
