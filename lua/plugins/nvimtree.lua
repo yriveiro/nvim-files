@@ -3,7 +3,7 @@ local g = vim.g
 local opts = {noremap = true, silent = true}
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
---g.nvim_tree_width = 30
+g.nvim_tree_width = 40
 g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 g.nvim_tree_gitignore = 1
 g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' }
