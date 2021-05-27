@@ -1,7 +1,7 @@
 local lspconfig = require 'lspconfig'
 
 lspconfig.terraformls.setup{
-	cmd = {'terraform-ls', 'serve'},
+	cmd = {os.getenv("HOME") .. '.local/share/nvim/lspinstall/terraform/terraform-ls', 'serve'},
 	settings = {
 		terraformls = {
 			experimentalFeatures = {

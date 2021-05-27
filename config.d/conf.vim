@@ -1,8 +1,6 @@
 "" Configurations
 "
 
-set mouse=a                       " enable mouse
-set showcmd                       " Show (partial) command in status line.
 set number                        " Line numbers
 set relativenumber                " Line relative numbers
 set termguicolors                 " Enable true colors
