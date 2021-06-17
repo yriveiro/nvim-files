@@ -1,16 +1,6 @@
 "" Configurations
 "
 
-set number                        " Line numbers
-set relativenumber                " Line relative numbers
-set termguicolors                 " Enable true colors
-set synmaxcol=2048                " Set a limit for syntax highlights
-set laststatus=2                  " Display the status line always
-set linespace=0                 " Set line-spacing to minimum.
-set showmode                      " Show current mode.
-set cursorline                    " Highlight the screen line of the cursor.
-set splitbelow
-set splitright                    " Split configurations
 set dir=/tmp/neovim
 set wildmode=list:longest,list:full
 set wildmenu
