@@ -1,6 +1,7 @@
 require 'lsp.bash'
 require 'lsp.docker'
 require 'lsp.go'
+require 'lsp.java'
 require 'lsp.json'
 require 'lsp.lua'
 require 'lsp.python'
