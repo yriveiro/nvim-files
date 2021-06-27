@@ -1,6 +1,7 @@
 local lspconfig = require 'lspconfig'
 
 lspconfig.jsonls.setup{
+  cmd= {os.getenv("HOME") .. '/.local/share/nvim/lspinstall/json/vscode-json/json-language-features/server/dist/node/jsonServerMain.js', '--stdio'},
   commands = {
     Format = {
       function()
