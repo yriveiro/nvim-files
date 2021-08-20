@@ -5,7 +5,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.gopls.setup{
 	capabilities = capabilities,
-	cmd = {"gopls", "serve"},
+	cmd = {os.getenv("HOME") .. '/.local/share/nvim/lspinstall/go/gopls', "serve"},
 	settings = {
 		gopls = {
 			analyses = {
