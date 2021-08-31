@@ -13,11 +13,6 @@ set viewoptions=cursor,folds,slash,unix
 set secure                        " prevent run autocmd not owned by you.
 set clipboard=unnamedplus
 
-" Better color support
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
 hi NonText ctermfg=7 guifg=gray
 
 " Themes
