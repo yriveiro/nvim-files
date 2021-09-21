@@ -46,8 +46,6 @@ sign_define(
   }
 )
 
--- Force default to ensure the user theme didn't cleared them
-vim.cmd([[ autocmd ColorScheme * :lua require('vim.lsp.diagnostic')._define_default_signs_and_highlights() ]])
 -- Force relink with default hi groups
 hi.link("LspDiagnosticsError", "LspDiagnosticsDefaultError", false)
 hi.link("LspDiagnosticsWarning", "LspDiagnosticsDefaultWarning", false)
