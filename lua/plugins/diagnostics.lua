@@ -1,53 +1,59 @@
-local lsp = vim.lsp
+--local lsp = vim.lsp
+local d = vim.diagnostic
 local sign_define = vim.fn.sign_define
 local hi = vim.highlight
 
-lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
-  lsp.diagnostic.on_publish_diagnostics, {
+d.config({
     signs = true,
     underline = false,
     update_in_insert = false,
+    severity_sort = false,
     virtual_text = {
       spacing = 2,
+      source = "always"
     }
-  }
-)
+}, nil)
 
 -- custom signs
 sign_define(
-  "LspDiagnosticsSignError",
+  "DiagnosticSignError",
   {
     text = "",
-    texthl = "LspDiagnosticsError"
+    texthl = "DiagnosticError",
+    numhl = "",
   }
 )
 
 sign_define(
-  "LspDiagnosticsSignWarning",
+  "DiagnosticSignWarn",
   {
     text = "⚑",
-    texthl = "LspDiagnosticsWarning"
+    texthl = "DiagnosticSignWarn",
+    numhl = "",
+    linehl = "",
   }
 )
 
 sign_define(
-  "LspDiagnosticsSignInformation",
+  "DiagnosticSignInfo",
   {
     text = "ℹ",
-    texthl = "LspDiagnosticsInformation"
+    texthl = "DiagnosticSignInfo",
+    numhl = "",
   }
 )
 
 sign_define(
-  "LspDiagnosticsSignHint",
+  "DiagnosticSignHint",
   {
     text = "",
-    texthl = "LspDiagnosticsHint"
+    texthl = "DiagnosticHint",
+    numhl = "",
   }
 )
 
 -- Force relink with default hi groups
-hi.link("LspDiagnosticsError", "LspDiagnosticsDefaultError", false)
-hi.link("LspDiagnosticsWarning", "LspDiagnosticsDefaultWarning", false)
-hi.link("LspDiagnosticsInformation", "LspDiagnosticsDefaultInformation", false)
-hi.link("LspDiagnosticsHint", "LspDiagnosticsDefaultHint", false)
+hi.link("DiagnosticSignError", "DiagnosticError", false)
+hi.link("DiagnosticSignWarn", "DiagnosticWarn", false)
+hi.link("DiagnosticSignInfo", "DiagnosticInfo", false)
+hi.link("DiagnosticSignHint", "DiagnosticHint", true)
