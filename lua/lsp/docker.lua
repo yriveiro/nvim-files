@@ -1,5 +1,7 @@
 local lspconfig = require 'lspconfig'
+local server = '/.local/share/nvim/lspinstall/dockerfile/node_modules/.bin/docker-langserver'
 
 lspconfig.dockerls.setup{
-  cmd= {os.getenv("HOME") .. '/.local/share/nvim/lspinstall/dockerfile/node_modules/.bin/docker-langserver', '--stdio'},
+  filetypes =  { "dockerfile", "Dockerfile" },
+  cmd= { os.getenv("HOME") .. server, '--stdio' },
 }

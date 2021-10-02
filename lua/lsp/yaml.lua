@@ -7,13 +7,11 @@ lspconfig.yamlls.setup{
   settings = {
     yaml = {
       schemas = {
-        kubernetes = {"*.yml", "*.yaml"},
         ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = "*.argo.yaml",
+        ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = {"docker-compose.yml", "docker-compose.yaml"},
+        kubernetes = {"*.yml", "*.yaml"},
       },
     },
-    cmd = {
-      os.getenv("HOME") .. server,
-      '--stdio'
-    },
+    cmd = { os.getenv("HOME") .. server,'--stdio' },
   },
 }
