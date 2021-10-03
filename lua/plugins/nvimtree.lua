@@ -17,7 +17,7 @@ require'nvim-tree'.setup {
   -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab         = true,
   -- hijacks new directory buffers when they are opened.
-  update_to_buf_dir   = true,
+  update_to_buf_dir   = { enable = true },
   -- hijack the cursor in the tree to put it at the start of the filename
   hijack_cursor       = false,
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
@@ -33,7 +33,7 @@ require'nvim-tree'.setup {
     update_cwd  = false,
     -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
     -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
-    ignore_list = {}
+    ignore_list = { '.git', 'node_modules', '.cache', '.terraform' }
   },
   -- configuration options for the system open command (`s` in the tree by default)
   system_open = {
@@ -98,8 +98,6 @@ g.nvim_tree_git_hl = 1
 g.nvim_tree_gitignore = 1
 g.nvim_tree_group_empty = 1
 g.nvim_tree_hide_dotfiles = 1
-g.nvim_tree_ignore = { '.git', 'node_modules', '.cache', '.terraform' }
-g.nvim_tree_indent_markers = 1
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_quit_on_open = 0
 g.nvim_tree_root_folder_modifier = ':~'
