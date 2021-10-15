@@ -1,5 +1,5 @@
 local lspconfig = require 'lspconfig'
-local server = '/.local/share/nvim/lspinstall/yaml/node_modules/.bin/yaml-language-server'
+local server = '/yaml/node_modules/.bin/yaml-language-server'
 
 
 lspconfig.yamlls.setup{
@@ -12,6 +12,6 @@ lspconfig.yamlls.setup{
         kubernetes = {"*.yml", "*.yaml"},
       },
     },
-    cmd = { os.getenv("HOME") .. server,'--stdio' },
+    cmd = { os.getenv("HOME") .. LSPServersPath .. server,'--stdio' },
   },
 }
