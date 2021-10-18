@@ -1,5 +1,6 @@
 require 'plugins/autopairs'
 require 'plugins/compe'
+require 'plugins/dapgo'
 require 'plugins/devicons'
 require 'plugins/diagnostics'
 require 'plugins/diffview'

@@ -51,7 +51,7 @@ Plug 'jremmen/vim-ripgrep'
 
 " Folding
 "
-Plug 'pierreglaser/folding-nvim'
+"Plug 'pierreglaser/folding-nvim'
 
 " Others
 "
@@ -62,6 +62,7 @@ Plug 'folke/which-key.nvim'
 Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'mfussenegger/nvim-dap'
 
 " Markdown
 "
@@ -71,6 +72,7 @@ Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 "
 Plug 'fatih/vim-go', { 'do': 'GoInstallBinaries' }
 Plug 'sebdah/vim-delve', { 'for': 'go' }
+Plug 'leoluz/nvim-dap-go', { 'for': 'go' }
 
 " Python
 "
