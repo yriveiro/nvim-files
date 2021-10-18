@@ -69,7 +69,7 @@ Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 
 "" Golang
 "
-Plug 'fatih/vim-go', { 'do': 'GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'sebdah/vim-delve', { 'for': 'go' }
 
 " Python
