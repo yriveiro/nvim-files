@@ -1,12 +1,13 @@
 local lspconfig = require 'lspconfig'
 local server = '/yaml/node_modules/.bin/yaml-language-server'
 
+
 lspconfig.yamlls.setup{
-  filetypes = { 'yaml', 'helm', 'yml' },
+  filetypes = { 'yaml.argo' },
   settings = {
     yaml = {
       schemas = {
-        kubernetes = {"*.yml", "*.yaml"},
+        ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = {"*.yaml", "*.yml"},
       },
     },
     cmd = { os.getenv("HOME") .. LSPServersPath .. server,'--stdio' },

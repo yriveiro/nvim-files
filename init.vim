@@ -44,14 +44,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog' " A lightweight and powerful git branch viewer for vim
 Plug 'airblade/vim-gitgutter'
 
-
 " Search
 "
 Plug 'jremmen/vim-ripgrep'
-
-" Folding
-"
-"Plug 'pierreglaser/folding-nvim'
 
 " Others
 "
