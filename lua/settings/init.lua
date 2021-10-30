@@ -24,5 +24,6 @@ o.showmode = true         -- Show current mode.
 o.cursorline  = true      -- Highlight the screen line of the cursor.
 o.splitbelow = true
 o.splitright = true       -- Split configurations
+o.foldlevelstart = 1
 o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
