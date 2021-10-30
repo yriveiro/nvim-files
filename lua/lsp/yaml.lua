@@ -6,7 +6,7 @@ lspconfig.yamlls.setup{
   settings = {
     yaml = {
       schemas = {
-        kubernetes = {"*.yml", "*.yaml"},
+        kubernetes = '*.{yaml,yml}',
       },
     },
     cmd = { os.getenv("HOME") .. LSPServersPath .. server,'--stdio' },

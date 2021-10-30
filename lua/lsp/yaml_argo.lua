@@ -7,7 +7,7 @@ lspconfig.yamlls.setup{
   settings = {
     yaml = {
       schemas = {
-        ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = {"*.yaml", "*.yml"},
+        ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*.argo.{yml,yaml}',
       },
     },
     cmd = { os.getenv("HOME") .. LSPServersPath .. server,'--stdio' },

@@ -7,7 +7,7 @@ lspconfig.yamlls.setup{
   settings = {
     yaml = {
       schemas = {
-        ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = {"docker-compose.yml", "docker-compose.yaml"},
+        ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = 'docker-compose.{yml,yaml}',
       },
     },
     cmd = { os.getenv("HOME") .. LSPServersPath .. server,'--stdio' },
