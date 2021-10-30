@@ -1,5 +1,6 @@
 local gl = require('galaxyline')
 local utils = require('utils')
+local lsp = require('galaxyline.providers.lsp')
 
 local gls = gl.section
 gl.short_line_list = { 'defx', 'vista' }
@@ -181,6 +182,25 @@ gls.left[15] = {
 }
 
 -- Right side
+
+gls.right[0] = {
+  LspClient = {
+    highlight = {colors.fg, colors.bg, 'bold'},
+    provider = function ()
+      local icon = '  '
+      local active_lsp = lsp.get_lsp_client()
+
+      if active_lsp == 'No Active Lsp' then
+        icon = ''
+        active_lsp  = ''
+      end
+
+      vim.api.nvim_command('hi GalaxyLspClient guifg='..mode_color())
+      return icon..active_lsp..' '
+    end,
+  }
+}
+
 gls.right[1]= {
   FileFormat = {
     provider = function() return ''..vim.bo.filetype end,
