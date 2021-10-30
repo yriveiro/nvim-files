@@ -32,7 +32,8 @@ Plug 'kyazdani42/nvim-web-devicons' | Plug 'kyazdani42/nvim-tree.lua'
 
 " UI
 "
-Plug 'glepnir/galaxyline.nvim'
+"Plug 'glepnir/galaxyline.nvim' -- original repo is stale.
+Plug 'NTBBloodbath/galaxyline.nvim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
