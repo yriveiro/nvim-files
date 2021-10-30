@@ -1,0 +1,4 @@
+-- Custom server for lspinstall.
+
+require 'servers/argo'
+require 'servers/dockercompose'

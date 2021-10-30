@@ -6,8 +6,8 @@ require 'lsp.lua'
 require 'lsp.python'
 require 'lsp.tf'
 require 'lsp.yaml'
-require 'lsp.yaml_argo'
-require 'lsp.yaml_docker'
+require 'lsp.argo'
+require 'lsp.dockercompose'
 
 local api = vim.api
 local opts = {noremap = true, silent = true}
