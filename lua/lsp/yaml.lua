@@ -10,5 +10,10 @@ lspconfig.yamlls.setup{
       },
     },
     cmd = { os.getenv("HOME") .. LSPServersPath .. server,'--stdio' },
+    redhat = {
+      telemetry = {
+        enabled = false
+      },
+    },
   },
 }
