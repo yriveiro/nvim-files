@@ -5,10 +5,10 @@
 " 2. Extend functionality where needed
 " 3. Change functionality only when it doesn't make sense
 
-let $NVIM_HOME="~/.config/nvim"
-let $NVIM_CACHE="~/.cache/nvim"
-let $NVIM_PLUGGED= join([$NVIM_HOME, "plugged"], "/")
-let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
+let $NVIM_HOME = join([$HOME, ".config/nvim"], "/")
+let $NVIM_CACHE = join([$HOME, ".cache/nvim"], "/")
+let $NVIM_PLUGGED = join([$NVIM_HOME, "plugged"], "/")
+let $NVIM_CONFIG = join([$NVIM_HOME, "config.d"], "/")
 
 " Plug install packages¬
 "
