@@ -8,5 +8,10 @@ wk.register({
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit"},
   },
   t = { name = "FloatTerm Toogle" },
-  b = { "<cmd>Vista!!<CR>", "Vista" }
+  b = { "<cmd>Vista!!<CR>", "Vista" },
+  ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" }
 }, { prefix = "<leader>" })
+
+wk.register({
+  ["§"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" }
+})

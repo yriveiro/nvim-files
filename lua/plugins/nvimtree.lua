@@ -108,7 +108,3 @@ g.nvim_tree_quit_on_open = 0
 g.nvim_tree_root_folder_modifier = ':~'
 g.nvim_tree_special_files = { 'README.md', 'Makefile', 'MAKEFILE' }
 g.nvim_tree_width = 50
-
-api.nvim_set_keymap("n", "§", ":NvimTreeToggle<CR>", opts)
-api.nvim_set_keymap("n", "<leader>§", ":NvimTreeFindFile<CR>", opts)
-
