@@ -1,5 +1,5 @@
+require 'plugins/alpha'
 require 'plugins/autopairs'
-require 'plugins/bufferline'
 require 'plugins/compe'
 require 'plugins/dapgo'
 require 'plugins/devicons'

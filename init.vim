@@ -30,7 +30,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'akinsho/bufferline.nvim'
 
 " UI
 "
@@ -41,6 +40,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'goolord/alpha-nvim'
 
 " Git
 "
@@ -63,6 +63,7 @@ Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-lua/plenary.nvim'
+"Plug 'lewis6991/impatient.nvim'
 
 " Markdown
 "
@@ -107,7 +108,8 @@ Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 
-lua require("")
+"lua require('impatient')
+lua require('')
 
 " Load custom configurations for plugins
 "

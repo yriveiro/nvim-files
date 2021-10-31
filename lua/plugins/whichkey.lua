@@ -22,6 +22,11 @@ wk.register({
   ch = { ":CloseHiddenBuffers<CR>", "Close Hidden Buffers" }
 })
 
+
+-- local leader
 wk.register({
   e = { "<cmd>lua require('vim.diagnostic').show_line_diagnostics()<CR>", "Show Diagnostics" },
+  r = { "<cmd>lua vim.lsp.buf.references()<CR>", "LSP References" },
+  d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "LSP Definition" },
+  h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "LSP Hover" }
 }, { prefix = "," })
