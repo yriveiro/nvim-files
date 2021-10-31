@@ -1,8 +1,12 @@
 local wk = require("which-key")
 
 wk.register({
-  ff = { name = "Telescope Find Files"  },
-  fr = { name = "Telescope Live Grep"  },
-  fg = { name = "Telescope Git Commits"  },
+  f = {
+    name = "+Telescope",
+    f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Find File" },
+    r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep"},
+    g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit"},
+  },
   t = { name = "FloatTerm Toogle" },
+  b = { "<cmd>Vista!!<CR>", "Vista" }
 }, { prefix = "<leader>" })
