@@ -6,6 +6,7 @@
 " 3. Change functionality only when it doesn't make sense
 
 let $NVIM_HOME="~/.config/nvim"
+let $NVIM_CACHE="~/.cache/nvim"
 let $NVIM_PLUGGED= join([$NVIM_HOME, "plugged"], "/")
 let $NVIM_CONFIG= join([$NVIM_HOME, "config.d"], "/")
 

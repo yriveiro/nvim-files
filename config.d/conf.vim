@@ -3,15 +3,9 @@
 
 set dir=/tmp/neovim
 set wildmode=list:longest,list:full
-set wildmenu
-set shortmess+=c
 set completeopt+=menuone,noinsert,noselect,preview
-set autoread
-set exrc                          " load per project configuration if exists.
 set listchars=eol:¬
 set viewoptions=cursor,folds,slash,unix
-set secure                        " prevent run autocmd not owned by you.
-set clipboard=unnamedplus
 
 hi NonText ctermfg=7 guifg=gray
 

@@ -24,4 +24,4 @@ wk.register({
 
 wk.register({
   e = { "<cmd>lua require('vim.diagnostic').show_line_diagnostics()<CR>", "Show Diagnostics" },
-}, { prefix = "<localeader>" })
+}, { prefix = "," })
