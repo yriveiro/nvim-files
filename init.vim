@@ -28,7 +28,9 @@ Plug 'embear/vim-localvimrc'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
-Plug 'kyazdani42/nvim-web-devicons' | Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/bufferline.nvim'
 
 " UI
 "
