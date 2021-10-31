@@ -24,7 +24,6 @@ Plug 'embear/vim-localvimrc'
 
 " Navigation
 "
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
@@ -38,6 +37,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'voldikss/vim-floaterm'
 Plug 'connorholyday/vim-snazzy'
 Plug 'sindrets/diffview.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Git
 "
@@ -59,6 +59,7 @@ Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 Plug 'mfussenegger/nvim-dap'
+Plug 'nvim-lua/plenary.nvim'
 
 " Markdown
 "
