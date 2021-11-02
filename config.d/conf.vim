@@ -9,10 +9,6 @@ set viewoptions=cursor,folds,slash,unix
 
 hi NonText ctermfg=7 guifg=gray
 
-" Themes
-"
-colorscheme snazzy
-
 if (exists('+colorcolumn'))
   set colorcolumn=80,120
   highlight ColorColumn ctermbg=7 guibg=red

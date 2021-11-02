@@ -16,7 +16,7 @@ call plug#begin($NVIM_PLUGGED)
 
 " Sanitizers Linters Formaters and Code Style
 "
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'McAuleyPenney/tidy.nvim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
@@ -28,29 +28,27 @@ Plug 'embear/vim-localvimrc'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " UI
 "
-"Plug 'glepnir/galaxyline.nvim' -- original repo is stale.
 Plug 'NTBBloodbath/galaxyline.nvim'
-Plug 'chrisbra/vim-diff-enhanced'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
-Plug 'connorholyday/vim-snazzy'
+Plug 'tjdevries/colorbuddy.nvim'
+Plug 'bbenzikry/snazzybuddy.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'goolord/alpha-nvim'
 
 " Git
 "
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog' " A lightweight and powerful git branch viewer for vim
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Search
 "
-Plug 'jremmen/vim-ripgrep'
+"Plug 'jremmen/vim-ripgrep'
 
 " Others
 "
@@ -62,8 +60,6 @@ Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 Plug 'mfussenegger/nvim-dap'
-Plug 'nvim-lua/plenary.nvim'
-"Plug 'lewis6991/impatient.nvim'
 
 " Markdown
 "
@@ -82,7 +78,7 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' , 'for': 'python' }
 
 " CSS
 "
-Plug 'ap/vim-css-color', {'for': 'css' }
+"Plug 'ap/vim-css-color', {'for': 'css' }
 
 " TOML
 "
@@ -99,12 +95,17 @@ Plug 'towolf/vim-helm'
 " LSP server
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'kabouzeid/nvim-lspinstall'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'onsails/lspkind-nvim'
 Plug 'rafamadriz/friendly-snippets'
+
+" Developement
+Plug 'nvim-lua/neovim-ui'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
 
 call plug#end()
 
