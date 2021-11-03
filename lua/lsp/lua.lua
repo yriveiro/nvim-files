@@ -23,7 +23,6 @@ lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
-        enable = true,
         globals = { 'vim' }
       }
     }

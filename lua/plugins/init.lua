@@ -12,9 +12,11 @@ require 'plugins/lspkind'
 require 'plugins/gitsigns'
 require 'plugins/nvimtree'
 require 'plugins/pydoc'
---require 'plugins/ripgrep'
 require 'plugins/tf'
 require 'plugins/vsnip'
 require 'plugins/wakatime'
 require 'plugins/whichkey'
+
+-- Themes
 require 'plugins/snazzybuddy'
+-- require 'plugins/palebuddy'

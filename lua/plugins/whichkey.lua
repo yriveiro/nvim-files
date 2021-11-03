@@ -25,8 +25,14 @@ wk.register({
 
 -- local leader
 wk.register({
-  e = { "<cmd>lua require('vim.diagnostic').show_line_diagnostics()<CR>", "Show Diagnostics" },
-  r = { "<cmd>lua vim.lsp.buf.references()<CR>", "LSP References" },
+  ["0"] = { "<cmd>lua vim.lsp.buf.document_symbol()<CR>", "LSP Docmument Symbol" },
   d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "LSP Definition" },
-  h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "LSP Hover" }
+  e = { "<cmd>lua require('vim.diagnostic').show_line_diagnostics()<CR>", "Show Diagnostics" },
+  f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "LSP formatting" },
+  h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "LSP Hover" },
+  r = { "<cmd>lua vim.lsp.buf.references()<CR>", "LSP References" },
+  i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "LSP Implementation" },
+  td = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "LSP Definition" },
+  w = { "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", "LSP Workspace Symbol" },
+  ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "LSP Signature Help" },
 }, { prefix = "," })

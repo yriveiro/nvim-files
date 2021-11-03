@@ -68,7 +68,6 @@ gls.left[2] = {
         R = 'REPLACE',
       }
 
-
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
 
       local mode = alias[vim.fn.mode()]
@@ -134,7 +133,7 @@ gls.left[9] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = checkwidth,
-    icon = ' ',
+    icon = '   ',
     highlight = { colors.red,colors.bg },
   }
 }

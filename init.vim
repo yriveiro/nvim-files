@@ -36,19 +36,19 @@ Plug 'NTBBloodbath/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'tjdevries/colorbuddy.nvim'
-Plug 'bbenzikry/snazzybuddy.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" Themes
+"
+Plug 'bbenzikry/snazzybuddy.nvim'
+Plug 'magicmonty/palebuddy.nvim'
 
 " Git
 "
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog' " A lightweight and powerful git branch viewer for vim
 Plug 'lewis6991/gitsigns.nvim'
-
-" Search
-"
-"Plug 'jremmen/vim-ripgrep'
 
 " Others
 "
