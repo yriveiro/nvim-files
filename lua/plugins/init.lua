@@ -20,4 +20,3 @@ require 'plugins/whichkey'
 
 -- Themes
 require 'plugins/snazzybuddy'
--- require 'plugins/palebuddy'
