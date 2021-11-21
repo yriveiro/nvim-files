@@ -1,5 +1,11 @@
 local wk = require("which-key")
 
+-- The function is called `t` for `termcodes`.
+local function t(str)
+  -- Adjust boolean arguments as needed
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 wk.register({
   f = {
     name = "+Telescope",
@@ -9,7 +15,7 @@ wk.register({
   },
   t = { name = "+Floatterm" },
   b = { "<cmd>Vista!!<CR>", "Vista" },
-  ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" }
+  ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" },
 }, { prefix = "<leader>" })
 
 wk.register({
@@ -19,7 +25,7 @@ wk.register({
     n = { ":tabnew<CR>", "New Tab"}
   },
   ["§"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
-  ch = { ":CloseHiddenBuffers<CR>", "Close Hidden Buffers" }
+  ch = { ":CloseHiddenBuffers<CR>", "Close Hidden Buffers" },
 })
 
 
@@ -35,4 +41,9 @@ wk.register({
   td = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "LSP Definition" },
   w = { "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", "LSP Workspace Symbol" },
   ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "LSP Signature Help" },
+  ["t"] = { "<cmd>lua require('termim').toggle()<CR>", "Termim" },
 }, { prefix = "," })
+
+wk.register({
+  t = { t("<C-\\><C-N>:lua require('termim').toggle()<CR>"), "Termim" },
+}, { prefix = ",", mode = "t" })
