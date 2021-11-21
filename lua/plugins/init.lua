@@ -1,3 +1,4 @@
+require 'plugins/alpha'
 require 'plugins/autopairs'
 require 'plugins/compe'
 require 'plugins/dapgo'

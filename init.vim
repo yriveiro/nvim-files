@@ -38,6 +38,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'goolord/alpha-nvim'
 
 " Themes
 "
