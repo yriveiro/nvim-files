@@ -1,21 +1,23 @@
-require 'lsp.bash'
-require 'lsp.docker'
 require 'lsp.go'
 require 'lsp.json'
 require 'lsp.lua'
-require 'lsp.python'
 require 'lsp.tf'
-require 'lsp.yaml'
-require 'lsp.argo'
-require 'lsp.dockercompose'
 
---local api = vim.api
---local opts = {noremap = true, silent = true}
+local lspconfig = require 'lspconfig'
+local configs = require 'lspconfig/configs'
 
--- LSP Mappings
--- api.nvim_set_keymap('n', ',0', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
---api.nvim_set_keymap('n', ',f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
---api.nvim_set_keymap('n', ',i', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
---api.nvim_set_keymap('n', ',td', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
---api.nvim_set_keymap('n', ',w', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
---api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+if not lspconfig.argo then
+  configs.argo = { default_config = {} }
+end
+
+lspconfig.argo.setup{
+  autostart = false,
+}
+
+if not lspconfig.dockercompose then
+  configs.dockercompose = { default_config = {} }
+end
+
+lspconfig.dockercompose.setup{
+  autostart = false,
+}
