@@ -1,6 +1,4 @@
-local api = vim.api
 local g = vim.g
-local opts = {noremap = true, silent = true}
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 require'nvim-tree'.setup {
@@ -47,6 +45,11 @@ require'nvim-tree'.setup {
 
   filters = {
     dotfiles = true,
+  },
+
+  git = {
+    enable = true,
+    ignore = true,
   },
 
   view = {
@@ -101,7 +104,6 @@ require'nvim-tree'.setup {
 g.nvim_tree_add_trailing = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_git_hl = 1
-g.nvim_tree_gitignore = 1
 g.nvim_tree_group_empty = 1
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_quit_on_open = 0
