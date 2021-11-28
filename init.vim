@@ -101,6 +101,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'onsails/lspkind-nvim'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'b0o/SchemaStore.nvim'
 
 " Developement
 Plug 'nvim-lua/neovim-ui'
