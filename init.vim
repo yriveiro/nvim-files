@@ -60,7 +60,14 @@ Plug 'folke/which-key.nvim'
 Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+
+" Debug
+"
+Plug 'nvim-telescope/telescope-dap.nvim'
 Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'leoluz/nvim-dap-go', { 'for': 'go' }
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Markdown
 "
@@ -70,7 +77,6 @@ Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 "
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'sebdah/vim-delve', { 'for': 'go' }
-Plug 'leoluz/nvim-dap-go', { 'for': 'go' }
 
 " Python
 "
