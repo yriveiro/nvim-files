@@ -1,4 +1,4 @@
-local lsp = require 'lspconfig.util'
+local lsp = require 'lspconfig'
 local configs = require 'lspconfig.configs'
 
 -- Check if the config is already defined (useful when reloading this file)
