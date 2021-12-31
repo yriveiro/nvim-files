@@ -7,7 +7,7 @@ local argo = require 'lsp/custom_servers/argo'
 -- Register Custom Server on nvim-lsp-installer.
 servers.register(argo)
 
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-end)
+--lsp_installer.on_server_ready(function(server)
+  --local opts = {}
+  --server:setup(opts)
+--end)
