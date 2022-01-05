@@ -36,7 +36,7 @@ wk.register({
     name = "+LSP",
     ["0"] = { "<cmd>lua vim.lsp.buf.document_symbol()<CR>", "LSP Docmument Symbol" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "LSP Definition" },
-    e = { "<cmd>lua require('vim.diagnostic').show_line_diagnostics()<CR>", "Show Diagnostics" },
+    e = { "<cmd>lua require('vim.diagnostic').open_float()<CR>", "Show Diagnostics" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "LSP formatting" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "LSP Hover" },
     r = { "<cmd>lua vim.lsp.buf.references()<CR>", "LSP References" },
