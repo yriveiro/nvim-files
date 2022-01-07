@@ -10,10 +10,10 @@ return server.Server:new {
   name = server_name,
   root_dir = root_dir,
   languages = { 'yaml' },
-  homepage = "https://github.com/redhat-developer/yaml-language-server",
-  installer = npm.packages { "yaml-language-server" },
+  homepage = 'https://github.com/redhat-developer/yaml-language-server',
+  installer = npm.packages { 'yaml-language-server' },
   default_options = {
-    cmd = { npm.env(root_dir), "yaml-language-server", "--stdio" },
+    cmd_env = npm.env(root_dir),
     single_file_support = true,
     filetypes = {'yaml.argo'},
     docs = {},
