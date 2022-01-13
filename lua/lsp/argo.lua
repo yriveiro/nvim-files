@@ -4,6 +4,7 @@ local ok, server = servers.get_server('argo')
 if ok then
   server:on_ready(function ()
     local opts = {
+      cmd = {'yaml-language-server', '--stdio'},
       settings = {
         -- https://github.com/redhat-developer/vscode-redhat-telemetry#how-to-disable-telemetry-reporting
         redhat = {

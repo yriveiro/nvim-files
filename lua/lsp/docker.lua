@@ -1,16 +1,10 @@
 local servers = require'nvim-lsp-installer.servers'
 
-local ok, server = servers.get_server('sumneko_lua')
+local ok, server = servers.get_server('dockerls')
 if ok then
   server:on_ready(function ()
     local opts = {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim', 'it', 'describe', 'assert', 'before_each' },
-          }
-        }
-      }
+      settings = {}
     }
     server:setup(opts)
   end)

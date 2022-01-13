@@ -1,4 +1,4 @@
-local wk = require("which-key")
+local wk = require 'which-key'
 
 -- The function is called `t` for `termcodes`.
 local function t(str)
@@ -25,7 +25,6 @@ wk.register({
     n = { ":tabnew<CR>", "New Tab"}
   },
   ["§"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
-  ch = { ":CloseHiddenBuffers<CR>", "Close Hidden Buffers" },
 })
 
 
@@ -51,22 +50,23 @@ wk.register({
   -- dap
   d = {
     name = "+DAP",
-    c = {  "<cmd>lua require('dap').continue()<CR>", "Continue/Start dap session" },
-    n = {  "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
-    i = {  "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
-    o = {  "<cmd>lua require('dap').step_out()<CR>", "Step Out" },
+    c = { "<cmd>lua require('dap').continue()<CR>", "Continue/Start dap session" },
+    a = { "<cmd>lua require('alpha.dap').new()<CR>", "Continue/Start dap session with args" },
+    n = { "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
+    i = { "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
+    o = { "<cmd>lua require('dap').step_out()<CR>", "Step Out" },
     b = {
       name = "+Breakpoint",
-      a = {  "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Add/Remove Breakpoint" },
-      i = {  "<cmd>lua require('dap').set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", "Breakpoint Condition" },
-      m = {  "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>", "Breakpoint Log Message" },
+      a = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Add/Remove Breakpoint" },
+      i = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", "Breakpoint Condition" },
+      m = { "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>", "Breakpoint Log Message" },
     },
     r = {
       name = "+RELP",
       o = { "<cmd>lua require('dap').repl.open()<CR>", "Open REPL" },
       l = {  "<cmd>lua require('dap').repl.run_last()<CR>", "Run last REPL" },
     },
-    h = {  "<cmd>lua require('dap.ui.variables').hover()<CR>", "Variables Hover." },
+    h = {  "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Variables Hover." },
     u = {  "<cmd>lua require('dapui').toggle()<CR>", "UI Toogle" },
   },
 

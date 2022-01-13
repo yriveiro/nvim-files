@@ -65,8 +65,9 @@ Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 "
 Plug 'nvim-telescope/telescope-dap.nvim'
 Plug 'mfussenegger/nvim-dap'
+Plug 'jbyuki/one-small-step-for-vimkind'
 Plug 'rcarriga/nvim-dap-ui'
-Plug 'leoluz/nvim-dap-go', { 'for': 'go' }
+Plug 'yriveiro/dap-go.nvim'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Markdown
@@ -76,7 +77,6 @@ Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 "" Golang
 "
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'sebdah/vim-delve', { 'for': 'go' }
 
 " Python
 "

@@ -23,6 +23,7 @@ servers.register(argo)
 -- Require configuration
 --
 require 'lsp.argo'
+require 'lsp.docker'
 require 'lsp.go'
 require 'lsp.java'
 require 'lsp.json'
