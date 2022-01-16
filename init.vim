@@ -85,7 +85,7 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' , 'for': 'python' }
 
 " CSS
 "
-"Plug 'ap/vim-css-color', {'for': 'css' }
+Plug 'ap/vim-css-color', {'for': 'css' }
 
 " TOML
 "
@@ -100,7 +100,14 @@ Plug 'hashivim/vim-terraform'
 Plug 'towolf/vim-helm'
 
 " LSP server
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'

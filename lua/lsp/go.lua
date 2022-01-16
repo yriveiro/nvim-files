@@ -1,12 +1,13 @@
-local lspconfig = require 'lspconfig'
-
+local lspconfig = require('lspconfig')
+local cmp = require('cmp_nvim_lsp')
 local servers = require'nvim-lsp-installer.servers'
 
 local ok, server = servers.get_server('gopls')
+
 if ok then
   server:on_ready(function ()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities.textDocument.completion.completionItem.snippetSupport = true
+		capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
     local opts = {
 			capabilities = capabilities,

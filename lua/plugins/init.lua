@@ -1,6 +1,6 @@
 require 'plugins/alpha'
 require 'plugins/autopairs'
-require 'plugins/compe'
+require 'plugins/cmp'
 require 'plugins/dap'
 require 'plugins/devicons'
 require 'plugins/diagnostics'
