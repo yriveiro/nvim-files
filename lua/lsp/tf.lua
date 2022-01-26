@@ -3,7 +3,7 @@ local servers = require'nvim-lsp-installer.servers'
 local server_name = 'terraformls'
 local root_dir = require 'nvim-lsp-installer.server'.get_server_root_path(server_name)
 
-local ok, server = servers.get_server('terraformls')
+local ok, server = servers.get_server(server_name)
 if ok then
   server:on_ready(function ()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -12,14 +12,19 @@ if ok then
     local opts = {
       capabilities = capabilities,
       settings = {
-        terraformls = {
+        ['terraform-ls'] = {
           experimentalFeatures = {
-            validateOnSave = true
-          }
+            validateOnSave = true,
+            PrefillRequiredFields = true,
+          },
+          terraformExecPath = '/usr/local/bin/terraform',
         },
         terraform = {
           languageServer = {
             pathToBinary = root_dir
+          },
+          codelens = {
+            referenceCount = true
           }
         }
       }
