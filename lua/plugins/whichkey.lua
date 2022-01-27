@@ -21,7 +21,7 @@ wk.register({
 wk.register({
   t = {
     y = { ":tabnext<CR>", "Next tab"},
-    r = { ":tabnext<CR>", "Previous tab"},
+    r = { ":tabprev<CR>", "Previous tab"},
     n = { ":tabnew<CR>", "New Tab"}
   },
   ["§"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },

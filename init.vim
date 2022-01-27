@@ -112,9 +112,11 @@ Plug 'hrsh7th/vim-vsnip' | Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'onsails/lspkind-nvim'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'b0o/SchemaStore.nvim'
+Plug 'j-hui/fidget.nvim'
 
 " Developement
 Plug 'nvim-lua/neovim-ui'
