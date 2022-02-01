@@ -60,6 +60,8 @@ Plug 'folke/which-key.nvim'
 Plug 'TaDaa/vimade'
 Plug 'romainl/vim-qf' " Tame the quickfix window
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
 
 " Debug
 "
