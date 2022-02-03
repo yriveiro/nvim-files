@@ -28,7 +28,8 @@ cmp.setup({
     ['<C-s>'] = cmp.mapping.complete({
         config = {
           sources = {
-            { name = 'vsnip' }
+            { name = 'vsnip' },
+            { name = 'nvim_lsp' }
           }
         }
       }),

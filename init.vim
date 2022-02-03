@@ -44,6 +44,7 @@ Plug 'goolord/alpha-nvim'
 "
 Plug 'bbenzikry/snazzybuddy.nvim'
 Plug 'magicmonty/palebuddy.nvim'
+Plug 'shaunsingh/nord.nvim'
 
 " Git
 "

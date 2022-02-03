@@ -34,3 +34,5 @@ o.undofile = true
 o.wildmenu = true
 o.autoread = true
 o.exrc = true
+
+vim.cmd[[colorscheme nord]]
