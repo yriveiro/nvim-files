@@ -125,7 +125,7 @@ Plug 'j-hui/fidget.nvim'
 Plug 'nvim-lua/neovim-ui'
 "Plug 'MunifTanjim/nui.nvim'
 Plug 'numtostr/FTerm.nvim'
-Plug 'yriveiro/termim.nvim', {'branch': 'develop'}
+Plug 'yriveiro/termim.nvim'
 Plug 'yriveiro/nui.nvim', {'branch': 'feature/attachable-buffer'}
 Plug 'nvim-lua/plenary.nvim'
 
