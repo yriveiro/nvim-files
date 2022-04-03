@@ -34,7 +34,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 "
 Plug 'NTBBloodbath/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'voldikss/vim-floaterm'
+"Plug 'voldikss/vim-floaterm'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'

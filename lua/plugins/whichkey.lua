@@ -13,7 +13,7 @@ wk.register({
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep"},
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit"},
   },
-  t = { name = "+Floatterm" },
+  --t = { name = "+Floatterm" },
   b = { "<cmd>Vista!!<CR>", "Vista" },
   ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" },
 }, { prefix = "<leader>" })
