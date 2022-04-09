@@ -120,6 +120,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'b0o/SchemaStore.nvim'
 Plug 'j-hui/fidget.nvim'
+Plug 'aspeddro/lsp_menu.nvim'
 
 " Developement
 Plug 'nvim-lua/neovim-ui'
