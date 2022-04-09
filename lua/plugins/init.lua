@@ -18,6 +18,7 @@ require 'plugins/tf'
 require 'plugins/vsnip'
 require 'plugins/wakatime'
 require 'plugins/whichkey'
+require 'plugins/windowpicker'
 
 -- Themes
 require 'plugins/snazzybuddy'

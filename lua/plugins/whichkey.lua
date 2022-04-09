@@ -15,6 +15,7 @@ wk.register({
   },
   --t = { name = "+Floatterm" },
   b = { "<cmd>Vista!!<CR>", "Vista" },
+  s = { "<cmd>lua require('window-picker').pick_window()<CR>", "Pick Window" },
   ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" },
 }, { prefix = "<leader>" })
 
@@ -43,6 +44,8 @@ wk.register({
     t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "LSP Definition" },
     w = { "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", "LSP Workspace Symbol" },
     s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "LSP Signature Help" },
+    a = { "<cmd>lua require('lsp_menu').codeaction.run()<CR>", "LSP Code Action" },
+    l = { "<cmd>lua require('lsp_menu').codelens.run()<CR>", "LSP Code Lens" },
   },
 
   t = { "<cmd>lua require('termim').toggle()<CR>", "Termim" },

@@ -29,6 +29,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 's1n7ax/nvim-window-picker'
 
 " UI
 "
