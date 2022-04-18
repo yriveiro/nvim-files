@@ -1,21 +1,26 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 cmp.setup({
   formatting = {
-    format = function(entry, vim_item)
-      -- fancy icons and a name of kind
-      vim_item.kind = require('lspkind').presets.default[vim_item.kind] .. ' ' .. vim_item.kind
-      -- set a name for each source
-      vim_item.menu = ({
+    format = lspkind.cmp_format({
+      mode = 'symbol_text', -- show only symbol annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      menu = ({
         buffer = '[Buffer]',
         nvim_lsp = '[LSP]',
         vsnip = '[Vsnip]',
         nvim_lua = '[Lua]',
         path = '[Path]',
         cmdline = '[Command]',
-      })[entry.source.name]
-      return vim_item
-    end
+        nvim_lsp_signature_help = '[LSP Signature Help]',
+      }),
+
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function (entry, vim_item)
+        return vim_item
+      end
+    })
   },
   snippet = {
     expand = function(args)
