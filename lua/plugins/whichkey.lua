@@ -16,6 +16,7 @@ wk.register({
   --t = { name = "+Floatterm" },
   b = { "<cmd>Vista!!<CR>", "Vista" },
   s = { "<cmd>lua require('window-picker').pick_window()<CR>", "Pick Window" },
+  y = { "<cmd>Yapf<CR>", "Yapf, Python formatter" },
   ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" },
 }, { prefix = "<leader>" })
 
@@ -40,6 +41,7 @@ wk.register({
     f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "LSP formatting" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "LSP Hover" },
     r = { "<cmd>lua vim.lsp.buf.references()<CR>", "LSP References" },
+    ["."] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "LSP Rename" },
     i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "LSP Implementation" },
     t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "LSP Definition" },
     w = { "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", "LSP Workspace Symbol" },

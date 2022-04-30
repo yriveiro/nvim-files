@@ -22,6 +22,7 @@ Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'windwp/nvim-autopairs'
 Plug 'embear/vim-localvimrc'
+Plug 'amirali/yapf.nvim'
 
 " Navigation
 "
@@ -84,7 +85,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Python
 "
-Plug 'petobens/poet-v'
+"Plug 'petobens/poet-v'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' , 'for': 'python' }
 
 " CSS

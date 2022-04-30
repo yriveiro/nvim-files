@@ -22,7 +22,7 @@ servers.register(argo)
 
 -- Require configuration
 --
---require 'lsp.java'
+require 'lsp.java'
 require 'lsp.argo'
 require 'lsp.bash'
 require 'lsp.docker'
@@ -31,6 +31,9 @@ require 'lsp.json'
 require 'lsp.lua'
 require 'lsp.markdown'
 require 'lsp.pyright'
+require 'lsp.rust'
+require 'lsp.sql'
 require 'lsp.tf'
 require 'lsp.tflint'
+require 'lsp.toml'
 require 'lsp.yaml'

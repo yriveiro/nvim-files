@@ -34,5 +34,6 @@ o.undofile = true
 o.wildmenu = true
 o.autoread = true
 o.exrc = true
+o.guifont = "MesloLGM Nerd Font Mono"
 
 vim.cmd[[colorscheme nord]]
