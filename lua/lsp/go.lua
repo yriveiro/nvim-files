@@ -1,34 +1,22 @@
-local lspconfig = require('lspconfig')
-local cmp = require('cmp_nvim_lsp')
-local servers = require'nvim-lsp-installer.servers'
+local lsp = require 'lspconfig'
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local ok, server = servers.get_server('gopls')
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-if ok then
-  server:on_ready(function ()
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-    local opts = {
-			capabilities = capabilities,
-			settings = {
-				gopls = {
-					analyses = {
-						unusedparams = true,
-						fieldalignment = true,
-						nilness = true,
-						shadow = true,
-						unusedwrite = true,
-					},
-					staticcheck = true,
-				},
+local opts = {
+	capabilities = capabilities,
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+				fieldalignment = true,
+				nilness = true,
+				shadow = true,
+				unusedwrite = true,
 			},
-		}
+			staticcheck = true,
+		},
+	},
+}
 
-    server:setup(opts)
-  end)
-  if not server:is_installed() then
-      -- Queue the server to be installed
-      server:install()
-  end
-end
+lsp.gopls.setup(opts)

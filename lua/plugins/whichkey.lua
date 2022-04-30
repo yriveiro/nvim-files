@@ -12,6 +12,7 @@ wk.register({
     f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Find File" },
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep"},
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit"},
+    n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", "Notify notifications"},
   },
   --t = { name = "+Floatterm" },
   b = { "<cmd>Vista!!<CR>", "Vista" },

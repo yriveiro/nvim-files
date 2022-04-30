@@ -1,4 +1,5 @@
 require 'plugins/alpha'
+require 'plugins/lspinstaller'
 require 'plugins/autopairs'
 require 'plugins/nvimcmp'
 require 'plugins/dap'
