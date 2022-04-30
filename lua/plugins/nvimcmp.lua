@@ -29,13 +29,13 @@ cmp.setup({
   },
   mapping = {
     ['<C-s>'] = cmp.mapping.complete({
-        config = {
-          sources = {
-            { name = 'vsnip' },
-            { name = 'nvim_lsp' }
-          }
+      config = {
+        sources = {
+          { name = 'vsnip' },
+          { name = 'nvim_lsp' }
         }
-      }),
+      }
+    }),
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -45,44 +45,49 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
+    ['<Tab>'] = cmp.mapping({
+      i = function(fallback)  -- see GH-231, GH-286
+        if cmp.visible() then cmp.select_next_item()
+        else fallback() end
+      end,
+      c = cmp.config.disable,
+    }),
+    ['<S-Tab>'] = cmp.mapping({
+      i = function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          fallback()
+        end
+      end,
+      c = cmp.config.disable,
+    }),
   },
-  sources = cmp.config.sources(
-    {{ name = 'nvim_lsp' }},
-    {{ name = 'nvim_lua' }},
-    {{ name = 'vsnip' }},
-    {{ name = 'buffer' }},
-    {{ name = 'nvim_lsp_signature_help' }},
-    {{ name = 'path' }},
-    {{ name = 'cmdline' }}
-  )
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'vsnip' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'path' },
+    { name = 'cmdline' },
+  }, {
+    { name = 'buffer' },
+  })
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    {{ name = 'nvim_lsp' }},
-    {{ name = 'buffer' }}
+    { name = 'nvim_lsp' },
+    { name = 'buffer' }
   }
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources(
-    {{ name = 'path' }},
-    {{ name = 'cmdline' }}
-  )
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
 })
