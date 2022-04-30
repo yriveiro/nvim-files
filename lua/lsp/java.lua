@@ -7,4 +7,4 @@ local opts = {
 	capabilities = capabilities,
 }
 
-lsp.jtls.setup(opts)
+lsp.jdtls.setup(opts)
