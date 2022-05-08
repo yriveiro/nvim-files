@@ -1,41 +1,44 @@
---local configs = require 'lspconfig.configs'
+local ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
 
---[[
-   [-- Check if the config is already defined (useful when reloading this file)
-   [if not configs.argo then
-   [  configs.argo = {
-   [    default_config = {
-   [      filetypes = {'yaml.argo'},
-   [      root_dir = function(fname)
-   [        return require'lspconfig.util'.find_git_ancestor(fname)
-   [      end,
-   [    }
-   [  }
-   [end
-   [
-   [require'lspconfig'.argo.setup{}
-   [
-   [-- Load Custom Servers.
-   [local servers = require 'nvim-lsp-installer.servers'
-   [local argo = require 'lsp/custom_servers/argo'
-   [-- Register Custom Server on nvim-lsp-installer.
-   [servers.register(argo)
-   ]]
+if not ok then
+  return
+end
 
--- Require configuration
---
-require 'lsp.java'
---require 'lsp.argo'
-require 'lsp.bash'
-require 'lsp.docker'
-require 'lsp.go'
-require 'lsp.json'
-require 'lsp.lua'
-require 'lsp.markdown'
-require 'lsp.pyright'
-require 'lsp.rust'
-require 'lsp.sql'
-require 'lsp.tf'
-require 'lsp.tflint'
-require 'lsp.toml'
-require 'lsp.yaml'
+
+
+local servers = {
+  'bashls',
+  'dockerls',
+  'gopls',
+  'jdtls',
+  'jsonls',
+  'sumneko_lua',
+  'pyright',
+  'rust_analyzer',
+  'sqls',
+  'terraformls',
+  'tflint',
+  'taplo',
+  'yamlls',
+}
+
+-- Floating border
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or { { ' ', 'FloatBorder' } }
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+lsp_installer.setup {
+  ensure_installed = servers,
+  automatic_installation = true,
+}
+
+for _, server in ipairs(servers) do
+  require('lsp.servers.' .. server)
+end
+
+-- Load diagnostic settings
+require 'lsp.diagnostics'
