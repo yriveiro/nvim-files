@@ -127,7 +127,7 @@ return packer.startup(function(use)
         config = require 'plugins.configs.lspinstaller',
     }
 
-    use { 'j-hui/fidget.nvim' }
+    use { 'j-hui/fidget.nvim', config = require 'plugins.configs.fidget'}
     use { 'b0o/SchemaStore.nvim' }
 
     -- Completion
