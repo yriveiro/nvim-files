@@ -35,8 +35,8 @@ _M.colors = {
 }
 
 _M.init = function()
-    local isExistNord, onenord = pcall(require, "onenord")
-    if isExistNord then
+    local onenord_exists, onenord = pcall(require, "onenord")
+    if onenord_exists then
         onenord.setup {
             borders = true,
             fade_nc = false,
