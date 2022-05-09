@@ -78,6 +78,7 @@ return packer.startup(function(use)
     use { 'McAuleyPenney/tidy.nvim' }
     use { 'amirali/yapf.nvim', config = require 'plugins.configs.autopairs' }
     use { 'mbbill/undotree' }
+    use { 'wakatime/vim-wakatime' }
 
     -- Debug
     use {
