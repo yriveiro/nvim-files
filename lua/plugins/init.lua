@@ -74,7 +74,7 @@ return packer.startup(function(use)
 
     -- Utilities
     use { 'windwp/nvim-autopairs', config = require 'plugins.configs.autopairs' }
-    use { 'editorconfig/editorconfig-vim', config = require 'plugins.configs.autopairs' }
+    use { 'editorconfig/editorconfig-vim' }
     use { 'McAuleyPenney/tidy.nvim' }
     use { 'amirali/yapf.nvim', config = require 'plugins.configs.autopairs' }
     use { 'mbbill/undotree' }
