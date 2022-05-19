@@ -79,6 +79,7 @@ return packer.startup(function(use)
     use { 'amirali/yapf.nvim', config = require 'plugins.configs.autopairs' }
     use { 'mbbill/undotree' }
     use { 'wakatime/vim-wakatime' }
+    use { 'terrortylor/nvim-comment', config = require 'plugins.configs.nvimcomment' }
 
     -- Debug
     use {

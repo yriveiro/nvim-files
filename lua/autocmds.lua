@@ -52,9 +52,16 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd("BufWrite", {
     pattern = "*.tf",
     callback = function()
         vim.lsp.buf.formatting_sync()
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*.tf",
+    callback = function()
+        vim.cmd [[set filetype=terraform]]
     end,
 })
