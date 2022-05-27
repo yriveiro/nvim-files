@@ -39,7 +39,7 @@ return packer.startup(function(use)
     use { 'rmehri01/onenord.nvim' }
     use { 'MunifTanjim/nui.nvim' }
     use { 'yriveiro/termim.nvim' }
-    use { 'rcarriga/nvim-notify', config = require 'plugins.configs.notify'}
+    use { 'rcarriga/nvim-notify', config = require 'plugins.configs.notify' }
     use { 'kyazdani42/nvim-web-devicons', config = require 'plugins.configs.icons' }
     use {
       'goolord/alpha-nvim',

@@ -1,7 +1,13 @@
 local ok, wk = pcall(require, 'which-key')
+local n = require 'notify'
 
 if not ok then
-    return
+  n(' which-key not found', 'error', {
+    title = 'Packer Nofification',
+    fade_in_slide_out = 'slide',
+  })
+
+  return
 end
 
 -- The function is called `t` for `termcodes`.

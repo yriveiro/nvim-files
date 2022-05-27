@@ -12,13 +12,14 @@ local servers = {
   'gopls',
   'jdtls',
   'jsonls',
-  'sumneko_lua',
   'pyright',
   'rust_analyzer',
   'sqls',
+  'sumneko_lua',
+  'taplo',
   'terraformls',
   'tflint',
-  'taplo',
+  'tsserver',
   'yamlls',
 }
 
