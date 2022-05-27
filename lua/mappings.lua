@@ -48,7 +48,7 @@ wk.register({
     ["0"] = { "<cmd>lua vim.lsp.buf.document_symbol()<CR>", "LSP Docmument Symbol" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "LSP Definition" },
     e = { "<cmd>lua require('vim.diagnostic').open_float()<CR>", "Show Diagnostics" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "LSP formatting" },
+    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", "LSP formatting" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "LSP Hover" },
     r = { "<cmd>lua vim.lsp.buf.references()<CR>", "LSP References" },
     ["."] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "LSP Rename" },
