@@ -8,43 +8,12 @@ local g = vim.g
 local signs = require 'utils'.signs
 local tree_cb = require 'nvim-tree.config'.nvim_tree_callback
 
-g.nvim_tree_special_files = {}
-g.nvim_tree_add_trailing = 1
-g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 0,
-}
-g.nvim_tree_icons = {
-    default = '',
-    symlink = '',
-    git = {
-        unstaged = '',
-        staged = 'ﰶ',
-        unmerged = '',
-        renamed = '➜',
-        untracked = '',
-        deleted = '﯀',
-        ignored = '',
-    },
-    folder = {
-        arrow_open = '',
-        arrow_closed = '',
-        default = '',
-        open = '',
-        empty = '',
-        empty_open = '',
-        symlink = '',
-        symlink_open = '',
-    },
-}
-
 t.setup {
     auto_reload_on_write = true,
     disable_netrw = true,
     sort_by = 'name',
     renderer = {
+        add_trailing = true,
         indent_markers = {
             enable = true,
             icons = {
@@ -54,7 +23,36 @@ t.setup {
             },
         },
         icons = {
+            show = {
+              git = true,
+              folder = true,
+              file = true,
+              folder_arrow = false,
+            },
             webdev_colors = true,
+            glyphs = {
+              default = '',
+              symlink = '',
+              git = {
+                  unstaged = '',
+                  staged = 'ﰶ',
+                  unmerged = '',
+                  renamed = '➜',
+                  untracked = '',
+                  deleted = '﯀',
+                  ignored = '',
+              },
+              folder = {
+                  arrow_open = '',
+                  arrow_closed = '',
+                  default = '',
+                  open = '',
+                  empty = '',
+                  empty_open = '',
+                  symlink = '',
+                  symlink_open = '',
+              },
+            },
         },
     },
     hijack_netrw = true,
@@ -150,4 +148,3 @@ t.setup {
         },
     },
 }
-
