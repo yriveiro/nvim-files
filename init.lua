@@ -5,7 +5,7 @@
 -- 2. Extend functionality where needed
 -- 3. Change functionality only when it doesn't make sense
 
-require 'impatient'.
+require 'impatient'
 require 'settings'
 require 'plugins'
 require 'lsp'
