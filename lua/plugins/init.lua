@@ -36,6 +36,7 @@ return packer.startup(function(use)
   -- System
   use { 'wbthomason/packer.nvim' }
   use { 'lewis6991/impatient.nvim' }
+  use { 'nathom/filetype.nvim' }
 
   -- UI
   use { 'rmehri01/onenord.nvim' }
