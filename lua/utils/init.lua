@@ -29,8 +29,4 @@ _M.nok_plugin = function(p)
   })
 end
 
-_M.trim = function(s)
-  return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
-end
-
 return _M
