@@ -1,6 +1,5 @@
+local notify = require 'notify'
 local _M = {}
-
-_M.signs = { Error = "", Warn = "", Hint = "", Info = "" }
 
 _M.is_buffer_empty = function()
   -- Check whether the current buffer is empty.
@@ -13,14 +12,25 @@ _M.has_width_gt = function(cols)
 end
 
 _M.table = {
-    some = function(tbl, cb)
-        for k, v in pairs(tbl) do
-            if cb(k, v) then
-                return true
-            end
-        end
-        return false
-    end,
+  some = function(tbl, cb)
+    for k, v in pairs(tbl) do
+      if cb(k, v) then
+        return true
+      end
+    end
+    return false
+  end,
 }
+
+_M.nok_plugin = function(p)
+  notify(' Plugin \'' + p + '\' not found', 'error', {
+    title = 'Packer Nofification',
+    fade_in_slide_out = 'slide',
+  })
+end
+
+_M.trim = function(s)
+  return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
+end
 
 return _M
