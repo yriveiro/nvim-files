@@ -1,6 +1,8 @@
 local ok, diff = pcall(require, 'diffview')
 
 if not ok then
+  local u = require 'utils'
+  u.nok_plugin('diffview')
   return
 end
 

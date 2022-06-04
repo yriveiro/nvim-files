@@ -1,7 +1,9 @@
 local ok, cmp = pcall(require, 'cmp')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('cmp')
+  return
 end
 
 local icons = {

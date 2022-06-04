@@ -1,7 +1,9 @@
 local ok, dap = pcall(require, 'dap')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('dap')
+  return
 end
 
 require('dapui').setup()

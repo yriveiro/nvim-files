@@ -1,7 +1,9 @@
 local ok, lspi = pcall(require, 'nvim-lsp-installer')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('nvim-lsp-installer')
+  return
 end
 
 

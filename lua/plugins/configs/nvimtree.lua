@@ -1,7 +1,7 @@
 local ok, t = pcall(require, 'nvim-tree')
-local u = require 'utils'
 
 if not ok then
+  local u = require 'utils'
   u.nok_plugin('nvim-tree')
   return
 end

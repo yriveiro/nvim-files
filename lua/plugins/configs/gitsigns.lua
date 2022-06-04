@@ -1,7 +1,9 @@
 local ok, gitsigns = pcall(require, 'gitsigns')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('gitsigns')
+  return
 end
 
 gitsigns.setup {

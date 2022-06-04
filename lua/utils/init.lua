@@ -23,7 +23,7 @@ _M.table = {
 }
 
 _M.nok_plugin = function(p)
-  notify(' Plugin \'' + p + '\' not found', 'error', {
+  notify(' Plugin \'' .. p .. '\' not found', 'error', {
     title = 'Packer Nofification',
     fade_in_slide_out = 'slide',
   })

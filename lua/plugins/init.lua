@@ -74,6 +74,11 @@ return packer.startup(function(use)
   }
   use { 'mg979/vim-visual-multi' }
   use { 'liuchengxu/vista.vim' }
+  use {
+    'folke/todo-comments.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = require 'plugins.configs.todo',
+  }
 
   -- Utilities
   use { 'windwp/nvim-autopairs', config = require 'plugins.configs.autopairs' }

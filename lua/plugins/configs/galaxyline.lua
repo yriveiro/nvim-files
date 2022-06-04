@@ -1,7 +1,9 @@
 local ok, gl = pcall(require, 'galaxyline')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('galaxyline')
+  return
 end
 
 local utils = require 'utils'

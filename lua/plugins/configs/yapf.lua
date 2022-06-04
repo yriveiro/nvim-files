@@ -1,7 +1,9 @@
 local ok, yapf = pcall(require, 'yapf')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('yapf')
+  return
 end
 
 yapf.setup {}

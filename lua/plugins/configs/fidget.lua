@@ -1,12 +1,8 @@
 local ok, fidget = pcall(require, 'fidget')
-local n = require 'notify'
 
 if not ok then
-  n(' fidget not found', 'error', {
-    title = 'Packer Nofification',
-    fade_in_slide_out = 'slide',
-  })
-
+  local u = require 'utils'
+  u.nok_plugin('fidget')
   return
 end
 

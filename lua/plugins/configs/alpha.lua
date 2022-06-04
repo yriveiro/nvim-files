@@ -33,6 +33,7 @@ dsh.section.buttons.val = {
   button('\\ f o', '  Recents', '<cmd>Telescope oldfiles<CR>'),
   button('\\ f r', '  Find Word', '<cmd>Telescope live_grep<CR>'),
   button('\\ f m', '  Bookmarks', '<cmd>Telescope marks<CR>'),
+  button('\\ f t', '  Todos', '<cmd>TodoTelescope<CR>'),
   button('\\ p s', '  Plugins Update', '<cmd>PackerSync<CR>'),
   button('\\ p i', '  Plugins Install', '<cmd>PackerSync<CR>'),
 }

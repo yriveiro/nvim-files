@@ -1,12 +1,8 @@
 local ok, wk = pcall(require, 'which-key')
-local n = require 'notify'
 
 if not ok then
-  n(' which-key not found', 'error', {
-    title = 'Packer Nofification',
-    fade_in_slide_out = 'slide',
-  })
-
+  local u = require 'utils'
+  u.nok_plugin('which-key')
   return
 end
 
@@ -20,21 +16,20 @@ wk.register({
   f = {
     name = "+Telescope",
     f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Find File" },
-    r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep"},
-    g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit"},
-    n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", "Notify notifications"},
+    r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep" },
+    g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit" },
+    n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", "Notify notifications" },
   },
   b = { "<cmd>Vista!!<CR>", "Vista" },
-  s = { "<cmd>lua require('window-picker').pick_window()<CR>", "Pick Window" },
   y = { "<cmd>Yapf<CR>", "Yapf, Python formatter" },
   ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" },
 }, { prefix = "<leader>" })
 
 wk.register({
   t = {
-    y = { ":tabnext<CR>", "Next tab"},
-    r = { ":tabprev<CR>", "Previous tab"},
-    n = { ":tabnew<CR>", "New Tab"}
+    y = { ":tabnext<CR>", "Next tab" },
+    r = { ":tabprev<CR>", "Previous tab" },
+    n = { ":tabnew<CR>", "New Tab" }
   },
   ["§"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
 })
@@ -79,10 +74,10 @@ wk.register({
     r = {
       name = "+RELP",
       o = { "<cmd>lua require('dap').repl.open()<CR>", "Open REPL" },
-      l = {  "<cmd>lua require('dap').repl.run_last()<CR>", "Run last REPL" },
+      l = { "<cmd>lua require('dap').repl.run_last()<CR>", "Run last REPL" },
     },
-    h = {  "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Variables Hover." },
-    u = {  "<cmd>lua require('dapui').toggle()<CR>", "UI Toogle" },
+    h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Variables Hover." },
+    u = { "<cmd>lua require('dapui').toggle()<CR>", "UI Toogle" },
   },
 
   -- telescope-dap

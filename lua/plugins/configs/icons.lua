@@ -1,7 +1,9 @@
 local ok, web_devicons = pcall(require, 'nvim-web-devicons')
 
 if not ok then
-    return
+  local u = require 'utils'
+  u.nok_plugin('nvim-web-devicons')
+  return
 end
 
 local colors = require 'theme'.colors
