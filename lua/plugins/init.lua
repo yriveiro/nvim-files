@@ -41,7 +41,6 @@ return packer.startup(function(use)
   -- UI
   use { 'rmehri01/onenord.nvim' }
   use { 'MunifTanjim/nui.nvim' }
-  use { 'yriveiro/termim.nvim' }
   use { 'rcarriga/nvim-notify', config = require 'plugins.configs.notify' }
   use { 'kyazdani42/nvim-web-devicons', config = require 'plugins.configs.icons' }
   use {
@@ -57,6 +56,11 @@ return packer.startup(function(use)
       'kyazdani42/nvim-web-devicons',
     },
     config = require 'plugins.configs.diffview'
+  }
+  use {
+    'akinsho/toggleterm.nvim',
+    tag = 'v1.*',
+    config = require 'plugins.configs.toggleterm'
   }
 
   -- Search and Navigation

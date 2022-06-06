@@ -55,8 +55,6 @@ wk.register({
     l = { "<cmd>lua require('lsp_menu').codelens.run()<CR>", "LSP Code Lens" },
   },
 
-  t = { "<cmd>lua require('termim').toggle()<CR>", "Termim" },
-
   -- dap
   d = {
     name = "+DAP",
@@ -90,7 +88,3 @@ wk.register({
     f = { "<cmd>lua require('telescope').extensions.dap.frames{}<CR>", "Frames" },
   },
 }, { prefix = "," })
-
-wk.register({
-  t = { t("<C-\\><C-N>:lua require('termim').toggle()<CR>"), "Termim" },
-}, { prefix = ",", mode = "t" })
