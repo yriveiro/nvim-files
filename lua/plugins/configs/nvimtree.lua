@@ -96,6 +96,7 @@ t.setup {
     height = 30,
     hide_root_folder = true,
     side = 'left',
+    adaptive_size = true,
     mappings = {
       custom_only = false,
       list = {

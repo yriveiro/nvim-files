@@ -57,11 +57,8 @@ return packer.startup(function(use)
     },
     config = require 'plugins.configs.diffview'
   }
-  use {
-    'akinsho/toggleterm.nvim',
-    tag = 'v1.*',
-    config = require 'plugins.configs.toggleterm'
-  }
+  use { 'yriveiro/termim.nvim' }
+  use { 'norcalli/nvim-colorizer.lua', config = require 'plugins.configs.colorizer' }
 
   -- Search and Navigation
   use {
@@ -92,6 +89,7 @@ return packer.startup(function(use)
   use { 'mbbill/undotree' }
   use { 'wakatime/vim-wakatime' }
   use { 'terrortylor/nvim-comment', config = require 'plugins.configs.nvimcomment' }
+  use { 'sychen52/smart-term-esc.nvim' }
 
   -- Debug
   use {

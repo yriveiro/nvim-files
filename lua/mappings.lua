@@ -19,6 +19,7 @@ wk.register({
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep" },
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit" },
     n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", "Notify notifications" },
+    t = { "<cmd>TodoTelescope<CR>", "Todo comments notifications" },
   },
   b = { "<cmd>Vista!!<CR>", "Vista" },
   y = { "<cmd>Yapf<CR>", "Yapf, Python formatter" },
@@ -55,6 +56,8 @@ wk.register({
     l = { "<cmd>lua require('lsp_menu').codelens.run()<CR>", "LSP Code Lens" },
   },
 
+  t = { "<cmd>lua require('termim').toggle()<CR>", "Termim" },
+
   -- dap
   d = {
     name = "+DAP",
@@ -88,3 +91,7 @@ wk.register({
     f = { "<cmd>lua require('telescope').extensions.dap.frames{}<CR>", "Frames" },
   },
 }, { prefix = "," })
+
+wk.register({
+  t = { t("<C-\\><C-N>:lua require('termim').toggle()<CR>"), "Termim" },
+}, { prefix = ",", mode = "t" })
