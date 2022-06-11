@@ -10,6 +10,9 @@ local icons = require 'icons'
 local tree_cb = require 'nvim-tree.config'.nvim_tree_callback
 
 t.setup {
+  filesystem_watchers = {
+    enable = true,
+  },
   auto_reload_on_write = true,
   disable_netrw = true,
   sort_by = 'name',
@@ -89,7 +92,7 @@ t.setup {
   },
   git = {
     enable = true,
-    ignore = false,
+    ignore = true,
     timeout = 500,
   },
   view = {
