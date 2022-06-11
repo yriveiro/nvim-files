@@ -81,9 +81,10 @@ t.setup {
     args = {},
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {
       '^.git$',
+      'node_modules'
     },
   },
   git = {
@@ -147,6 +148,7 @@ t.setup {
     },
     open_file = {
       quit_on_open = false,
+      resize_window = true,
     },
   },
 }
