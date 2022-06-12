@@ -87,12 +87,12 @@ t.setup {
     dotfiles = true,
     custom = {
       '^.git$',
-      'node_modules'
+      '^node_modules',
     },
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
   },
   view = {
