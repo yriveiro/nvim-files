@@ -19,6 +19,7 @@ wk.register({
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep" },
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit" },
     n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", "Notify notifications" },
+    p = { "<cmd>lua require('telescope').extensions.project.project()<CR>", "Projects" },
     t = { "<cmd>TodoTelescope<CR>", "Todo comments notifications" },
   },
   b = { "<cmd>Vista!!<CR>", "Vista" },

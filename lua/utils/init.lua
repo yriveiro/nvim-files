@@ -1,4 +1,4 @@
-local notify = require 'notify'
+local n = require 'notify'
 local _M = {}
 
 _M.is_buffer_empty = function()
@@ -23,7 +23,7 @@ _M.table = {
 }
 
 _M.nok_plugin = function(p)
-  notify(' Plugin \'' .. p .. '\' not found', 'error', {
+  n(' Plugin \'' .. p .. '\' not found', 'error', {
     title = 'Packer Nofification',
     fade_in_slide_out = 'slide',
   })
