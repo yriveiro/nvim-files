@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufWrite", {
     pattern = "*.tf",
     callback = function()
-        vim.lsp.buf.formatting_sync()
+        vim.lsp.buf.format()
     end,
 })
 
