@@ -50,9 +50,3 @@ sign_define(
     numhl = "",
   }
 )
-
--- Force relink with default hi groups
-hi.link("DiagnosticSignError", "DiagnosticError", false)
-hi.link("DiagnosticSignWarn", "DiagnosticWarn", false)
-hi.link("DiagnosticSignInfo", "DiagnosticInfo", false)
-hi.link("DiagnosticSignHint", "DiagnosticHint", true)
