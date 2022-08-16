@@ -135,12 +135,14 @@ return packer.startup(function(use)
 
   -- LSP
   use {
-    'williamboman/nvim-lsp-installer',
+    'williamboman/mason.nvim',
     requires = {
-      'neovim/nvim-lspconfig',
+      'williamboman/mason-lspconfig.nvim',
     },
-    config = require 'plugins.configs.lspinstaller',
+    config = require 'plugins.configs.mason',
   }
+
+  use { 'neovim/nvim-lspconfig' }
 
   use { 'j-hui/fidget.nvim', config = require 'plugins.configs.fidget' }
   use { 'b0o/SchemaStore.nvim' }

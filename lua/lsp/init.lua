@@ -1,10 +1,8 @@
-local ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
+local ok, mlsp = pcall(require, 'mason-lspconfig')
 
 if not ok then
   return
 end
-
-
 
 local servers = {
   'bashls',
@@ -21,20 +19,6 @@ local servers = {
   'tflint',
   'tsserver',
   'yamlls',
-}
-
--- Floating border
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or { { ' ', 'FloatBorder' } }
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
-
-lsp_installer.setup {
-  ensure_installed = servers,
-  automatic_installation = true,
 }
 
 for _, server in ipairs(servers) do
