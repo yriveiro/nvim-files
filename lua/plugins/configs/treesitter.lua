@@ -6,8 +6,6 @@ if not ok then
   return
 end
 
-local colors = require 'theme'.colors
-
 treesitter.setup {
   ensure_installed = 'all',
   ignore_install = { 'phpdoc' },

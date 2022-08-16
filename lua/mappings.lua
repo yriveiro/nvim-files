@@ -70,8 +70,14 @@ wk.register({
     b = {
       name = "+Breakpoint",
       a = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Add/Remove Breakpoint" },
-      i = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", "Breakpoint Condition" },
-      m = { "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>", "Breakpoint Log Message" },
+      i = {
+        "<cmd>lua require('dap').set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>",
+        "Breakpoint Condition"
+      },
+      m = {
+        "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>",
+        "Breakpoint Log Message"
+      },
     },
     r = {
       name = "+RELP",

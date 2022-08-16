@@ -75,7 +75,7 @@ gls.left[2] = {
         R = 'REPLACE',
       }
 
-      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
+      vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color())
 
       local mode = alias[vim.fn.mode()]
 
@@ -83,14 +83,14 @@ gls.left[2] = {
         return 'V-BLOCK '
       end
 
-      return mode..' '
+      return mode .. ' '
     end,
     highlight = { colors.bg, colors.bg },
     separator = '  ',
-    separator_highlight = {colors.bg, colors.section_bg},
+    separator_highlight = { colors.bg, colors.section_bg },
   },
 }
-gls.left[3] ={
+gls.left[3] = {
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
@@ -103,21 +103,21 @@ gls.left[4] = {
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.section_bg },
     separator = '  ',
-    separator_highlight = {colors.section_bg, colors.bg},
+    separator_highlight = { colors.section_bg, colors.bg },
   }
 }
 gls.left[5] = {
   GitIcon = {
     provider = function() return ' ' end,
     condition = buffer_not_empty,
-    highlight = {colors.red,colors.bg},
+    highlight = { colors.red, colors.bg },
   }
 }
 gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = buffer_not_empty,
-    highlight = {colors.fg,colors.bg},
+    highlight = { colors.fg, colors.bg },
   }
 }
 gls.left[7] = {
@@ -141,47 +141,47 @@ gls.left[9] = {
     provider = 'DiffRemove',
     condition = checkwidth,
     icon = '   ',
-    highlight = { colors.red,colors.bg },
+    highlight = { colors.red, colors.bg },
   }
 }
 gls.left[10] = {
   LeftEnd = {
     provider = function() return ' ' end,
     condition = buffer_not_empty,
-    highlight = {colors.bg, colors.section_bg}
+    highlight = { colors.bg, colors.section_bg }
   }
 }
 gls.left[11] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = '   ',
-    highlight = {colors.red,colors.section_bg}
+    highlight = { colors.red, colors.section_bg }
   }
 }
 gls.left[12] = {
   Space = {
-    provider = function () return ' ' end,
-    highlight = {colors.section_bg,colors.section_bg},
+    provider = function() return ' ' end,
+    highlight = { colors.section_bg, colors.section_bg },
   }
 }
 gls.left[13] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
-    highlight = {colors.orange,colors.section_bg},
+    highlight = { colors.orange, colors.section_bg },
   }
 }
 gls.left[14] = {
   Space = {
-    provider = function () return ' ' end,
-    highlight = {colors.section_bg,colors.section_bg},
+    provider = function() return ' ' end,
+    highlight = { colors.section_bg, colors.section_bg },
   }
 }
 gls.left[15] = {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
     icon = '  ',
-    highlight = {colors.blue,colors.section_bg},
+    highlight = { colors.blue, colors.section_bg },
     separator = ' ',
     separator_highlight = { colors.section_bg, colors.bg },
   }
@@ -191,26 +191,26 @@ gls.left[15] = {
 
 gls.right[0] = {
   LspClient = {
-    highlight = {colors.fg, colors.bg, 'bold'},
-    provider = function ()
+    highlight = { colors.fg, colors.bg, 'bold' },
+    provider = function()
       local icon = '  '
       local active_lsp = lsp.get_lsp_client()
 
       if active_lsp == 'No Active Lsp' then
-        icon = ''
-        active_lsp  = ''
+        icon       = ''
+        active_lsp = ''
       end
 
-      vim.api.nvim_command('hi GalaxyLspClient guifg='..mode_color())
-      return icon..active_lsp..' '
+      vim.api.nvim_command('hi GalaxyLspClient guifg=' .. mode_color())
+      return icon .. active_lsp .. ' '
     end,
   }
 }
 
-gls.right[1]= {
+gls.right[1] = {
   FileFormat = {
-    provider = function() return ''..vim.bo.filetype end,
-    highlight = { colors.fg,colors.section_bg },
+    provider = function() return '' .. vim.bo.filetype end,
+    highlight = { colors.fg, colors.section_bg },
     separator = ' ',
     separator_highlight = { colors.bg, colors.section_bg },
   }
@@ -244,10 +244,10 @@ gls.short_line_left[1] = {
 
 gls.short_line_right[1] = {
   BufferIcon = {
-    provider= 'BufferIcon',
+    provider = 'BufferIcon',
     highlight = { colors.yellow, colors.section_bg },
     separator = ' ',
-    separator_highlight = {colors.bg, colors.section_bg},
+    separator_highlight = { colors.bg, colors.section_bg },
   }
 }
 

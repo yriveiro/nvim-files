@@ -59,7 +59,7 @@ return packer.startup(function(use)
   }
   use { 'yriveiro/termim.nvim' }
   use { 'norcalli/nvim-colorizer.lua', config = require 'plugins.configs.colorizer' }
-  use {"ellisonleao/glow.nvim", branch = 'main'}
+  use { "ellisonleao/glow.nvim", branch = 'main' }
 
   -- Search and Navigation
   use {
@@ -143,6 +143,7 @@ return packer.startup(function(use)
   }
 
   use { 'neovim/nvim-lspconfig' }
+  use { 'aspeddro/lsp_menu.nvim' }
 
   use { 'j-hui/fidget.nvim', config = require 'plugins.configs.fidget' }
   use { 'b0o/SchemaStore.nvim' }

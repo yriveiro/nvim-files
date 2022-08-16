@@ -1,9 +1,3 @@
-local ok, mlsp = pcall(require, 'mason-lspconfig')
-
-if not ok then
-  return
-end
-
 local servers = {
   'bashls',
   'dockerls',
