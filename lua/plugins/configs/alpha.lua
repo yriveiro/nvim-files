@@ -36,7 +36,7 @@ dsh.section.buttons.val = {
   button('\\ f t', '  Todos', '<cmd>TodoTelescope<CR>'),
   button('\\ p u', '  Plugins Update', '<cmd>PackerSync<CR>'),
   button('\\ p i', '  Plugins Install', '<cmd>PackerSync<CR>'),
-  button('\\ l u', '  LSP Update', '<cmd>LspInstallInfo<CR>'),
+  button('\\ l u', '  LSP Update', '<cmd>Mason<CR>'),
 }
 
 dsh.section.footer.val = ''

@@ -1,13 +1,22 @@
-local ok, lspi = pcall(require, 'nvim-lsp-installer')
+local ok, m = pcall(require, 'mason')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('nvim-lsp-installer')
+  u.nok_plugin('mason.nvim')
   return
 end
 
+local ok, mlsp = pcall(require, 'mason-lspconfig')
 
-lspi.setup({
+if not ok then
+  local u = require 'utils'
+  u.nok_plugin('lspconfig')
+  return
+end
+
+m.setup()
+
+mlsp.setup({
   ensure_installed = {
     'bashls',
     'dockerls',
@@ -20,7 +29,7 @@ lspi.setup({
     'jdtls',
     'jsonls',
     'sqls',
-    'sumneko_lua',
+    'lua-language-server',
     'taplo',
     'terraformls',
     'tflint',
