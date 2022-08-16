@@ -7,10 +7,8 @@ local opts = {
   capabilities = capabilities,
   settings = {
     yaml = {
-      schemas = require('schemastore').json.schemas {
-        select = {
-          'docker-compose.yml',
-        },
+      schemas = {
+        ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "**/argo/**.yaml"
       },
     },
   }
