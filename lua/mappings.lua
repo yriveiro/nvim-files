@@ -12,19 +12,26 @@ local function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
+local function wp()
+    local picked_window_id = wp.pick_window() or vim.api.nvim_get_current_win()
+    vim.api.nvim_set_current_win(picked_window_id)
+end
+
+
 wk.register({
   f = {
     name = "+Telescope",
     f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Find File" },
-    r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep" },
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Find Git Commit" },
     n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", "Notify notifications" },
     p = { "<cmd>lua require('telescope').extensions.project.project()<CR>", "Projects" },
+    r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Live Grep" },
     t = { "<cmd>TodoTelescope<CR>", "Todo comments notifications" },
   },
   b = { "<cmd>Vista!!<CR>", "Vista" },
   y = { "<cmd>Yapf<CR>", "Yapf, Python formatter" },
-  ["§"] = { ":NvimTreeFindFile<CR>", "Find file in NvimTree" },
+  w = { "<cmd>lua PickWindow()<CR>", "Window Picker" },
+  ["§"] = { ":NeoTreeReveal<CR>", "Find file in NeoTree" },
 }, { prefix = "<leader>" })
 
 wk.register({
@@ -33,7 +40,8 @@ wk.register({
     r = { ":tabprev<CR>", "Previous tab" },
     n = { ":tabnew<CR>", "New Tab" }
   },
-  ["§"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
+  ["§"] = { ":NeoTreeShowToggle<CR>", "Toggle Neotree" },
+  ["<space>"] = { ":Telescope file_browser<CR>", "File Browser" },
 })
 
 
