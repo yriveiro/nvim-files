@@ -2,7 +2,7 @@ local ok, treesitter = pcall(require, 'nvim-treesitter.configs')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('nvim-treesitter')
+  u.nok_plugin 'nvim-treesitter'
   return
 end
 

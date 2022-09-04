@@ -8,8 +8,8 @@ local opts = {
   commands = {
     Format = {
       function()
-        vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-      end
+        vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line '$', 0 })
+      end,
     },
   },
   settings = {
@@ -18,6 +18,5 @@ local opts = {
     },
   },
 }
-
 
 lsp.jsonls.setup(opts)

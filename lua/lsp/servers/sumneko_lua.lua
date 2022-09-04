@@ -12,9 +12,9 @@ local opts = {
     Lua = {
       diagnostics = {
         globals = { 'vim', 'it', 'describe', 'assert', 'before_each' },
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 lsp.sumneko_lua.setup(opts)

@@ -2,7 +2,7 @@ local ok, alpha = pcall(require, 'alpha')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('alpha')
+  u.nok_plugin 'alpha'
   return
 end
 

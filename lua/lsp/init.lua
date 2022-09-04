@@ -2,6 +2,7 @@ local servers = {
   'bashls',
   'dockerls',
   'gopls',
+  'grammarly',
   'jdtls',
   'jsonls',
   'pyright',

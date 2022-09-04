@@ -1,37 +1,37 @@
-local theme = require "theme"
+local theme = require 'theme'
 local o = vim.opt
 local g = vim.g
 
 -- Leader key configuation
 -- https://learnvimscriptthehardway.stevelosh.com/chapters/06.html
-g.mapleader = "\\" -- Define leader key.
-g.localmapleader = "," -- Define local leader.
+g.mapleader = '\\' -- Define leader key.
+g.localmapleader = ',' -- Define local leader.
 
 vim.cmd [[set fcs=eob:\ ]]
 vim.cmd [[filetype plugin indent on]]
 
 local options = {
   autoread = true,
-  background = "dark",
+  background = 'dark',
   backup = false,
-  clipboard = "unnamedplus", -- Allows neovim to access the system clipboard.
-  cmdheight = 0,
-  colorcolumn = "80",
+  clipboard = 'unnamedplus', -- Allows neovim to access the system clipboard.
+  cmdheight = 1,
+  colorcolumn = '80',
   cursorline = true, -- Highlight the screen line of the cursor.
   expandtab = true,
   exrc = true,
-  fileencoding = "utf-8", -- The encoding written to a file.
-  foldexpr = "nvim_treesitter#foldexpr()",
+  fileencoding = 'utf-8', -- The encoding written to a file.
+  foldexpr = 'nvim_treesitter#foldexpr()',
   foldlevelstart = 2,
-  foldmethod = "expr",
-  guifont = "MesloLGM Nerd Font Mono",
+  foldmethod = 'expr',
+  guifont = 'MesloLGM Nerd Font Mono',
   hidden = true,
   hlsearch = true,
   ignorecase = true,
   incsearch = true,
   laststatus = 3, -- Display the status line always.
   linespace = 0, -- Set line-spacing to minimum.
-  mouse = "a", -- Enable mouse.
+  mouse = 'a', -- Enable mouse.
   number = true, -- Line numbers.
   pumheight = 10,
   relativenumber = true, -- Line relative numbers.
@@ -42,7 +42,7 @@ local options = {
   showcmd = true, -- Show (partial) command in status line.
   showmode = true, -- Show current mode.
   sidescrolloff = 5,
-  signcolumn = "yes",
+  signcolumn = 'yes',
   smartcase = true,
   smartindent = true,
   splitbelow = true,
@@ -52,13 +52,20 @@ local options = {
   tabstop = 2,
   termguicolors = true, -- Enable true colors
   timeoutlen = 1000,
-  undodir = vim.fn.stdpath('cache') .. "/undo", -- set an undo directory.
+  undodir = vim.fn.stdpath 'cache' .. '/undo', -- set an undo directory.
   undofile = true,
   updatetime = 250,
   wildmenu = true,
+  listchars = {
+    eol = '↵',
+    space = ' ',
+    trail = '✚',
+    extends = '◀',
+    precedes = '▶',
+  },
 }
 
-o.shortmess:append "c"
+o.shortmess:append 'c'
 
 for key, value in pairs(options) do
   o[key] = value

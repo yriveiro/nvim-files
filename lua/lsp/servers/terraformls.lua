@@ -15,10 +15,10 @@ local opts = {
     },
     terraform = {
       codelens = {
-        referenceCount = true
-      }
-    }
-  }
+        referenceCount = true,
+      },
+    },
+  },
 }
 
 lsp.terraformls.setup(opts)

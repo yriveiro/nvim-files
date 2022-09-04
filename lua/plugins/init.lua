@@ -55,11 +55,11 @@ return packer.startup(function(use)
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
     },
-    config = require 'plugins.configs.diffview'
+    config = require 'plugins.configs.diffview',
   }
   use { 'yriveiro/termim.nvim' }
   use { 'norcalli/nvim-colorizer.lua', config = require 'plugins.configs.colorizer' }
-  use { "ellisonleao/glow.nvim", branch = 'main' }
+  use { 'ellisonleao/glow.nvim', branch = 'main' }
 
   -- Search and Navigation
   use {
@@ -72,12 +72,12 @@ return packer.startup(function(use)
   use { 'nvim-telescope/telescope-file-browser.nvim' }
   use { 'folke/which-key.nvim' }
   use {
-  "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = { 
-      "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
     },
     config = require 'plugins.configs.neotree',
   }
@@ -89,15 +89,18 @@ return packer.startup(function(use)
     config = require 'plugins.configs.todo',
   }
 
+  use { 's1n7ax/nvim-window-picker', config = require 'plugins.configs.windowpicker' }
+
   -- Utilities
-  use { 'windwp/nvim-autopairs', config = require 'plugins.configs.autopairs' }
+  use { 'McAuleyPenney/tidy.nvim' } -- trailing whitespaces and delete empty lines at EOF
+  use { 'amirali/yapf.nvim', config = require 'plugins.configs.yapf' }
+  use { 'danymat/neogen', config = require 'plugins.configs.neogen', requires = 'nvim-treesitter/nvim-treesitter' }
   use { 'editorconfig/editorconfig-vim' }
-  use { 'McAuleyPenney/tidy.nvim' }
-  use { 'amirali/yapf.nvim', config = require 'plugins.configs.autopairs' }
   use { 'mbbill/undotree' }
-  use { 'wakatime/vim-wakatime' }
-  use { 'terrortylor/nvim-comment', config = require 'plugins.configs.nvimcomment' }
   use { 'sychen52/smart-term-esc.nvim' }
+  use { 'terrortylor/nvim-comment', config = require 'plugins.configs.nvimcomment' }
+  use { 'wakatime/vim-wakatime' }
+  use { 'windwp/nvim-autopairs', config = require 'plugins.configs.autopairs' }
 
   -- Debug
   use {
@@ -107,13 +110,13 @@ return packer.startup(function(use)
       'yriveiro/dap-go.nvim',
       'theHamsta/nvim-dap-virtual-text',
     },
-    config = require 'plugins.configs.dap'
+    config = require 'plugins.configs.dap',
   }
   use {
     'nvim-telescope/telescope-dap.nvim',
     requires = {
       'nvim-telescope/telescope.nvim',
-      'mfussenegger/nvim-dap'
+      'mfussenegger/nvim-dap',
     },
   }
 
@@ -154,7 +157,11 @@ return packer.startup(function(use)
   use { 'b0o/SchemaStore.nvim' }
 
   -- Completion
-
+  use {
+    'L3MON4D3/LuaSnip',
+    requires = 'rafamadriz/friendly-snippets',
+    config = require 'plugins.configs.luasnip'
+  }
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -165,9 +172,7 @@ return packer.startup(function(use)
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lsp-document-symbol',
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip',
-      'hrsh7th/vim-vsnip-integ',
+      'saadparwaiz1/cmp_luasnip',
       'dmitmel/cmp-cmdline-history',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'rafamadriz/friendly-snippets',

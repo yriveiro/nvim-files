@@ -2,7 +2,7 @@ local ok, gl = pcall(require, 'galaxyline')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('galaxyline')
+  u.nok_plugin 'galaxyline'
   return
 end
 
@@ -23,7 +23,7 @@ local colors = {
   orange = '#ffb86c',
   magenta = '#ff79c6',
   blue = '#8be9fd',
-  red = '#ff5555'
+  red = '#ff5555',
 }
 
 -- Local helper functions
@@ -58,8 +58,10 @@ end
 -- Left side
 gls.left[1] = {
   FirstElement = {
-    provider = function() return '▋' end,
-    highlight = { colors.cyan, colors.section_bg }
+    provider = function()
+      return '▋'
+    end,
+    highlight = { colors.cyan, colors.section_bg },
   },
 }
 gls.left[2] = {
@@ -104,21 +106,23 @@ gls.left[4] = {
     highlight = { colors.fg, colors.section_bg },
     separator = '  ',
     separator_highlight = { colors.section_bg, colors.bg },
-  }
+  },
 }
 gls.left[5] = {
   GitIcon = {
-    provider = function() return ' ' end,
+    provider = function()
+      return ' '
+    end,
     condition = buffer_not_empty,
     highlight = { colors.red, colors.bg },
-  }
+  },
 }
 gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.bg },
-  }
+  },
 }
 gls.left[7] = {
   DiffAdd = {
@@ -126,7 +130,7 @@ gls.left[7] = {
     condition = checkwidth,
     icon = '   ',
     highlight = { colors.green, colors.bg },
-  }
+  },
 }
 gls.left[8] = {
   DiffModified = {
@@ -134,7 +138,7 @@ gls.left[8] = {
     condition = checkwidth,
     icon = '   ',
     highlight = { colors.orange, colors.bg },
-  }
+  },
 }
 gls.left[9] = {
   DiffRemove = {
@@ -142,40 +146,46 @@ gls.left[9] = {
     condition = checkwidth,
     icon = '   ',
     highlight = { colors.red, colors.bg },
-  }
+  },
 }
 gls.left[10] = {
   LeftEnd = {
-    provider = function() return ' ' end,
+    provider = function()
+      return ' '
+    end,
     condition = buffer_not_empty,
-    highlight = { colors.bg, colors.section_bg }
-  }
+    highlight = { colors.bg, colors.section_bg },
+  },
 }
 gls.left[11] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = '   ',
-    highlight = { colors.red, colors.section_bg }
-  }
+    highlight = { colors.red, colors.section_bg },
+  },
 }
 gls.left[12] = {
   Space = {
-    provider = function() return ' ' end,
+    provider = function()
+      return ' '
+    end,
     highlight = { colors.section_bg, colors.section_bg },
-  }
+  },
 }
 gls.left[13] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
     highlight = { colors.orange, colors.section_bg },
-  }
+  },
 }
 gls.left[14] = {
   Space = {
-    provider = function() return ' ' end,
+    provider = function()
+      return ' '
+    end,
     highlight = { colors.section_bg, colors.section_bg },
-  }
+  },
 }
 gls.left[15] = {
   DiagnosticInfo = {
@@ -184,7 +194,7 @@ gls.left[15] = {
     highlight = { colors.blue, colors.section_bg },
     separator = ' ',
     separator_highlight = { colors.section_bg, colors.bg },
-  }
+  },
 }
 
 -- Right side
@@ -197,23 +207,25 @@ gls.right[0] = {
       local active_lsp = lsp.get_lsp_client()
 
       if active_lsp == 'No Active Lsp' then
-        icon       = ''
+        icon = ''
         active_lsp = ''
       end
 
       vim.api.nvim_command('hi GalaxyLspClient guifg=' .. mode_color())
       return icon .. active_lsp .. ' '
     end,
-  }
+  },
 }
 
 gls.right[1] = {
   FileFormat = {
-    provider = function() return '' .. vim.bo.filetype end,
+    provider = function()
+      return '' .. vim.bo.filetype
+    end,
     highlight = { colors.fg, colors.section_bg },
     separator = ' ',
     separator_highlight = { colors.bg, colors.section_bg },
-  }
+  },
 }
 gls.right[2] = {
   LineInfo = {
@@ -225,11 +237,13 @@ gls.right[2] = {
 }
 gls.right[3] = {
   Heart = {
-    provider = function() return ' ' end,
+    provider = function()
+      return ' '
+    end,
     highlight = { colors.red, colors.section_bg },
     separator = ' | ',
     separator_highlight = { colors.bg, colors.section_bg },
-  }
+  },
 }
 
 -- Short status line
@@ -239,7 +253,7 @@ gls.short_line_left[1] = {
     highlight = { colors.fg, colors.section_bg },
     separator = ' ',
     separator_highlight = { colors.section_bg, colors.bg },
-  }
+  },
 }
 
 gls.short_line_right[1] = {
@@ -248,7 +262,7 @@ gls.short_line_right[1] = {
     highlight = { colors.yellow, colors.section_bg },
     separator = ' ',
     separator_highlight = { colors.bg, colors.section_bg },
-  }
+  },
 }
 
 -- Force manual load so that nvim boots with a status line

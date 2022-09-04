@@ -3,7 +3,7 @@ local _M = {}
 
 _M.is_buffer_empty = function()
   -- Check whether the current buffer is empty.
-  return vim.fn.empty(vim.fn.expand('%:t')) == 1
+  return vim.fn.empty(vim.fn.expand '%:t') == 1
 end
 
 _M.has_width_gt = function(cols)
@@ -23,7 +23,7 @@ _M.table = {
 }
 
 _M.nok_plugin = function(p)
-  n(' Plugin \'' .. p .. '\' not found', 'error', {
+  n(" Plugin '" .. p .. "' not found", 'error', {
     title = 'Packer Nofification',
     fade_in_slide_out = 'slide',
   })

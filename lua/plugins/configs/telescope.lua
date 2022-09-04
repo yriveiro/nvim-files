@@ -4,7 +4,7 @@ local ok, telescope = pcall(require, 'telescope')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('telescope')
+  u.nok_plugin 'telescope'
   return
 end
 
@@ -76,6 +76,13 @@ telescope.setup {
       override_file_sorter = true,
       case_mode = 'smart_case',
     },
+    file_browse = {
+      hijack_netrw = true,
+      depth = false,
+    },
+    project = {
+      display_type = 'full',
+    },
   },
 }
 
@@ -83,3 +90,4 @@ telescope.load_extension 'dap'
 telescope.load_extension 'fzf'
 telescope.load_extension 'notify'
 telescope.load_extension 'project'
+telescope.load_extension 'file_browser'

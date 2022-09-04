@@ -2,7 +2,7 @@ local ok, todo = pcall(require, 'todo-comments')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('todo-comments')
+  u.nok_plugin 'todo-comments'
   return
 end
 

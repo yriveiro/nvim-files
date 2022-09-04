@@ -8,11 +8,10 @@ local opts = {
   settings = {
     yaml = {
       schemas = {
-        ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "**/argo/**.yaml"
+        ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '**/argo/**.yaml',
       },
     },
-  }
+  },
 }
-
 
 lsp.yamlls.setup(opts)

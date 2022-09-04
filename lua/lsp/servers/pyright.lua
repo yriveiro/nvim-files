@@ -5,6 +5,13 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local opts = {
   capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = 'workspace',
+      },
+    },
+  },
 }
 
 lsp.pyright.setup(opts)

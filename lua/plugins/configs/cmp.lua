@@ -2,7 +2,23 @@ local ok, cmp = pcall(require, 'cmp')
 
 if not ok then
   local u = require 'utils'
-  u.nok_plugin('cmp')
+  u.nok_plugin 'cmp'
+  return
+end
+
+local ok, luasnip = pcall(require, 'luasnip')
+
+if not ok then
+  local u = require 'utils'
+  u.nok_plugin 'luasnip'
+  return
+end
+
+local ok, lspkind = pcall(require, 'lspkind')
+
+if not ok then
+  local u = require 'utils'
+  u.nok_plugin 'lspkind'
   return
 end
 
@@ -37,7 +53,7 @@ local icons = {
 local menu = {
   buffer = 'Buffer',
   nvim_lsp = 'LSP',
-  vsnip = 'VSnip',
+  luasnip = 'Luasnip',
   nvim_lua = 'Lua',
   path = 'Path',
   cmdline = 'Command',
@@ -45,15 +61,20 @@ local menu = {
   cmdline_history = 'Command History',
 }
 
+-- Borrowed from AstroNvim configuration of cmp plugin
+local function has_words_before()
+  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+end
+
 cmp.setup {
   experimental = {
     native_menu = false,
-    ghost_text = false,
+    ghost_text = true,
   },
-  confirmation = {
-    get_commit_characters = function()
-      return {}
-    end,
+  confirm_opts = {
+    behavior = cmp.ConfirmBehavior.Replace,
+    select = false,
   },
   completion = {
     completeopt = 'menu,menuone,noinsert',
@@ -62,7 +83,7 @@ cmp.setup {
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
-    format = require 'lspkind'.cmp_format({
+    format = lspkind.cmp_format {
       mode = 'symbol_text', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       menu = menu,
@@ -70,36 +91,33 @@ cmp.setup {
       before = function(_, vim_item)
         vim_item.menu = vim_item.kind
         vim_item.kind = icons[vim_item.kind]
-
         return vim_item
-      end
-    })
+      end,
+    },
   },
   snippet = {
-    expand = function(args)
-      vim.fn['vsnip#anonymous'](args.body)
-    end,
+    expand = function(args) luasnip.lsp_expand(args.body) end,
   },
   mapping = {
-    ['<C-s>'] = cmp.mapping.complete({
+    ['<C-s>'] = cmp.mapping.complete {
       config = {
         sources = {
+          { name = 'luasnip' },
           { name = 'nvim_lsp' },
-          { name = 'vsnip' },
-        }
-      }
-    }),
+        },
+      },
+    },
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-q>'] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn['vsnip#available'](1) == 1 then
-        vim.api.nvim_feedkeys(
-          vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true),
-          '',
-          true
-        )
+      elseif luasnip.expandable() then
+        luasnip.expand()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
       else
         fallback()
       end
@@ -107,22 +125,18 @@ cmp.setup {
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-        vim.api.nvim_feedkeys(
-          vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-prev)', true, true, true),
-          '',
-          true
-        )
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
     end, { 'i', 's' }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true })
+    ['<CR>'] = cmp.mapping.confirm { select = true },
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'vsnip' },
+    { name = 'nvim_lsp', priority = 1000 },
+    { name = 'nvim_lsp_signature_help', priority = 500 },
+    { name = 'luasnip', priority = 750 },
     {
       name = 'buffer',
       option = {
@@ -132,8 +146,9 @@ cmp.setup {
             bufs[vim.api.nvim_win_get_buf(win)] = true
           end
           return vim.tbl_keys(bufs)
-        end
-      }
+        end,
+      },
+      priority = 525
     },
     { name = 'path' },
     { name = 'nvim_lua' },
@@ -150,9 +165,9 @@ cmp.setup.cmdline('/', {
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
+  sources = cmp.config.sources {
     { name = 'cmdline' },
-    { name = 'path' },
     { name = 'cmdline_history' },
-  }),
+    { name = 'path' },
+  },
 })
