@@ -11,14 +11,16 @@ if ok then
   impatient.enable_profile()
 end
 
-for _, source in ipairs {
-  'settings',
-  'plugins',
-  'lsp',
-  'mappings',
-  'autocmds',
-  'commands',
-} do
+sources = {
+  'settings', -- Vim settings
+  'plugins', -- Packer plugins
+  'lsp', -- LSP configuration
+  'mappings', -- Vim mappings
+  'autocmds', -- Magic from autocommands
+  'commands', -- custom commands
+}
+
+for _, source in ipairs(sources) do
   local ok, err = pcall(require, source)
   if not ok then
     vim.api.nvim_err_writeln('Failed to load ' .. source .. '\n\n' .. err)

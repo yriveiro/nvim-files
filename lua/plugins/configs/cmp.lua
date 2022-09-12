@@ -64,7 +64,7 @@ local menu = {
 -- Borrowed from AstroNvim configuration of cmp plugin
 local function has_words_before()
   local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
 end
 
 cmp.setup {
@@ -96,18 +96,16 @@ cmp.setup {
     },
   },
   snippet = {
-    expand = function(args) luasnip.lsp_expand(args.body) end,
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
   },
   mapping = {
-    ['<C-s>'] = cmp.mapping.complete {
-      config = {
-        sources = {
-          { name = 'luasnip' },
-          { name = 'nvim_lsp' },
-        },
-      },
-    },
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Up>'] = cmp.mapping.select_prev_item(),
+    ['<Down>'] = cmp.mapping.select_next_item(),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 's' }),
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
     ['<C-q>'] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -148,7 +146,7 @@ cmp.setup {
           return vim.tbl_keys(bufs)
         end,
       },
-      priority = 525
+      priority = 525,
     },
     { name = 'path' },
     { name = 'nvim_lua' },

@@ -12,11 +12,6 @@ local function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local function wp()
-  local picked_window_id = wp.pick_window() or vim.api.nvim_get_current_win()
-  vim.api.nvim_set_current_win(picked_window_id)
-end
-
 wk.register({
   f = {
     name = '+Telescope',
@@ -25,9 +20,10 @@ wk.register({
     n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", 'Notify notifications' },
     p = { "<cmd>lua require('telescope').extensions.project.project()<CR>", 'Projects' },
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", 'Live Grep' },
+    d = { "<cmd>lua require('telescope.builtin').diagnostics()<CR>", 'Diagnostics' },
     t = { '<cmd>TodoTelescope<CR>', 'Todo comments notifications' },
   },
-  b = { '<cmd>Vista!!<CR>', 'Vista' },
+  v = { '<cmd>Vista!!<CR>', 'Vista' },
   y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
   w = { '<cmd>lua PickWindow()<CR>', 'Window Picker' },
   ['§'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },

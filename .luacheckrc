@@ -1,3 +1,5 @@
+-- vim: ft=lua tw=80
+
 -- Global objects
 globals = {
   "PACKER_BOOTSTRAP",

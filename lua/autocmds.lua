@@ -65,3 +65,10 @@ vim.api.nvim_create_autocmd('BufEnter', {
     vim.cmd [[set filetype=terraform]]
   end,
 })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*.py',
+  callback = function()
+    vim.cmd [[setlocal colorcolumn=120]]
+  end,
+})

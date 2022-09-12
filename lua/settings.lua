@@ -21,9 +21,12 @@ local options = {
   expandtab = true,
   exrc = true,
   fileencoding = 'utf-8', -- The encoding written to a file.
-  foldexpr = 'nvim_treesitter#foldexpr()',
-  foldlevelstart = 2,
-  foldmethod = 'expr',
+  -- foldexpr = 'nvim_treesitter#foldexpr()',
+  foldcolumn = '1',
+  foldlevel = 99,
+  foldlevelstart = 99,
+  -- foldmethod = 'expr',
+  foldenable = true,
   guifont = 'MesloLGM Nerd Font Mono',
   hidden = true,
   hlsearch = true,
@@ -62,6 +65,13 @@ local options = {
     trail = '✚',
     extends = '◀',
     precedes = '▶',
+  },
+  fillchars = {
+    eob = ' ',
+    fold = ' ',
+    foldopen = '',
+    foldsep = ' ',
+    foldclose = '',
   },
 }
 

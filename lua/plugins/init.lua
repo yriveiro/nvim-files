@@ -88,6 +88,11 @@ return packer.startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = require 'plugins.configs.todo',
   }
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = require 'plugins.configs.ufo',
+  }
 
   use { 's1n7ax/nvim-window-picker', config = require 'plugins.configs.windowpicker' }
 
@@ -160,7 +165,7 @@ return packer.startup(function(use)
   use {
     'L3MON4D3/LuaSnip',
     requires = 'rafamadriz/friendly-snippets',
-    config = require 'plugins.configs.luasnip'
+    config = require 'plugins.configs.luasnip',
   }
   use {
     'hrsh7th/nvim-cmp',
