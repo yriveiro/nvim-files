@@ -145,6 +145,10 @@ return packer.startup(function(use)
   }
   use { 'rbong/vim-flog' }
   use { 'tpope/vim-fugitive' }
+  use {
+    'ThePrimeagen/git-worktree.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' },
+  }
 
   -- LSP
   use {

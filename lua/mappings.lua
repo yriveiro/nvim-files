@@ -22,6 +22,7 @@ wk.register({
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", 'Live Grep' },
     d = { "<cmd>lua require('telescope.builtin').diagnostics()<CR>", 'Diagnostics' },
     t = { '<cmd>TodoTelescope<CR>', 'Todo comments notifications' },
+    w = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", 'Git Worktree' }
   },
   v = { '<cmd>Vista!!<CR>', 'Vista' },
   y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
