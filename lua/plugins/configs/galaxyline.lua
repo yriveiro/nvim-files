@@ -101,7 +101,7 @@ gls.left[3] = {
 }
 gls.left[4] = {
   FileName = {
-    provider = { 'FileName', 'FileSize' },
+    provider = { 'FilePath', 'FileName', 'FileSize' },
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.section_bg },
     separator = '  ',
