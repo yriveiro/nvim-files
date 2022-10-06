@@ -1,4 +1,5 @@
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = vim.fn.system {
     'git',
@@ -48,7 +49,16 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = require 'plugins.configs.alpha',
   }
-  use { 'NTBBloodbath/galaxyline.nvim', config = require 'plugins.configs.galaxyline' }
+  -- use { 'NTBBloodbath/galaxyline.nvim', config = require 'plugins.configs.galaxyline' }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = require 'plugins.configs.lualine',
+  }
+  use {
+    'arkav/lualine-lsp-progress',
+    requires = { 'nvim-lualine/lualine.nvim' }
+  }
   use {
     'sindrets/diffview.nvim',
     requires = {
@@ -70,7 +80,20 @@ return packer.startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { 'nvim-telescope/telescope-project.nvim' }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
+  use {
+    'nvim-telescope/telescope-cheat.nvim',
+    requires = 'kkharji/sqlite.lua',
+  }
   use { 'folke/which-key.nvim' }
+  use {
+    'folke/noice.nvim',
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+      'hrsh7th/nvim-cmp',
+    },
+    config = require 'plugins.configs.noice',
+  }
   use {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v2.x',
@@ -162,7 +185,6 @@ return packer.startup(function(use)
   use { 'neovim/nvim-lspconfig' }
   use { 'aspeddro/lsp_menu.nvim' }
 
-  use { 'j-hui/fidget.nvim', config = require 'plugins.configs.fidget' }
   use { 'b0o/SchemaStore.nvim' }
 
   -- Completion
@@ -187,6 +209,15 @@ return packer.startup(function(use)
       'rafamadriz/friendly-snippets',
     },
     config = require 'plugins.configs.cmp',
+  }
+
+  -- Plugin Development
+
+  use {
+    '~/Development/github/cheat-sh.nvim/main',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
   }
 
   if PACKER_BOOTSTRAP then
