@@ -15,14 +15,15 @@ end
 wk.register({
   f = {
     name = '+Telescope',
+    c = { "<cmd>lua require('cheatsh'):search()<CR>", 'Cheat.sh' },
+    d = { "<cmd>lua require('telescope.builtin').diagnostics()<CR>", 'Diagnostics' },
     f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", 'Find File' },
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", 'Find Git Commit' },
     n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", 'Notify notifications' },
     p = { "<cmd>lua require('telescope').extensions.project.project()<CR>", 'Projects' },
     r = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", 'Live Grep' },
-    d = { "<cmd>lua require('telescope.builtin').diagnostics()<CR>", 'Diagnostics' },
     t = { '<cmd>TodoTelescope<CR>', 'Todo comments notifications' },
-    w = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", 'Git Worktree' }
+    w = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", 'Git Worktree' },
   },
   v = { '<cmd>Vista!!<CR>', 'Vista' },
   y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
