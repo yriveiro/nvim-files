@@ -1,6 +1,5 @@
 local d = vim.diagnostic
 local sign_define = vim.fn.sign_define
-local hi = vim.highlight
 
 d.config({
   signs = true,
