@@ -11,7 +11,7 @@ if ok then
   impatient.enable_profile()
 end
 
-sources = {
+local sources = {
   'settings', -- Vim settings
   'plugins', -- Packer plugins
   'lsp', -- LSP configuration
