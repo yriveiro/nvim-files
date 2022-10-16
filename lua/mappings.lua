@@ -12,6 +12,8 @@ local function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
+local snapshot_path = os.getenv("HOME")
+
 wk.register({
   f = {
     name = '+Telescope',
@@ -29,6 +31,10 @@ wk.register({
   y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
   w = { '<cmd>lua PickWindow()<CR>', 'Window Picker' },
   ['§'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
+  p = {
+    name = '+Packer',
+    s = { "<cmd>PackerSnapshot " .. snapshot_path .. "/.packer/snapshots/" .. os.time(os.date("!*t")) .. " <CR>", 'Do snapshot' },
+  }
 }, { prefix = '<leader>' })
 
 wk.register {
