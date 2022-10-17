@@ -85,11 +85,11 @@ cmp.setup {
     fields = { 'kind', 'abbr', 'menu' },
     format = lspkind.cmp_format {
       mode = 'symbol_text', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      maxwidth = 75, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      ellipsis_char = '...',
       menu = menu,
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
       before = function(_, vim_item)
-        vim_item.menu = vim_item.kind
         vim_item.kind = icons[vim_item.kind]
         return vim_item
       end,
@@ -132,8 +132,8 @@ cmp.setup {
     ['<CR>'] = cmp.mapping.confirm { select = true },
   },
   sources = {
-    { name = 'nvim_lsp', priority = 1000 },
-    { name = 'nvim_lsp_signature_help', priority = 500 },
+    { name = 'nvim_lsp', priority = 900 },
+    { name = 'nvim_lsp_signature_help', priority = 1000 },
     { name = 'luasnip', priority = 750 },
     {
       name = 'buffer',

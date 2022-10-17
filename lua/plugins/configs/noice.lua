@@ -23,6 +23,11 @@ noice.setup {
         winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
       },
     },
+    notify = {
+      backend = 'notify',
+      replace = true,
+      format = 'details',
+    },
   },
   hacks = {
     -- due to https://github.com/neovim/neovim/issues/20416
@@ -37,5 +42,14 @@ noice.setup {
     ---@type 'nui'|'cmp'
     backend = 'cmp', -- backend to use to show regular cmdline completions
     -- You can specify options for nui under `config.views.popupmenu`
+  },
+  routes = {
+    {
+      filter = {
+        event = 'msg_show',
+        kind = 'search_count',
+      },
+      opts = { skip = true },
+    },
   },
 }
