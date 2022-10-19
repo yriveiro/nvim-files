@@ -17,6 +17,7 @@ end
 m.setup()
 
 mlsp.setup {
+  automatic_installation = true,
   ensure_installed = {
     'bashls',
     'dockerls',
@@ -29,7 +30,7 @@ mlsp.setup {
     'jdtls',
     'jsonls',
     'sqls',
-    'lua-language-server',
+    'sumneko_lua',
     'taplo',
     'terraformls',
     'tflint',
