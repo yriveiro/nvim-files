@@ -84,6 +84,13 @@ _M.init = function()
 
         LspFloatWinNormal = { fg = _M.colors.fg, bg = _M.colors.grey14 },
         LspFloatWinBorder = { fg = _M.colors.grey14 },
+
+        NoiceCmdlineIconCmdline = { fg = _M.colors.magenta },
+        NoiceCmdlineIconLua = { fg = _M.colors.magenta },
+        NoiceCmdlineIconSearch = { fg = _M.colors.magenta },
+        NoiceCmdlinePopupBorderCmdline = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+        NoiceCmdlinePopupBorderLua = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+        NoiceCmdlinePopupBorderSearch = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
       },
     }
   end

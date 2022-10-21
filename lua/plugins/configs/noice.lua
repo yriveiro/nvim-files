@@ -7,6 +7,24 @@ if not ok then
 end
 
 noice.setup {
+  cmdline = {
+    enabled = true, -- enables the Noice cmdline UI
+    view = 'cmdline_popup', -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+    opts = { buf_options = { filetype = 'vim' } }, -- enable syntax highlighting in the cmdline
+    ---@type table<string, CmdlineFormat>
+    format = {
+      -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
+      -- view: (default is cmdline view)
+      -- opts: any options passed to the view
+      -- icon_hl_group: optional hl_group for the icon
+      cmdline = { pattern = '^:', icon = '❯_' },
+      search_down = { kind = 'search', pattern = '^/', icon = ' ', ft = 'regex' },
+      search_up = { kind = 'search', pattern = '^%?', icon = ' ', ft = 'regex' },
+      filter = { pattern = '^:%s*!', icon = '$_', ft = 'sh' },
+      lua = { pattern = '^:%s*lua%s+', icon = '_', ft = 'lua' },
+      -- lua = false, -- to disable a format, set to `false`
+    },
+  },
   views = {
     cmdline_popup = {
       border = {
@@ -20,7 +38,9 @@ noice.setup {
       },
       filter_options = {},
       win_options = {
-        winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+        winhighlight = {
+          Normal = 'NormalFloat',
+        },
       },
     },
     notify = {
@@ -40,7 +60,7 @@ noice.setup {
   popupmenu = {
     enabled = true, -- disable if you use something like cmp-cmdline
     ---@type 'nui'|'cmp'
-    backend = 'cmp', -- backend to use to show regular cmdline completions
+    backend = 'nui', -- backend to use to show regular cmdline completions
     -- You can specify options for nui under `config.views.popupmenu`
   },
   routes = {
