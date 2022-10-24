@@ -69,17 +69,12 @@ end
 
 cmp.setup {
   experimental = {
-    native_menu = false,
     ghost_text = true,
-  },
-  confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
   },
   completion = {
     completeopt = 'menu,menuone,noinsert',
     keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
-    keyword_length = 1,
+    keyword_length = 3,
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
@@ -90,7 +85,7 @@ cmp.setup {
       menu = menu,
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
       before = function(_, vim_item)
-        vim_item.kind = icons[vim_item.kind]
+        vim_item.kind = icons[vim_item.kind] .. ' ' .. vim_item.kind
         return vim_item
       end,
     },

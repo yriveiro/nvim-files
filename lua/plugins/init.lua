@@ -49,7 +49,6 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = require 'plugins.configs.alpha',
   }
-  -- use { 'NTBBloodbath/galaxyline.nvim', config = require 'plugins.configs.galaxyline' }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -178,12 +177,15 @@ return packer.startup(function(use)
     'williamboman/mason.nvim',
     requires = {
       'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig',
     },
     config = require 'plugins.configs.mason',
   }
 
-  use { 'neovim/nvim-lspconfig' }
-  use { 'aspeddro/lsp_menu.nvim' }
+  use {
+    'aspeddro/lsp_menu.nvim',
+    config = require 'plugins.configs.lspmenu',
+  }
 
   use { 'b0o/SchemaStore.nvim' }
 
@@ -196,17 +198,17 @@ return packer.startup(function(use)
   use {
     'hrsh7th/nvim-cmp',
     requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'onsails/lspkind-nvim',
-      'hrsh7th/cmp-nvim-lua',
+      -- 'dmitmel/cmp-cmdline-history',
       'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-document-symbol',
-      'saadparwaiz1/cmp_luasnip',
-      'dmitmel/cmp-cmdline-history',
       'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-path',
+      'onsails/lspkind-nvim',
       'rafamadriz/friendly-snippets',
+      'saadparwaiz1/cmp_luasnip',
     },
     config = require 'plugins.configs.cmp',
   }

@@ -71,5 +71,15 @@ noice.setup {
       },
       opts = { skip = true },
     },
+    -- skip which-key messages
+    {
+      filter = {
+        event = 'msg_show',
+        kind = 'echo',
+        find = 'go up one level',
+      },
+      opts = { skip = true },
+    },
+
   },
 }
