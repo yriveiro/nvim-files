@@ -183,8 +183,8 @@ return packer.startup(function(use)
   }
 
   use {
-    'aspeddro/lsp_menu.nvim',
-    config = require 'plugins.configs.lspmenu',
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    config = require 'plugins.configs.lsp_lines'
   }
 
   use { 'b0o/SchemaStore.nvim' }
