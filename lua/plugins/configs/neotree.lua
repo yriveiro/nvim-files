@@ -34,4 +34,11 @@ nt.setup {
       ['s'] = 'open_with_window_picker',
     },
   },
+  filesystem = {
+    follow_current_file = true,
+    use_libuv_file_watcher = true,
+  },
+  buffers = {
+    follow_current_file = true,
+  },
 }
