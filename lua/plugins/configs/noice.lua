@@ -22,6 +22,7 @@ noice.setup {
       search_up = { kind = 'search', pattern = '^%?', icon = ' ', ft = 'regex' },
       filter = { pattern = '^:%s*!', icon = '$_', ft = 'sh' },
       lua = { pattern = '^:%s*lua%s+', icon = '_', ft = 'lua' },
+      help = { pattern = "^:%s*h%s+", icon = "_" },
       -- lua = false, -- to disable a format, set to `false`
     },
   },
@@ -80,6 +81,17 @@ noice.setup {
       },
       opts = { skip = true },
     },
-
+    -- skip window pick message from neotree
+    {
+      filter = {
+        event = 'msg_show',
+        find = 'Pick window',
+      },
+      opts = { skip = true },
+    },
   },
+  messages = {
+    view = 'mini',
+    notify = 'mini',
+  }
 }

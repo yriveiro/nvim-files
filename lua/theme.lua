@@ -85,12 +85,17 @@ _M.init = function()
         LspFloatWinNormal = { fg = _M.colors.fg, bg = _M.colors.grey14 },
         LspFloatWinBorder = { fg = _M.colors.grey14 },
 
-        NoiceCmdlineIconCmdline = { fg = _M.colors.magenta },
+        NoiceCmdlineIconCmdline = { fg = _M.colors.yellow },
         NoiceCmdlineIconLua = { fg = _M.colors.magenta },
         NoiceCmdlineIconSearch = { fg = _M.colors.magenta },
+        NoiceCmdlineIconHelp = { fg = _M.colors.blue },
+        NoiceCmdlinePopupBorder = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
         NoiceCmdlinePopupBorderCmdline = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
         NoiceCmdlinePopupBorderLua = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
         NoiceCmdlinePopupBorderSearch = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+        NoiceCmdlinePopupBorderHelp = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+        NoiceCmdlinePopupBorderFilter = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
+        NoiceCmdlinePopupBorderInput = { bg = _M.colors.grey14, fg = _M.colors.grey14 },
       },
     }
   end
