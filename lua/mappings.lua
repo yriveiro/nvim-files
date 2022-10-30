@@ -34,7 +34,13 @@ wk.register({
   p = {
     name = '+Packer',
     s = { "<cmd>PackerSnapshot " .. snapshot_path .. "/.packer/snapshots/" .. os.time(os.date("!*t")) .. " <CR>", 'Do snapshot' },
-  }
+  },
+  n = {
+    name = 'Noice',
+    n = {'<cmd>Noice<CR>', 'Noice'},
+    l = {'<cmd>Noice last<CR>', 'Noice'},
+    h = {'<cmd>Noice history<CR>', 'Noice'},
+  },
 }, { prefix = '<leader>' })
 
 wk.register {
