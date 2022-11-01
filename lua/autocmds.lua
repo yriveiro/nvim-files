@@ -59,8 +59,22 @@ vim.api.nvim_create_autocmd('BufWrite', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufWrite', {
+  pattern = '*.hcl',
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '*.tf',
+  callback = function()
+    vim.cmd [[set filetype=terraform]]
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*.hcl',
   callback = function()
     vim.cmd [[set filetype=terraform]]
   end,
