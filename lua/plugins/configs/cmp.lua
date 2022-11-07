@@ -74,7 +74,6 @@ cmp.setup {
   completion = {
     completeopt = 'menu,menuone,noinsert',
     keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
-    keyword_length = 3,
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
