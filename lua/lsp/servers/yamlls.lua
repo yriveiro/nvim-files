@@ -7,6 +7,10 @@ local opts = {
   capabilities = capabilities,
   settings = {
     yaml = {
+      format = { enable = true },
+      validate = true,
+      completion = true,
+      hover = true,
       schemas = {
         ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '**/argo/**.yaml',
       },
