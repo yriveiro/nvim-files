@@ -37,7 +37,10 @@ return packer.startup(function(use)
   -- System
   use { 'wbthomason/packer.nvim' }
   use { 'lewis6991/impatient.nvim' }
-  use { 'nathom/filetype.nvim' }
+  use {
+    'nathom/filetype.nvim',
+    setup = [[vim.cmd('runtime! autoload/dist/ft.vim')]],
+  }
 
   -- UI
   use { 'rmehri01/onenord.nvim' }
