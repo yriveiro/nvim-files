@@ -43,6 +43,7 @@ return packer.startup(function(use)
   }
 
   -- UI
+  use { 'stevearc/dressing.nvim' }
   use { 'rmehri01/onenord.nvim' }
   use { 'MunifTanjim/nui.nvim' }
   use { 'rcarriga/nvim-notify', config = require 'plugins.configs.notify' }
