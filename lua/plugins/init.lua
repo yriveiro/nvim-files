@@ -124,7 +124,6 @@ return packer.startup(function(use)
 
   -- Utilities
   use { 'McAuleyPenney/tidy.nvim' } -- trailing whitespaces and delete empty lines at EOF
-  use { 'amirali/yapf.nvim', config = require 'plugins.configs.yapf' }
   use { 'danymat/neogen', config = require 'plugins.configs.neogen', requires = 'nvim-treesitter/nvim-treesitter' }
   use { 'editorconfig/editorconfig-vim' }
   use { 'mbbill/undotree' }
