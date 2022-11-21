@@ -60,7 +60,7 @@ return packer.startup(function(use)
   }
   use {
     'arkav/lualine-lsp-progress',
-    requires = { 'nvim-lualine/lualine.nvim' }
+    requires = { 'nvim-lualine/lualine.nvim' },
   }
   use {
     'sindrets/diffview.nvim',
@@ -82,6 +82,7 @@ return packer.startup(function(use)
   }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { 'nvim-telescope/telescope-project.nvim' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
   use {
     'nvim-telescope/telescope-cheat.nvim',
@@ -131,6 +132,11 @@ return packer.startup(function(use)
   use { 'terrortylor/nvim-comment', config = require 'plugins.configs.nvimcomment' }
   use { 'wakatime/vim-wakatime' }
   use { 'windwp/nvim-autopairs', config = require 'plugins.configs.autopairs' }
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = require 'plugins.configs.nullls',
+  }
 
   -- Debug
   use {
@@ -187,7 +193,7 @@ return packer.startup(function(use)
 
   use {
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-    config = require 'plugins.configs.lsp_lines'
+    config = require 'plugins.configs.lsp_lines',
   }
 
   use { 'b0o/SchemaStore.nvim' }
@@ -201,7 +207,7 @@ return packer.startup(function(use)
   use {
     'hrsh7th/nvim-cmp',
     requires = {
-      -- 'dmitmel/cmp-cmdline-history',
+      'dmitmel/cmp-cmdline-history',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lsp',
@@ -219,6 +225,13 @@ return packer.startup(function(use)
 
   use {
     '~/Development/github/cheat-sh.nvim/main',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
+
+  use {
+    '~/Development/github/schemify.nvim/develop',
     requires = {
       'nvim-lua/plenary.nvim',
     },

@@ -6,10 +6,7 @@ d.config({
   underline = false,
   update_in_insert = false,
   severity_sort = false,
-  virtual_text = {
-    spacing = 2,
-    source = 'always',
-  },
+  virtual_text = false, -- lsp_line will do this.
 }, nil)
 
 -- custom signs
