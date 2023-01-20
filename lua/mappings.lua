@@ -27,10 +27,11 @@ wk.register({
     t = { '<cmd>TodoTelescope<CR>', 'Todo comments notifications' },
     w = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", 'Git Worktree' },
   },
-  v = { '<cmd>Vista!!<CR>', 'Vista' },
+  v = { '<cmd>SymbolsOutline<CR>', 'Symbols Outline Tree' },
   y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
   w = { '<cmd>lua PickWindow()<CR>', 'Window Picker' },
   ['§'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
+  ['º'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
   p = {
     name = '+Packer',
     s = { "<cmd>PackerSnapshot " .. snapshot_path .. "/.packer/snapshots/" .. os.time(os.date("!*t")) .. " <CR>", 'Do snapshot' },
@@ -50,6 +51,7 @@ wk.register {
     n = { ':tabnew<CR>', 'New Tab' },
   },
   ['§'] = { ':NeoTreeFocusToggle<CR>', 'Toggle Neotree' },
+  ['º'] = { ':NeoTreeFocusToggle<CR>', 'Toggle Neotree' },
   ['<space>'] = { ':Telescope file_browser<CR>', 'File Browser' },
 }
 
