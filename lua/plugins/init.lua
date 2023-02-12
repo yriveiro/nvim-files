@@ -109,7 +109,10 @@ return packer.startup(function(use)
     config = require 'plugins.configs.neotree',
   }
   use { 'mg979/vim-visual-multi' }
-  use { 'liuchengxu/vista.vim' }
+  use {
+    'simrat39/symbols-outline.nvim',
+    config = require 'plugins.configs.symbols'
+  }
   use {
     'folke/todo-comments.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
