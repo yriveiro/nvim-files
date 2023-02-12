@@ -81,6 +81,13 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*.d2',
+  callback = function()
+    vim.cmd [[set filetype=d2]]
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '*.py',
   callback = function()
     vim.cmd [[setlocal colorcolumn=120]]
