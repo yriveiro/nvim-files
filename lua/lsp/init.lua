@@ -8,7 +8,7 @@ local servers = {
   'pyright',
   'rust_analyzer',
   'sqls',
-  'sumneko_lua',
+  'lua_ls',
   'taplo',
   'terraformls',
   'tflint',
