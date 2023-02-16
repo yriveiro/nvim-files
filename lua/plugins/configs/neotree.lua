@@ -10,6 +10,16 @@ local icons = require 'icons'
 
 nt.setup {
   close_if_last_window = true,
+  filter_rules = {
+    -- filter using buffer options
+    bo = {
+      -- if the file type is one of following, the window will be ignored
+      filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
+
+      -- if the buffer type is one of following, the window will be ignored
+      buftype = { 'terminal', 'quickfix', 'TelescopePrompt' },
+    },
+  },
   default_component_configs = {
     git_status = {
       symbols = {
@@ -32,7 +42,6 @@ nt.setup {
       ['v'] = 'open_vsplit',
       ['h'] = 'open_split',
       ['s'] = 'open_with_window_picker',
-      ['F'] = "clear_filter",
     },
   },
   filesystem = {

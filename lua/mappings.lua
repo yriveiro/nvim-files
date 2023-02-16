@@ -31,6 +31,7 @@ wk.register({
   y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
   w = { '<cmd>lua PickWindow()<CR>', 'Window Picker' },
   ['§'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
+  ['º'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
   p = {
     name = '+Packer',
     s = { "<cmd>PackerSnapshot " .. snapshot_path .. "/.packer/snapshots/" .. os.time(os.date("!*t")) .. " <CR>", 'Do snapshot' },

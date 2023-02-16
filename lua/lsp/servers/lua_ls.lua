@@ -23,4 +23,4 @@ local opts = {
   },
 }
 
-lsp.sumneko_lua.setup(opts)
+lsp.lua_ls.setup(opts)
