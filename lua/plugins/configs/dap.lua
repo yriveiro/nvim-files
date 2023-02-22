@@ -8,7 +8,7 @@ end
 
 require('dapui').setup()
 require('dap-go').setup { external_config = { enabled = true } }
-require('nvim-dap-virtual-text').setup()
+require('nvim-dap-virtual-text').setup {}
 
 local dapui = require 'dapui'
 local fn = vim.fn
