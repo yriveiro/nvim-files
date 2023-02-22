@@ -77,6 +77,8 @@
         "/Users/Yago.Riveiro/.local/share/nvim/site/pack/packer/start/cmp-path/after",
         "/Users/Yago.Riveiro/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after",
         "/Users/Yago.Riveiro/.local/share/nvim/site/pack/packer/start/playground/after",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library",
+        "${3rd}/luv/library"
     ]
 }
