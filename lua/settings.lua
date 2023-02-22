@@ -16,7 +16,6 @@ local options = {
   backup = false,
   clipboard = 'unnamedplus', -- Allows neovim to access the system clipboard.
   cmdheight = 1,
-  colorcolumn = '80',
   cursorline = true, -- Highlight the screen line of the cursor.
   expandtab = true,
   exrc = true,

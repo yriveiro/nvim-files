@@ -72,6 +72,10 @@ return packer.startup(function(use)
   }
   use { 'yriveiro/termim.nvim' }
   use { 'norcalli/nvim-colorizer.lua', config = require 'plugins.configs.colorizer' }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = require 'plugins.configs.colorizer'
+  }
   use { 'ellisonleao/glow.nvim', branch = 'main' }
 
   -- Search and Navigation
