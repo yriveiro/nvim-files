@@ -28,13 +28,37 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('plugins', {})
-
-require('impatient').enable_profile()
+require('lazy').setup('plugins', {
+  ui = {
+    icons = {
+      cmd = '',
+      config = ' ',
+      event = ' ',
+      ft = ' ',
+      init = ' ',
+      import = ' ',
+      keys = ' ',
+      lazy = ' ',
+      loaded = '●',
+      not_loaded = '○',
+      plugin = ' ',
+      runtime = ' ',
+      source = ' ',
+      start = ' ',
+      task = '✔ ',
+      list = {
+        '●',
+        '➜',
+        '★',
+        '‒',
+      },
+    },
+  },
+})
 
 local sources = {
+  'icons', -- Load custom icons
   'settings', -- Vim settings
-  'icons',
   'lsp', -- LSP configuration
   'mappings', -- Vim mappings
   'autocmds', -- Magic from autocommands
