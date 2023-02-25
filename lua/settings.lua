@@ -1,6 +1,5 @@
 local theme = require 'theme'
 local o = vim.opt
-local g = vim.g
 
 vim.cmd [[set fcs=eob:\ ]]
 vim.cmd [[filetype plugin indent on]]
