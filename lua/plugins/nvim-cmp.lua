@@ -1,5 +1,6 @@
 return {
   'hrsh7th/nvim-cmp',
+  event = 'InsertEnter',
   dependencies = {
     'dmitmel/cmp-cmdline-history',
     'hrsh7th/cmp-buffer',
@@ -8,7 +9,10 @@ return {
     'hrsh7th/cmp-nvim-lsp-document-symbol',
     'hrsh7th/cmp-nvim-lua',
     'hrsh7th/cmp-path',
-    'onsails/lspkind-nvim',
+    {
+      'onsails/lspkind-nvim',
+      event = 'VeryLazy',
+    },
     'rafamadriz/friendly-snippets',
     'saadparwaiz1/cmp_luasnip',
   },
@@ -91,7 +95,7 @@ return {
         ['<Up>'] = cmp.mapping.select_prev_item(),
         ['<Down>'] = cmp.mapping.select_next_item(),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 's' }),
-        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
+        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs( -1), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
         ['<C-q>'] = cmp.mapping.close(),
         ['<Tab>'] = cmp.mapping(function(fallback)
@@ -110,8 +114,8 @@ return {
         ['<S-Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
+          elseif luasnip.jumpable( -1) then
+            luasnip.jump( -1)
           else
             fallback()
           end
@@ -121,7 +125,7 @@ return {
       sources = {
         { name = 'nvim_lsp', priority = 900 },
         -- { name = 'nvim_lsp_signature_help', priority = 1000 },
-        { name = 'luasnip', priority = 750 },
+        { name = 'luasnip',  priority = 750 },
         {
           name = 'buffer',
           option = {

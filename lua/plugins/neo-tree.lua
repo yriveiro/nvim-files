@@ -42,7 +42,6 @@ return {
           ['v'] = 'open_vsplit',
           ['h'] = 'open_split',
           ['s'] = 'open_with_window_picker',
-          ['F'] = 'clear_filter',
         },
       },
       filesystem = {
