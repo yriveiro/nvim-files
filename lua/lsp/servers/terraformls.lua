@@ -6,7 +6,8 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local opts = {
   capabilities = capabilities,
   filetypes = { 'terraform', 'hcl' },
-  cmd = { 'terraform-ls',
+  cmd = {
+    'terraform-ls',
     'serve',
     -- '-cpuprofile=/tmp/terraform-ls-cpu.prof',
     -- '-memprofile=/tmp/terraform-ls-mem.prof',
@@ -23,7 +24,6 @@ local opts = {
         logFilePath = '~/.cache/nvim/terraformls.log',
         timeout = '120s',
       },
-
     },
   },
 }

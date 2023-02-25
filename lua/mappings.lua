@@ -12,7 +12,7 @@ local function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local snapshot_path = os.getenv("HOME")
+local snapshot_path = os.getenv 'HOME'
 
 wk.register({
   f = {
@@ -34,13 +34,16 @@ wk.register({
   ['º'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
   p = {
     name = '+Packer',
-    s = { "<cmd>PackerSnapshot " .. snapshot_path .. "/.packer/snapshots/" .. os.time(os.date("!*t")) .. " <CR>", 'Do snapshot' },
+    s = {
+      '<cmd>PackerSnapshot ' .. snapshot_path .. '/.packer/snapshots/' .. os.time(os.date '!*t') .. ' <CR>',
+      'Do snapshot',
+    },
   },
   n = {
     name = 'Noice',
-    n = {'<cmd>Noice<CR>', 'Noice'},
-    l = {'<cmd>Noice last<CR>', 'Noice'},
-    h = {'<cmd>Noice history<CR>', 'Noice'},
+    n = { '<cmd>Noice<CR>', 'Noice' },
+    l = { '<cmd>Noice last<CR>', 'Noice' },
+    h = { '<cmd>Noice history<CR>', 'Noice' },
   },
 }, { prefix = '<leader>' })
 
@@ -71,7 +74,7 @@ wk.register({
     t = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'LSP Definition' },
     w = { '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', 'LSP Workspace Symbol' },
     s = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'LSP Signature Help' },
-    a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", 'LSP Code Action' },
+    a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'LSP Code Action' },
   },
 
   t = { "<cmd>lua require('termim').toggle()<CR>", 'Termim' },

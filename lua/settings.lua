@@ -2,11 +2,6 @@ local theme = require 'theme'
 local o = vim.opt
 local g = vim.g
 
--- Leader key configuation
--- https://learnvimscriptthehardway.stevelosh.com/chapters/06.html
-g.mapleader = '\\' -- Define leader key.
-g.localmapleader = ',' -- Define local leader.
-
 vim.cmd [[set fcs=eob:\ ]]
 vim.cmd [[filetype plugin indent on]]
 
@@ -51,7 +46,6 @@ local options = {
   swapfile = false,
   synmaxcol = 2048, -- Set a limit for syntax highlights
   tabstop = 2,
-  termguicolors = true, -- Enable true colors
   timeoutlen = 1000,
   undodir = vim.fn.stdpath 'cache' .. '/undo', -- set an undo directory.
   undofile = true,
