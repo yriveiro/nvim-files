@@ -32,13 +32,6 @@ wk.register({
   w = { '<cmd>lua PickWindow()<CR>', 'Window Picker' },
   ['§'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
   ['º'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
-  p = {
-    name = '+Packer',
-    s = {
-      '<cmd>PackerSnapshot ' .. snapshot_path .. '/.packer/snapshots/' .. os.time(os.date '!*t') .. ' <CR>',
-      'Do snapshot',
-    },
-  },
   n = {
     name = 'Noice',
     n = { '<cmd>Noice<CR>', 'Noice' },
@@ -76,9 +69,7 @@ wk.register({
     s = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'LSP Signature Help' },
     a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'LSP Code Action' },
   },
-
   t = { "<cmd>lua require('termim').toggle()<CR>", 'Termim' },
-
   -- dap
   d = {
     name = '+DAP',
@@ -107,7 +98,6 @@ wk.register({
     h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", 'Variables Hover.' },
     u = { "<cmd>lua require('dapui').toggle()<CR>", 'UI Toogle' },
   },
-
   -- telescope-dap
   f = {
     name = '+Telescope DAP',
@@ -117,6 +107,7 @@ wk.register({
     v = { "<cmd>lua require('telescope').extensions.dap.variables{}<CR>", 'Variables' },
     f = { "<cmd>lua require('telescope').extensions.dap.frames{}<CR>", 'Frames' },
   },
+  ['<'] = { "<cmd>lua require('lazy.util').float_term({ 'lazygit' })<CR>", 'Lazygit' },
 }, { prefix = ',' })
 
 wk.register({
