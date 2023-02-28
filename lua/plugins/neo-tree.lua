@@ -55,6 +55,23 @@ return {
         winbar = true,
         statusline = true,
       },
+      filter_rules = {
+        -- filter using buffer options
+        bo = {
+          -- if the file type is one of following, the window will be ignored
+          filetype = { 'neo-tree', 'neo-tree-popup', 'notify', 'Outline' },
+
+          -- if the buffer type is one of following, the window will be ignored
+          buftype = { 'terminal', 'quickfix', 'nofile' },
+        },
+        wo = {
+          -- if the file type is one of following, the window will be ignored
+          filetype = { 'neo-tree', 'neo-tree-popup', 'notify', 'Outline' },
+
+          -- if the buffer type is one of following, the window will be ignored
+          buftype = { 'terminal', 'quickfix', 'nofile' },
+        },
+      },
     }
   end,
 }

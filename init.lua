@@ -12,6 +12,7 @@ vim.g.localmapleader = ',' -- Define local leader.
 
 -- Some plugins require termguicolor to be set before load.
 vim.o.termguicolors = true -- Enable true colors
+vim.o.laststatus = 3
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
