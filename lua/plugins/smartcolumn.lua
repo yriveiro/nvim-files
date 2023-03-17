@@ -8,10 +8,10 @@ return {
       'alpha',
       'lazy',
       'mason',
-      'neorg'
+      'neorg',
     },
     custom_colorcolumn = {
-      python = 120,
+      python = { '120', '200' },
     },
   },
 }

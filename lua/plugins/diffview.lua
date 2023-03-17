@@ -10,7 +10,6 @@ return {
       lazy = true,
     },
   },
-  lazy = true,
   config = function()
     local cb = require('diffview.config').diffview_callback
 

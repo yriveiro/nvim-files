@@ -12,13 +12,18 @@ local function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local snapshot_path = os.getenv 'HOME'
-
 wk.register({
+  d = {
+    name = 'Diffview',
+    c = { '<cmd>DiffviewClose<CR>', 'Diffview close' },
+    d = { '<cmd>DiffviewToggleFiles<CR>', 'Diffview toggle files' },
+    h = { '<cmd>DiffviewFileHistory<CR>', 'Diffview history' },
+    v = { '<cmd>DiffviewOpen<CR>', 'Diffview open' },
+  },
   f = {
     name = '+Telescope',
     c = { "<cmd>lua require('cheatsh'):search()<CR>", 'Cheat.sh' },
-    d = { "<cmd>lua require('telescope.builtin').diagnostics()<CR>", 'Diagnostics' },
+    d = { "<cmd>lua require('telescope.builtin').diagnostics({bufnr = 0})<CR>", 'Diagnostics' },
     f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", 'Find File' },
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", 'Find Git Commit' },
     n = { "<cmd>lua require('telescope').extensions.notify.notify()<CR>", 'Notify notifications' },
@@ -48,7 +53,7 @@ wk.register {
   },
   ['§'] = { ':NeoTreeFocusToggle<CR>', 'Toggle Neotree' },
   ['º'] = { ':NeoTreeFocusToggle<CR>', 'Toggle Neotree' },
-  ['<space>'] = { ':Telescope file_browser<CR>', 'File Browser' },
+  -- ['<space>'] = { ':Telescope file_browser<CR>', 'File Browser' },
 }
 
 -- local leader

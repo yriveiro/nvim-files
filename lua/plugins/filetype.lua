@@ -1,7 +1,16 @@
 return {
   'nathom/filetype.nvim',
   lazy = false,
-  init = function()
-    vim.cmd 'runtime! autoload/dist/ft.vim'
-  end,
+  config = true,
+  opts = {
+    overrides = {
+      extensions = {
+        sh = "sh"
+      },
+      shebang = {
+        -- Set the filetype of files with a dash shebang to sh
+        dash = 'sh',
+      },
+    },
+  },
 }

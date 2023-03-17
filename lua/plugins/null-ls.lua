@@ -14,6 +14,8 @@ return {
         null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.yapf,
+        null_ls.builtins.formatting.beautysh,
+        null_ls.builtins.formatting.hadolint,
       },
     }
   end,

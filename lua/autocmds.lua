@@ -94,9 +94,9 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '*.sh',
-  callback = function()
-    vim.cmd [[set filetype=sh]]
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   pattern = '*.sh',
+--   callback = function()
+--     vim.cmd [[set filetype=sh]]
+--   end,
+-- })

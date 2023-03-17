@@ -69,7 +69,7 @@ return {
           filetype = { 'neo-tree', 'neo-tree-popup', 'notify', 'Outline' },
 
           -- if the buffer type is one of following, the window will be ignored
-          buftype = { 'terminal', 'quickfix', 'nofile' },
+          buftype = { 'terminal', 'quickfix', 'nofile', 'Outline' },
         },
       },
     }
