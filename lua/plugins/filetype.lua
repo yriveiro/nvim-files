@@ -5,7 +5,7 @@ return {
   opts = {
     overrides = {
       extensions = {
-        sh = "sh"
+        sh = 'sh',
       },
       shebang = {
         -- Set the filetype of files with a dash shebang to sh

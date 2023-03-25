@@ -93,10 +93,3 @@ vim.api.nvim_create_autocmd('BufEnter', {
     vim.cmd [[setlocal colorcolumn=120]]
   end,
 })
-
--- vim.api.nvim_create_autocmd('BufEnter', {
---   pattern = '*.sh',
---   callback = function()
---     vim.cmd [[set filetype=sh]]
---   end,
--- })

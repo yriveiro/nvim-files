@@ -22,7 +22,7 @@ wk.register({
   },
   f = {
     name = '+Telescope',
-    c = { "<cmd>lua require('cheatsh'):search()<CR>", 'Cheat.sh' },
+    c = { "<cmd>Telescope cheat fd<CR>", 'Cheat' },
     d = { "<cmd>lua require('telescope.builtin').diagnostics({bufnr = 0})<CR>", 'Diagnostics' },
     f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", 'Find File' },
     g = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", 'Find Git Commit' },
