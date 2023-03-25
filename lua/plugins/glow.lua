@@ -1,4 +1,9 @@
 return {
   'ellisonleao/glow.nvim',
-  branch = 'main',
+  config = true,
+  cmd = 'Glow',
+  opts = {
+    style = "dark",
+    width = 120,
+  }
 }
