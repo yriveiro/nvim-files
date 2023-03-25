@@ -63,6 +63,7 @@ return {
     end
 
     local cmp = require 'cmp'
+    local luasnip = require 'luasnip'
 
     cmp.setup {
       experimental = {
@@ -88,7 +89,7 @@ return {
       },
       snippet = {
         expand = function(args)
-          require('luasnip').lsp_expand(args.body)
+          luasnip.lsp_expand(args.body)
         end,
       },
       mapping = {
