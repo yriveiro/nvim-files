@@ -113,6 +113,11 @@ wk.register({
     v = { "<cmd>lua require('telescope').extensions.dap.variables{}<CR>", 'Variables' },
     f = { "<cmd>lua require('telescope').extensions.dap.frames{}<CR>", 'Frames' },
   },
+  n = {
+    name = '+Notify',
+    d = { "<cmd>lua require('notify').dismiss({ silent = true, pending = true })<CR>", 'Dismiss notifications' },
+  },
+
   ['<'] = { "<cmd>lua require('lazy.util').float_term({ 'lazygit' })<CR>", 'Lazygit' },
 }, { prefix = ',' })
 
