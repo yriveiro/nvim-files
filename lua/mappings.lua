@@ -59,6 +59,7 @@ wk.register {
 -- local leader
 wk.register({
   -- lsp
+  c = { "<cmd>lua require('notify').dissmiss()<CR>", 'Clean Notify messages' },
   l = {
     name = '+LSP',
     ['0'] = { '<cmd>lua vim.lsp.buf.document_symbol()<CR>', 'LSP Docmument Symbol' },
