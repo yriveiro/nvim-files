@@ -7,4 +7,4 @@ local opts = {
   capabilities = capabilities,
 }
 
-lsp.sqls.setup(opts)
+lsp.sqlls.setup(opts)
