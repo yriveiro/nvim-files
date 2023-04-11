@@ -6,6 +6,7 @@ return {
     overrides = {
       extensions = {
         sh = 'sh',
+        xml = 'xml',
       },
       shebang = {
         -- Set the filetype of files with a dash shebang to sh
