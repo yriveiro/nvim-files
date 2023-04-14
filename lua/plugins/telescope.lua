@@ -82,6 +82,17 @@ return {
           display_type = 'full',
         },
       },
+      pickers = {
+        find_files = {
+          find_command = {
+            'rg',
+            '--files',
+            '--no-ignore',
+            '--smart-case',
+            '--hidden',
+          },
+        },
+      },
     }
 
     telescope.load_extension 'dap'
