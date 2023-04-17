@@ -271,10 +271,10 @@ return {
           color = colors.orange,
           name = 'gitattributes',
         },
-        ['Dockerfile'] = {
+        ['dockerfile'] = {
           icon = '',
           color = colors.blue,
-          name = 'dockerfilex',
+          name = 'dockerfile',
         },
         ['.nvmrc'] = {
           icon = '',
