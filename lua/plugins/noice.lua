@@ -17,8 +17,8 @@ return {
   config = function()
     require('noice').setup {
       cmdline = {
-        enabled = true, -- enables the Noice cmdline UI
-        view = 'cmdline_popup', -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+        enabled = true,                                -- enables the Noice cmdline UI
+        view = 'cmdline_popup',                        -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
         opts = { buf_options = { filetype = 'vim' } }, -- enable syntax highlighting in the cmdline
         ---@type table<string, CmdlineFormat>
         format = {
@@ -68,7 +68,7 @@ return {
         skip_duplicate_messages = true,
       },
       popupmenu = {
-        enabled = true, -- disable if you use something like cmp-cmdline
+        enabled = true,  -- disable if you use something like cmp-cmdline
         ---@type 'nui'|'cmp'
         backend = 'nui', -- backend to use to show regular cmdline completions
         -- You can specify options for nui under `config.views.popupmenu`
