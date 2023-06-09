@@ -33,7 +33,6 @@ wk.register({
     w = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", 'Git Worktree' },
   },
   v = { '<cmd>SymbolsOutline<CR>', 'Symbols Outline Tree' },
-  y = { '<cmd>Yapf<CR>', 'Yapf, Python formatter' },
   w = { '<cmd>lua PickWindow()<CR>', 'Window Picker' },
   ['§'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
   ['º'] = { ':NeoTreeReveal<CR>', 'Find file in NeoTree' },
