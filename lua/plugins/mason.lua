@@ -16,9 +16,8 @@ return {
         'bashls',
         'dockerls',
         'gopls',
-        'grammarly',
+        -- 'grammarly',
         'jdtls',
-        'jsonls',
         'jsonls',
         'lua_ls',
         'rust_analyzer',
@@ -26,7 +25,6 @@ return {
         'taplo',
         'terraformls',
         'tflint',
-        'yamlls',
         'yamlls',
       },
     }
