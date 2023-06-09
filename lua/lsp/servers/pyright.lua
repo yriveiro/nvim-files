@@ -11,6 +11,7 @@ local opts = {
         autoSearchPaths = true,
         diagnosticMode = 'workspace',
         useLibraryCodeForTypes = true,
+        indexing = true,
       },
     },
   },
