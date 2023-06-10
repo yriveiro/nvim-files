@@ -1,8 +1,7 @@
 return {
   'goolord/alpha-nvim',
+  event = 'VimEnter',
   dependencies = {
-    'kyazdani42/nvim-web-devicons',
-    lazy = true,
     'nvim-tree/nvim-web-devicons',
   },
   config = function()
