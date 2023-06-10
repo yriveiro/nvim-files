@@ -3,6 +3,7 @@ return {
   dependencies = {
     'kyazdani42/nvim-web-devicons',
     lazy = true,
+    'nvim-tree/nvim-web-devicons',
   },
   config = function()
     local dsh = require 'alpha.themes.dashboard'
