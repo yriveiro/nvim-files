@@ -52,6 +52,7 @@ wk.register {
   },
   ['§'] = { ':NeoTreeFocusToggle<CR>', 'Toggle Neotree' },
   ['º'] = { ':NeoTreeFocusToggle<CR>', 'Toggle Neotree' },
+  ['±'] = { ':OpenDoc', 'Terraform Open Documentation' },
   -- ['<space>'] = { ':Telescope file_browser<CR>', 'File Browser' },
 }
 
