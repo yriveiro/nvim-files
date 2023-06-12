@@ -37,6 +37,7 @@ return {
       open_fold_hl_timeout = 150,
       close_fold_kinds = { 'imports', 'comment' },
       fold_virt_text_handler = handler,
+      filetype_exclude = { 'help', 'alpha', 'dashboard', 'neo-tree', 'Trouble', 'lazy', 'mason' },
       provider_selector = function(bufnr, filetype, buftype)
         return { 'treesitter', 'indent' }
       end,
