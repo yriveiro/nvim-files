@@ -1,3 +1,0 @@
-return {
-  'McAuleyPenney/tidy.nvim',
-}
