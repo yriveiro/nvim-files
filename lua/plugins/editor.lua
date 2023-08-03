@@ -200,18 +200,11 @@ return {
           'Trouble',
           'undotree',
         },
-        provider_selector = function(bufnr, filetype, buftype)
+        provider_selector = function(...)
           return { 'treesitter', 'indent' }
         end,
       }
     end,
-  },
-
-  -- clean whitespaces
-  {
-    'McAuleyPenney/tidy.nvim',
-    event = { 'BufWritePre' },
-    config = true,
   },
 
   {

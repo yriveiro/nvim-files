@@ -4,8 +4,8 @@ return {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      { 'folke/neoconf.nvim', cmd = 'Neoconf', config = false, dependencies = { 'nvim-lspconfig' } },
-      { 'folke/neodev.nvim', opts = {} },
+      --  { 'folke/neoconf.nvim', cmd = 'Neoconf', config = false, dependencies = { 'nvim-lspconfig' } },
+      --  { 'folke/neodev.nvim', opts = {} },
       'mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       {
@@ -22,14 +22,7 @@ return {
       diagnostics = {
         underline = true,
         update_in_insert = false,
-        virtual_text = {
-          spacing = 4,
-          source = 'if_many',
-          prefix = '●',
-          -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-          -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-          -- prefix = "icons",
-        },
+        virtual_text = false,
         severity_sort = true,
       },
       -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
@@ -53,7 +46,6 @@ return {
         timeout_ms = nil,
       },
       -- LSP Server Settings
-      ---@type lspconfig.options
       servers = {
         jsonls = {},
         lua_ls = {
@@ -76,7 +68,6 @@ return {
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
         -- example to setup with typescript.nvim
         -- tsserver = function(_, opts)
@@ -89,7 +80,7 @@ return {
     },
     ---@param opts PluginLspOpts
     config = function(_, opts)
-      local Util = require 'lazyvim.util'
+      local Util = require 'core.util'
 
       --  if Util.has 'neoconf.nvim' then
       --    local plugin = require('lazy.core.config').spec.plugins['neoconf.nvim']
@@ -194,14 +185,6 @@ return {
       if have_mason then
         mlsp.setup { ensure_installed = ensure_installed, handlers = { setup } }
       end
-
-      if Util.lsp_get_config 'denols' and Util.lsp_get_config 'tsserver' then
-        local is_deno = require('lspconfig.util').root_pattern('deno.json', 'deno.jsonc')
-        Util.lsp_disable('tsserver', is_deno)
-        Util.lsp_disable('denols', function(root_dir)
-          return not is_deno(root_dir)
-        end)
-      end
     end,
   },
 
@@ -215,11 +198,8 @@ return {
       return {
         root_dir = require('null-ls.utils').root_pattern('.null-ls-root', '.neoconf.json', 'Makefile', '.git'),
         sources = {
-          nls.builtins.formatting.fish_indent,
-          nls.builtins.diagnostics.fish,
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.shfmt,
-          -- nls.builtins.diagnostics.flake8,
         },
       }
     end,
@@ -230,13 +210,12 @@ return {
 
     'williamboman/mason.nvim',
     cmd = 'Mason',
-    keys = { { '<leader>cm', '<cmd>Mason<cr>', desc = 'Mason' } },
+    keys = { { '<leader>m', '<cmd>Mason<cr>', desc = 'Mason' } },
     build = ':MasonUpdate',
     opts = {
       ensure_installed = {
         'stylua',
         'shfmt',
-        -- "flake8",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}

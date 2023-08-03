@@ -109,13 +109,13 @@ return {
     -- stylua: ignore
     keys = {
       { "<leader>fd", "<cmd>lua require('telescope.builtin').diagnostics({bufnr = 0})<CR>", desc = 'Diagnostics' },
-      { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>",desc =  'Find File' },
-      { "<leader>fg", "<cmd>lua require('telescope.builtin').git_commits()<CR>",desc =  'Find Git Commit' },
-      { "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>",desc =  'Notify notifications' },
-      { "<leader>fp", ":lua require('telescope').extensions.project.project()<CR>", 'Projects' },
-      { "<leader>fr", "<cmd>lua require('telescope.builtin').live_grep()<CR>",desc =  'Live Grep' },
-      { "<leader>ft", '<cmd>TodoTelescope<CR>',desc =  'Todo comments notifications' },
-      { "<leader>fw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", 'Git Worktree' },
+      { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>",desc = 'Find File' },
+      { "<leader>fg", "<cmd>lua require('telescope.builtin').git_commits()<CR>",desc = 'Find Git Commit' },
+      { "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>",desc = 'Notify notifications' },
+      { "<leader>fp", "<cm>lua require('telescope').extensions.project.project()<CR>", desc = 'Projects' },
+      { "<leader>fr", "<cmd>lua require('telescope.builtin').live_grep()<CR>",desc = 'Live Grep' },
+      { "<leader>ft", '<cmd>TodoTelescope<CR>',desc = 'Todo comments notifications' },
+      { "<leader>fw", "<cms>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", desc = 'Git Worktree' },
     },
   },
 

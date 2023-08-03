@@ -8,7 +8,10 @@ return {
       require('config').setup(opts)
     end,
     init = function()
-      require('config').init()
+      require('config').init {
+        options = true,
+        keymaps = true,
+      }
     end,
     opts = {
       colorscheme = 'onenord',
