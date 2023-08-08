@@ -38,15 +38,15 @@ return {
       end
 
       ---@type UfoFoldingRangeKind
-      local kinds = { 'imports', 'comment' }
+      -- local kinds = { 'imports', 'comment' }
 
       require('ufo').setup {
         enable_get_fold_virt_text = true,
         preview = {},
         open_fold_hl_timeout = 150,
-        close_fold_kinds = kinds,
+        close_fold_kinds = {},
         fold_virt_text_handler = handler,
-        filetype_exclude = { 'help', 'alpha', 'dashboard', 'neo-tree', 'Trouble', 'lazy', 'mason' },
+        filetype_exclude = { 'help', 'alpha', 'dashboard', 'neo-tree', 'Trouble', 'lazy', 'mason', 'Outline' },
         provider_selector = function()
           return { 'treesitter', 'indent' }
         end,
@@ -75,10 +75,72 @@ return {
     'goolord/alpha-nvim',
     optional = true,
     opts = function(_, dashboard)
+      dashboard.section.header.val = {
+        [[ < Join Neovim, we have buffers! > ]],
+        [[ --------------------------------- ]],
+        [[        \    ,-^-.                 ]],
+        [[         \   !oYo!                 ]],
+        [[          \ /./=\.\______          ]],
+        [[               ##        )\/\      ]],
+        [[                ||-----w||         ]],
+        [[                ||      ||         ]],
+        [[                                   ]],
+        [[             Cowth Vader           ]],
+      }
       local button = dashboard.button('m', '󰏓 ' .. ' Mason', ':Mason <CR>')
       button.opts.hl = 'AlphaButtons'
       button.opts.hl_shortcut = 'AlphaShortcut'
       table.insert(dashboard.section.buttons.val, 9, button)
     end,
+  },
+
+  {
+    'folke/noice.nvim',
+    opts = {
+      cmdline = {
+        enabled = true, -- enables the Noice cmdline UI
+        view = 'cmdline_popup', -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+        opts = { buf_options = { filetype = 'vim' } }, -- enable syntax highlighting in the cmdline
+        ---@type table<string, CmdlineFormat>
+        format = {
+          -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
+          -- view: (default is cmdline view)
+          -- opts: any options passed to the view
+          -- icon_hl_group: optional hl_group for the icon
+          cmdline = { pattern = '^:', icon = '❯_', lang = 'vim' },
+          search_down = { kind = 'search', pattern = '^/', icon = ' ', ft = 'regex' },
+          search_up = { kind = 'search', pattern = '^%?', icon = ' ', lang = 'regex' },
+          filter = { pattern = '^:%s*!', icon = '$_', lang = 'sh' },
+          lua = { pattern = { '^:%s*lua%s+', '^:%s*lua%s*=%s*', '^:%s*=%s*' }, icon = '_', lang = 'lua' },
+          help = { pattern = '^:%s*h%s+', icon = '_' },
+          -- lua = false, -- to disable a format, set to `false`
+        },
+      },
+      views = {
+        cmdline_popup = {
+          border = {
+            style = 'none',
+            padding = { 1, 1 },
+          },
+          size = {
+            min_width = 80,
+            width = 'auto',
+            height = 'auto',
+          },
+          win_options = {
+            winhighlight = {
+              Normal = 'NormalFloat',
+            },
+          },
+        },
+      },
+      presets = {
+        bottom_search = false, -- use a classic bottom cmdline for search
+        command_palette = false, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true, -- add a border to hover docs and signature help
+      },
+    },
   },
 }

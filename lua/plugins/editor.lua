@@ -44,7 +44,7 @@ return {
         lazy = true,
         opts = {
           show_prompt = false,
-          filter_riles = {
+          filter_rules = {
             autoselect_one = false,
             include_current_win = true,
           },
@@ -53,6 +53,11 @@ return {
               focused = {
                 fg = '#ededed',
                 bg = '#ff9e00',
+                bold = true,
+              },
+              unfocused = {
+                fg = '#ededed',
+                bg = '#ee4592',
                 bold = true,
               },
             },
@@ -166,6 +171,39 @@ return {
         config = function()
           require('telescope').load_extension 'ui-select'
         end,
+      },
+    },
+    opts = {
+      picker = {
+        hidden = false,
+      },
+      defaults = {
+        vimgrep_arguments = {
+          'rg',
+          '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--no-ignore',
+          '--smart-case',
+          '--hidden',
+        },
+        layout_strategy = 'horizontal',
+        sorting_strategy = 'ascending',
+        layout_config = {
+          horizontal = {
+            prompt_position = 'top',
+            preview_width = 0.55,
+            results_width = 0.8,
+          },
+          vertical = {
+            mirror = false,
+          },
+          width = 0.80,
+          height = 0.85,
+          preview_cutoff = 120,
+        },
       },
     },
   },
