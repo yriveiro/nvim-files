@@ -46,7 +46,16 @@ return {
         open_fold_hl_timeout = 150,
         close_fold_kinds = {},
         fold_virt_text_handler = handler,
-        filetype_exclude = { 'help', 'alpha', 'dashboard', 'neo-tree', 'Trouble', 'lazy', 'mason', 'Outline' },
+        filetype_exclude = {
+          'help',
+          'alpha',
+          'dashboard',
+          'neo-tree',
+          'Trouble',
+          'lazy',
+          'mason',
+          'Outline',
+        },
         provider_selector = function()
           return { 'treesitter', 'indent' }
         end,
@@ -64,6 +73,7 @@ return {
         'lazy',
         'mason',
         'neorg',
+        'Outline',
       },
       custom_colorcolumn = {
         python = { '120', '200' },
@@ -107,12 +117,37 @@ return {
           -- view: (default is cmdline view)
           -- opts: any options passed to the view
           -- icon_hl_group: optional hl_group for the icon
-          cmdline = { pattern = '^:', icon = '❯_', lang = 'vim' },
-          search_down = { kind = 'search', pattern = '^/', icon = ' ', ft = 'regex' },
-          search_up = { kind = 'search', pattern = '^%?', icon = ' ', lang = 'regex' },
-          filter = { pattern = '^:%s*!', icon = '$_', lang = 'sh' },
-          lua = { pattern = { '^:%s*lua%s+', '^:%s*lua%s*=%s*', '^:%s*=%s*' }, icon = '_', lang = 'lua' },
-          help = { pattern = '^:%s*h%s+', icon = '_' },
+          cmdline = {
+            pattern = '^:',
+            icon = '❯_',
+            lang = 'vim',
+          },
+          search_down = {
+            kind = 'search',
+            pattern = '^/',
+            icon = ' ',
+            ft = 'regex',
+          },
+          search_up = {
+            kind = 'search',
+            pattern = '^%?',
+            icon = ' ',
+            lang = 'regex',
+          },
+          filter = {
+            pattern = '^:%s*!',
+            icon = '$_',
+            lang = 'sh',
+          },
+          lua = {
+            pattern = { '^:%s*lua%s+', '^:%s*lua%s*=%s*', '^:%s*=%s*' },
+            icon = '_',
+            lang = 'lua',
+          },
+          help = {
+            pattern = '^:%s*h%s+',
+            icon = '󱜹_',
+          },
           -- lua = false, -- to disable a format, set to `false`
         },
       },
