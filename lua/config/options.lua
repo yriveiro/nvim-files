@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.opt.laststatus = 3 -- Display the status line always. Improves window picker behaviour
+vim.o.swapfile = false
