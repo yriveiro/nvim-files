@@ -3,6 +3,7 @@ local colors = {
   fg = '#ECEFF4',
   red = '#bf616a',
   orange = '#d08770',
+  orange_light = '#958784',
   yellow = '#ebcb8b',
   blue = '#5e81ac',
   green = '#a3be8c',
@@ -99,6 +100,8 @@ return {
         AlphaShortcut = { fg = colors.magenta, style = 'italic' },
         AlphaButtons = { fg = colors.grey1 },
         AlphaFooter = { fg = colors.orange, style = 'italic' },
+
+        NeoTreeCursorLine = { bg = colors.grey11 },
       },
     },
   },
