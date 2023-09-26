@@ -96,9 +96,23 @@ return {
         'º',
         function()
           require('neo-tree.command').execute {
-            toggle = true,
-            source = 'filesystem',
             position = 'left',
+            source = 'filesystem',
+            toggle = true,
+            focused = true,
+          }
+        end,
+        desc = 'Explorer NeoTree',
+      },
+      {
+        '\\º',
+        function()
+          require('neo-tree.command').execute {
+            position = 'left',
+            reveal = true,
+            source = 'filesystem',
+            toggle = true,
+            focused = true,
           }
         end,
         desc = 'Explorer NeoTree',
@@ -174,21 +188,12 @@ return {
       },
     },
     opts = {
-      picker = {
-        hidden = false,
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
       },
       defaults = {
-        vimgrep_arguments = {
-          'rg',
-          '--color=never',
-          '--no-heading',
-          '--with-filename',
-          '--line-number',
-          '--column',
-          '--no-ignore',
-          '--smart-case',
-          '--hidden',
-        },
         layout_strategy = 'horizontal',
         sorting_strategy = 'ascending',
         layout_config = {
@@ -213,7 +218,15 @@ return {
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         'tflint',
+        'yapf',
       })
     end,
+  },
+  {
+    'danymat/neogen',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    version = '*',
   },
 }
