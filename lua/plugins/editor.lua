@@ -22,7 +22,9 @@ return {
   {
     'simrat39/symbols-outline.nvim',
     cmd = 'SymbolsOutline',
-    keys = { { '<leader>cs', '<cmd>SymbolsOutline<cr>', desc = 'Symbols Outline' } },
+    keys = {
+      { '<leader>cs', '<cmd>SymbolsOutline<cr>', desc = 'Symbols Outline' },
+    },
     config = true,
   },
   {
@@ -120,26 +122,6 @@ return {
     },
   },
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    opts = function(_, opts)
-      local nls = require 'null-ls'
-      vim.list_extend(opts.sources, {
-        nls.builtins.completion.spell,
-        nls.builtins.diagnostics.checkmake,
-        nls.builtins.diagnostics.hadolint,
-        nls.builtins.diagnostics.npm_groovy_lint,
-        nls.builtins.diagnostics.terraform_validate,
-        nls.builtins.formatting.beautysh,
-        nls.builtins.formatting.goimports,
-        nls.builtins.formatting.goimports_reviser,
-        nls.builtins.formatting.stylua,
-        nls.builtins.formatting.terraform_fmt,
-        nls.builtins.formatting.trim_whitespace,
-        nls.builtins.formatting.yapf,
-      })
-    end,
-  },
-  {
     'nvim-treesitter/nvim-treesitter',
     opts = function(_, opts)
       if type(opts.ensure_installed) == 'table' then
@@ -228,5 +210,9 @@ return {
     config = true,
     -- Uncomment next line if you want to follow only stable versions
     version = '*',
+  },
+  {
+    'towolf/vim-helm',
+    event = 'VeryLazy',
   },
 }

@@ -103,7 +103,6 @@ return {
       table.insert(dashboard.section.buttons.val, 9, button)
     end,
   },
-
   {
     'folke/noice.nvim',
     opts = {
