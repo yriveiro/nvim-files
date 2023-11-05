@@ -21,7 +21,18 @@ return {
           },
         },
         ruff_lsp = {},
-        terraformls = {},
+        terraformls = {
+          capabilities = {
+            experimental = {
+              prefillRequiredFields = true,
+              showReferencesCommandId = 'client.showReferences',
+              referenceCountCodeLens = true,
+              refreshModuleProviders = true,
+              refreshModuleCalls = true,
+              refreshTerraformVersion = true,
+            },
+          },
+        },
         yamlls = {
           -- Have to add this for yamlls to understand that we support line folding
           capabilities = {
