@@ -221,7 +221,7 @@ return {
       search = {
         modes = {
           search = {
-            enabled = true,
+            enabled = false,
           },
         },
       },

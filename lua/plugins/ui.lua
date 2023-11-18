@@ -2,6 +2,23 @@ return {
   {
     'mg979/vim-visual-multi',
   },
+  -- {
+  --   'smoka7/multicursors.nvim',
+  --   event = 'VeryLazy',
+  --   dependencies = {
+  --     'smoka7/hydra.nvim',
+  --   },
+  --   opts = {},
+  --   cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+  --   keys = {
+  --     {
+  --       mode = { 'v', 'n' },
+  --       '<Leader>m',
+  --       '<cmd>MCstart<cr>',
+  --       desc = 'Create a selection for selected text or word under the cursor',
+  --     },
+  --   },
+  -- },
   {
     'kevinhwang91/nvim-ufo',
     dependencies = {
@@ -66,14 +83,15 @@ return {
     'm4xshen/smartcolumn.nvim',
     opts = {
       disabled_filetypes = {
-        'help',
-        'text',
-        'markdown',
-        'alpha',
-        'lazy',
-        'mason',
-        'neorg',
         'Outline',
+        'alpha',
+        'help',
+        'lazy',
+        'markdown',
+        'mason',
+        'neo-tree',
+        'neorg',
+        'text',
       },
       custom_colorcolumn = {
         python = { '120', '200' },

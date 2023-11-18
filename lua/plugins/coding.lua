@@ -5,16 +5,9 @@ return {
     dependencies = {
       'chrisgrieser/cmp_yanky',
     },
-    opts = function()
+    opts = function(_, opts)
       local cmp = require 'cmp'
-      sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'path' },
-        { name = 'cmp_yanky' },
-      }, {
-        { name = 'buffer' },
-      })
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {}))
     end,
   },
 }
