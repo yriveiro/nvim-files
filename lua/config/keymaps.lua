@@ -20,3 +20,5 @@ map('n', '\\w', function()
 end, { desc = 'Pick window' })
 
 map('n', '\\f', '<cmd>Neotree focus<cr>', { desc = 'Focus on Neotree' })
+map('n', '<tab>l', '<cmd>tabnex<cr>', { desc = 'Next tab' })
+map('n', '<tab>h', '<cmd>tabprev<cr>', { desc = 'Previous tab' })
