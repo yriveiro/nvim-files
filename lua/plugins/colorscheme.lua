@@ -102,6 +102,13 @@ return {
         AlphaFooter = { fg = colors.orange, style = 'italic' },
 
         NeoTreeCursorLine = { bg = colors.grey11 },
+
+        -- Headlines
+        Headline = { bg = colors.grey16 },
+        Headline1 = { bg = colors.grey16 },
+        Headline2 = { bg = colors.grey14 },
+        -- CodeBlock = { bg = '#1e2718', fg = colors.red },
+        Dash = { bg = colors.yellow, style = 'bold' },
       },
     },
   },
