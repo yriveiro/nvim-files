@@ -1,24 +1,27 @@
 return {
   {
-    'mg979/vim-visual-multi',
+    'smoka7/multicursors.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'smoka7/hydra.nvim',
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    keys = {
+      {
+        mode = { 'v', 'n' },
+        '<Leader>m',
+        '<cmd>MCstart<cr>',
+        desc = 'Create a selection for selected text or word under the cursor',
+      },
+      {
+        mode = { 'n' },
+        '<Leader>mp',
+        '<cmd>MCpatten<cr>',
+        desc = 'Prompts for a pattern and selects every match in the buffer',
+      },
+    },
   },
-  -- {
-  --   'smoka7/multicursors.nvim',
-  --   event = 'VeryLazy',
-  --   dependencies = {
-  --     'smoka7/hydra.nvim',
-  --   },
-  --   opts = {},
-  --   cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
-  --   keys = {
-  --     {
-  --       mode = { 'v', 'n' },
-  --       '<Leader>m',
-  --       '<cmd>MCstart<cr>',
-  --       desc = 'Create a selection for selected text or word under the cursor',
-  --     },
-  --   },
-  -- },
   {
     'kevinhwang91/nvim-ufo',
     dependencies = {
@@ -241,5 +244,8 @@ return {
   {
     'stevearc/stickybuf.nvim',
     opts = {},
+  },
+  {
+    'onsails/lspkind.nvim',
   },
 }
