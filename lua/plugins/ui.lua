@@ -17,8 +17,14 @@ return {
       {
         mode = { 'n' },
         '<Leader>mp',
-        '<cmd>MCpatten<cr>',
+        '<cmd>MCpattern<cr>',
         desc = 'Prompts for a pattern and selects every match in the buffer',
+      },
+      {
+        mode = { 'n', 'v' },
+        '<Leader>mc',
+        '<cmd>MCclear<cr>',
+        desc = 'Clears all the selections',
       },
     },
   },
