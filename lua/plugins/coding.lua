@@ -7,7 +7,22 @@ return {
     },
     opts = function(_, opts)
       local cmp = require 'cmp'
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {}))
+      local lspkind = require 'lspkind'
+
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { name = 'cmp_yanky' }))
+      opts.formatting.format = lspkind.cmp_format {
+        mode = 'symbol_text',
+        max_width = 50,
+        ellipsis_char = '...',
+        menu = {
+          buffer = '[Buffer]',
+          cmp_yanky = '[Yanky]',
+          luasnip = '[LuaSnip]',
+          nvim_lsp = '[LSP]',
+          nvim_lua = '[Lua]',
+          path = '[Path]',
+        },
+      }
     end,
   },
   {
