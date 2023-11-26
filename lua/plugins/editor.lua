@@ -1,8 +1,13 @@
 return {
-  -- Custom plugins
   {
-    'mbbill/undotree',
-    event = 'VeryLazy',
+    'stevearc/aerial.nvim',
+    opts = {
+      layout = {
+        width = 25,
+        default_direction = 'right',
+        placement = 'edge',
+      },
+    },
   },
   {
     'sindrets/diffview.nvim',
@@ -16,14 +21,6 @@ return {
         'nvim-tree/nvim-web-devicons',
         lazy = true,
       },
-    },
-    config = true,
-  },
-  {
-    'simrat39/symbols-outline.nvim',
-    cmd = 'SymbolsOutline',
-    keys = {
-      { '<leader>cs', '<cmd>SymbolsOutline<cr>', desc = 'Symbols Outline' },
     },
     config = true,
   },
@@ -166,6 +163,20 @@ return {
         event = 'VeryLazy',
         config = function()
           require('telescope').load_extension 'ui-select'
+        end,
+      },
+      {
+        'debugloop/telescope-undo.nvim',
+        event = 'VeryLazy',
+        keys = {
+          { -- lazy style key map
+            '<leader>cu',
+            '<cmd>Telescope undo<cr>',
+            desc = 'undo history',
+          },
+        },
+        config = function()
+          require('telescope').load_extension 'undo'
         end,
       },
     },
