@@ -73,7 +73,6 @@ return {
                 globals = {
                   'vim',
                   'require',
-                  'kong',
                 },
               },
             },

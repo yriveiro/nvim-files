@@ -3,9 +3,7 @@ return {
     'stevearc/aerial.nvim',
     opts = {
       layout = {
-        width = 25,
-        default_direction = 'right',
-        placement = 'edge',
+        width = 50,
       },
     },
   },

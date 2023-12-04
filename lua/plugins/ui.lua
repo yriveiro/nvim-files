@@ -225,8 +225,8 @@ return {
         TODO = { icon = ' ', color = 'info' },
         HACK = { icon = ' ', color = 'warning' },
         WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
-        PERF = { icon = ' ', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
-        NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },
+        PERF = { icon = '⚡', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
+        NOTE = { icon = 'ℹ ', color = 'hint', alt = { 'INFO' } },
         TEST = { icon = '⏲ ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
       },
       highlight = {
@@ -247,5 +247,25 @@ return {
   },
   {
     'onsails/lspkind.nvim',
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    opts = function(_, opts)
+      opts.indent.tab_char = '>'
+      opts.exclude.filetypes = vim.list_extend(opts.exclude.filetypes, { 'aerial' })
+    end,
+  },
+  {
+    'echasnovski/mini.indentscope',
+    init = function()
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = {
+          'aerial',
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true ---@diagnostic disable-line
+        end,
+      })
+    end,
   },
 }
