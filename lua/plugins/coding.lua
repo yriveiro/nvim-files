@@ -9,7 +9,8 @@ return {
       local cmp = require 'cmp'
       local lspkind = require 'lspkind'
 
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { name = 'cmp_yanky' }))
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = 'cmp_yanky' } }))
+
       opts.formatting.format = lspkind.cmp_format {
         mode = 'symbol_text',
         max_width = 50,
