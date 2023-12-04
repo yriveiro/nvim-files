@@ -63,7 +63,6 @@ return {
         return newVirtText
       end
 
-      ---@type UfoFoldingRangeKind
       local kinds = { 'imports', 'comment' }
 
       require('ufo').setup {
@@ -73,14 +72,15 @@ return {
         close_fold_kinds = kinds, ---@diagnostic disable-line assign-type-mismatch
         fold_virt_text_handler = handler,
         filetype_exclude = {
-          'help',
+          'Outline',
+          'Trouble',
+          'aerial',
           'alpha',
           'dashboard',
-          'neo-tree',
-          'Trouble',
+          'help',
           'lazy',
           'mason',
-          'Outline',
+          'neo-tree',
         },
         provider_selector = function()
           return { 'treesitter', 'indent' }
@@ -93,6 +93,7 @@ return {
     opts = {
       disabled_filetypes = {
         'Outline',
+        'aerial',
         'alpha',
         'help',
         'lazy',
@@ -100,6 +101,7 @@ return {
         'mason',
         'neo-tree',
         'neorg',
+        'noice', ---@diagnostic disable-line
         'text',
       },
       custom_colorcolumn = {
