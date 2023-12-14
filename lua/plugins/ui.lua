@@ -81,6 +81,7 @@ return {
           'lazy',
           'mason',
           'neo-tree',
+          'spectre_panel',
         },
         provider_selector = function()
           return { 'treesitter', 'indent' }
@@ -103,6 +104,7 @@ return {
         'neorg',
         'noice', ---@diagnostic disable-line
         'text',
+        'spectre_panel',
       },
       custom_colorcolumn = {
         python = { '120', '200' },
