@@ -107,7 +107,7 @@ return {
         Headline = { bg = colors.grey16 },
         Headline1 = { bg = colors.grey16 },
         Headline2 = { bg = colors.grey14 },
-        -- CodeBlock = { bg = '#1e2718', fg = colors.red },
+        CodeBlock = { bg = '#1e2718' },
         Dash = { bg = colors.yellow, style = 'bold' },
       },
     },
