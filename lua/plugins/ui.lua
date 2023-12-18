@@ -271,6 +271,7 @@ return {
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {
           'aerial',
+          'lazy',
         },
         callback = function()
           vim.b.miniindentscope_disable = true ---@diagnostic disable-line
