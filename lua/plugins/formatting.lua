@@ -5,6 +5,7 @@ return {
       formatters_by_ft = {
         yaml = { 'yamlfmt' },
         toml = { 'taplo' },
+        markdown = { 'markdownlint' },
       },
     },
   },
