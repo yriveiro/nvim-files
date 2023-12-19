@@ -128,10 +128,14 @@ return {
         [[                                   ]],
         [[             Cowth Vader           ]],
       }
-      local button = dashboard.button('m', '󰏓 ' .. ' Mason', ':Mason <CR>')
+      local button = dashboard.button('m', '󰏓 ' .. ' Mason', ':Mason<CR>')
       button.opts.hl = 'AlphaButtons'
       button.opts.hl_shortcut = 'AlphaShortcut'
       table.insert(dashboard.section.buttons.val, 9, button)
+      button = dashboard.button('oss', ' ' .. ' [Neorg] Open Source', ':Neorg workspace oss<CR>')
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+      table.insert(dashboard.section.buttons.val, 10, button)
     end,
   },
   {
