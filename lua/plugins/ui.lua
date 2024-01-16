@@ -241,7 +241,7 @@ return {
         WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
         PERF = { icon = '⚡', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
         NOTE = { icon = 'ℹ ', color = 'hint', alt = { 'INFO' } },
-        TEST = { icon = '⏲ ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
+        TEST = { icon = '󰅒 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
       },
       highlight = {
         before = '', -- 'fg' or 'bg' or empty

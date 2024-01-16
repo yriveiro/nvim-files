@@ -17,6 +17,12 @@ return {
               },
             },
           },
+          ['core.completion'] = {
+            config = {
+              engine = 'nvim-cmp',
+            },
+          },
+          ['core.export'] = {},
         },
       }
     end,

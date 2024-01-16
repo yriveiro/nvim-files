@@ -33,6 +33,10 @@ return {
         fat_headline_upper_string = '▃',
         fat_headline_lower_string = '━',
       },
+      norg = {
+        fat_headline_upper_string = '▃',
+        fat_headline_lower_string = '▀',
+      },
     },
   },
 }
