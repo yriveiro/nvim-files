@@ -32,6 +32,16 @@ return {
       markdown = {
         fat_headline_upper_string = '▃',
         fat_headline_lower_string = '━',
+        headline_highlights = { 'HeadlinesHeadline' },
+        codeblock_highlight = 'HeadlinesCodeBlock',
+        dash_highlight = 'HeadlinesDash',
+      },
+      norg = {
+        fat_headline_upper_string = '▃',
+        fat_headline_lower_string = '▀',
+        headline_highlights = { 'NorgHeadline' },
+        codeblock_highlight = 'NorgCodeBlock',
+        dash_highlight = 'NorgDash',
       },
       norg = {
         fat_headline_upper_string = '▃',

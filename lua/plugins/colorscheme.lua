@@ -104,11 +104,15 @@ return {
         NeoTreeCursorLine = { bg = colors.grey11 },
 
         -- Headlines
-        Headline = { bg = colors.grey16 },
+        HeadlinesHeadline = { bg = colors.grey16 },
         Headline1 = { bg = colors.grey16 },
         Headline2 = { bg = colors.grey14 },
-        CodeBlock = { bg = '#1e2718' },
-        Dash = { bg = colors.yellow, style = 'bold' },
+        HeadlinesCodeBlock = { bg = '#1e2718' },
+        HeadlinesDash = { bg = colors.yellow, style = 'bold' },
+
+        NorgHeadline = { bg = colors.grey16 },
+        NorgCodeBlock = { bg = '#1e2718' },
+        NorgDash = { bg = colors.yellow, style = 'bold' },
       },
     },
   },

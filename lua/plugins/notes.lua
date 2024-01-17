@@ -14,6 +14,7 @@ return {
                 work = '~/notes/work',
                 home = '~/notes/home',
                 oss = '~/notes/oss',
+                ['awesome-links'] = '~/notes/awesome-links',
               },
             },
           },
