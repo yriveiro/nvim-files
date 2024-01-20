@@ -284,4 +284,8 @@ return {
       })
     end,
   },
+  {
+    'kevinhwang91/nvim-bqf',
+    lazy = 'VeryLazy',
+  },
 }
