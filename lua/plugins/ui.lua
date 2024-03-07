@@ -277,6 +277,7 @@ return {
         pattern = {
           'aerial',
           'lazy',
+          'alpha',
         },
         callback = function()
           vim.b.miniindentscope_disable = true ---@diagnostic disable-line

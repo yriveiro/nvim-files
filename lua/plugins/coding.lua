@@ -4,12 +4,14 @@ return {
     event = 'InsertEnter',
     dependencies = {
       'chrisgrieser/cmp_yanky',
+      'hrsh7th/cmp-nvim-lua',
     },
     opts = function(_, opts)
       local cmp = require 'cmp'
       local lspkind = require 'lspkind'
 
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = 'cmp_yanky' } }))
+      opts.sources =
+        cmp.config.sources(vim.list_extend(opts.sources, { { name = 'cmp_yanky' }, { name = 'nvim_lua' } }))
 
       opts.formatting.format = lspkind.cmp_format {
         mode = 'symbol_text',
@@ -21,6 +23,7 @@ return {
           luasnip = '[LuaSnip]',
           nvim_lsp = '[LSP]',
           nvim_lua = '[Lua]',
+          snippets = '[snippets]',
           path = '[Path]',
         },
       }
@@ -31,21 +34,14 @@ return {
     opts = {
       markdown = {
         fat_headline_upper_string = '▃',
-        fat_headline_lower_string = '━',
-        headline_highlights = { 'HeadlinesHeadline' },
-        codeblock_highlight = 'HeadlinesCodeBlock',
-        dash_highlight = 'HeadlinesDash',
-      },
-      norg = {
-        fat_headline_upper_string = '▃',
         fat_headline_lower_string = '▀',
         headline_highlights = { 'NorgHeadline' },
         codeblock_highlight = 'NorgCodeBlock',
         dash_highlight = 'NorgDash',
       },
       norg = {
-        fat_headline_upper_string = '▃',
-        fat_headline_lower_string = '▀',
+        fat_headlines = false,
+        headline_highlights = {},
       },
     },
   },

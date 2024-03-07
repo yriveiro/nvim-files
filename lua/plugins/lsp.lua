@@ -2,6 +2,9 @@ return {
   {
     'neovim/nvim-lspconfig',
     opts = {
+      codelens = {
+        enabled = true,
+      },
       servers = {
         dockerls = {},
         docker_compose_language_service = {},
@@ -21,7 +24,28 @@ return {
           },
         },
         ruff_lsp = {},
+        pyright = {
+          -- Disable hint capabilities to avoid duplicate hint with ruff_lsp.
+          -- @see https://www.reddit.com/r/neovim/comments/11k5but/comment/jbjwwtf
+          capabilities = (function()
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+            return capabilities
+          end)(),
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = 'off',
+              },
+            },
+          },
+        },
         terraformls = {
+          init_options = {
+            terraform = {
+              path = '/opt/homebrew/bin/terraform',
+            },
+          },
           capabilities = {
             experimental = {
               prefillRequiredFields = true,
@@ -30,6 +54,11 @@ return {
               refreshModuleProviders = true,
               refreshModuleCalls = true,
               refreshTerraformVersion = true,
+            },
+          },
+          settings = {
+            terraformls = {
+              timeout = 60,
             },
           },
         },
@@ -79,6 +108,14 @@ return {
           },
         },
       },
+    },
+  },
+  {
+    'Afourcat/treesitter-terraform-doc.nvim',
+    opts = {
+      command_name = 'OpenDoc',
+      url_opener_command = '!open',
+      jump_argument = true,
     },
   },
 }

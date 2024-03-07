@@ -136,13 +136,6 @@ return {
     'telescope.nvim',
     dependencies = {
       {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make',
-        config = function()
-          require('telescope').load_extension 'fzf'
-        end,
-      },
-      {
         'nvim-telescope/telescope-project.nvim',
         event = 'VeryLazy',
         config = function()
@@ -211,19 +204,26 @@ return {
     },
   },
   {
-    'williamboman/mason.nvim',
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        'tflint',
-        'yapf',
-      })
-    end,
-  },
-  {
     'danymat/neogen',
     dependencies = 'nvim-treesitter/nvim-treesitter',
     config = true,
+    keys = {
+      {
+        mode = { 'v', 'n' },
+        '<Leader>cc',
+        '<cmd>Neogen<cr>',
+        desc = 'Create doc string for selected text or word under the cursor',
+      },
+    },
+    opts = {
+      languages = {
+        python = {
+          template = {
+            annotation_convention = 'numpydoc',
+          },
+        },
+      },
+    },
     -- Uncomment next line if you want to follow only stable versions
     version = '*',
   },

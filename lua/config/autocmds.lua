@@ -7,7 +7,7 @@ vim.cmd [[highlight ColorColumn guibg=#FF8C00]]
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'neo-tree', 'Outline' },
   callback = function()
-    require('ufo').detach()
+    -- require('ufo').detach()
     vim.opt_local.foldenable = false
   end,
 })

@@ -2,7 +2,7 @@ return {
   {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim', 'pysan3/neorg-templates' },
     config = function()
       require('neorg').setup {
         load = {
@@ -24,6 +24,9 @@ return {
             },
           },
           ['core.export'] = {},
+          ['core.ui'] = {},
+          ['core.ui.calendar'] = {},
+          ['external.templates'] = {},
         },
       }
     end,
