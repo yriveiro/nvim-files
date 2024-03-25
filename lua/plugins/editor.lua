@@ -127,6 +127,7 @@ return {
           'jsonc',
           'terraform',
           'hcl',
+          'markdown_inline',
           'yaml',
         })
       end
