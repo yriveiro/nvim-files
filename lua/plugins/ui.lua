@@ -132,11 +132,14 @@ return {
       button.opts.hl = 'AlphaButtons'
       button.opts.hl_shortcut = 'AlphaShortcut'
       table.insert(dashboard.section.buttons.val, 9, button)
-      button = dashboard.button('oss', ' ' .. ' [Neorg] Open Source', ':Neorg workspace oss<CR>')
-      button = dashboard.button('w', ' ' .. ' [Neorg] Awasome Links', ':Neorg workspace awesome-links<CR>')
       button.opts.hl = 'AlphaButtons'
       button.opts.hl_shortcut = 'AlphaShortcut'
+      button = dashboard.button('op', ' ' .. ' [Obsidian] Personal', ':ObsidianWorkspace personal<CR>')
       table.insert(dashboard.section.buttons.val, 10, button)
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+      button = dashboard.button('ow', ' ' .. ' [Obsidian] Work', ':ObsidianWorkspace work<CR>')
+      table.insert(dashboard.section.buttons.val, 11, button)
     end,
   },
   {
