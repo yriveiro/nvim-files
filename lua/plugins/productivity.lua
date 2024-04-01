@@ -3,7 +3,7 @@ return {
     'epwalsh/obsidian.nvim',
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = true,
-    ft = 'markdown',
+    ft = { 'markdown', 'alpha' },
     event = {
       'BufReadPre ' .. vim.fn.expand '~' .. '/vaults/*/**.md',
       'BufNewFile ' .. vim.fn.expand '~' .. '/vaults/*/**.md',
@@ -44,6 +44,10 @@ return {
           name = 'work',
           path = '~/vaults/work',
         },
+        {
+          name = 'personal',
+          path = '~/vaults/personal',
+        },
       },
       notes_subdir = 'notes',
       new_notes_location = 'notes_subdir',
@@ -65,17 +69,17 @@ return {
       },
       mappings = {
         -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-        ['gf'] = {
+        ['\\g'] = {
           action = function()
             return require('obsidian').util.gf_passthrough()
           end,
-          opts = { noremap = false, expr = true, buffer = true },
+          opts = { noremap = false, expr = true, buffer = true, desc = '' },
         },
         ['\\ol'] = {
           action = function()
             return require('obsidian').util.toggle_checkbox()
           end,
-          opts = { buffer = true, desc = 'Toogle Checkboxes' },
+          opts = { buffer = true, desc = 'Toggle Checkboxes' },
         },
       },
       templates = {
