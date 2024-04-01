@@ -150,7 +150,7 @@ return {
           { -- lazy style key map
             '<leader>cw',
             '<cmd>Telescope git_worktree<cr>',
-            desc = 'undo history',
+            desc = 'Git worktree',
           },
         },
         config = function()
