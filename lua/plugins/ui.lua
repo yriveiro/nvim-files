@@ -73,7 +73,7 @@ return {
         fold_virt_text_handler = handler,
         filetype_exclude = {
           'Outline',
-          'Trouble',
+          'trouble',
           'aerial',
           'alpha',
           'dashboard',
@@ -98,11 +98,12 @@ return {
         'alpha',
         'help',
         'lazy',
+        'trouble',
         'markdown',
         'mason',
         'neo-tree',
         'neorg',
-        'noice', ---@diagnostic disable-line
+        'noice',
         'text',
         'spectre_panel',
       },
