@@ -33,6 +33,18 @@ return {
         '<cmd>ObsidianSearch<cr>',
         desc = 'Search Notes',
       },
+      {
+        mode = { 'n' },
+        '\\ot',
+        '<cmd>ObsidianToday<cr>',
+        desc = 'Today Note',
+      },
+      {
+        mode = { 'n' },
+        '\\oy',
+        '<cmd>ObsidianYesterday<cr>',
+        desc = 'Yesterday Note',
+      },
     },
     dependencies = {
       -- Required.
