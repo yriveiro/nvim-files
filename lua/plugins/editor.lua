@@ -1,13 +1,5 @@
 return {
   {
-    'stevearc/aerial.nvim',
-    opts = {
-      layout = {
-        width = 50,
-      },
-    },
-  },
-  {
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
     dependencies = {
