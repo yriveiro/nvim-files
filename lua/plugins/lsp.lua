@@ -2,9 +2,6 @@ return {
   {
     'neovim/nvim-lspconfig',
     opts = {
-      codelens = {
-        enabled = true,
-      },
       servers = {
         dockerls = {},
         docker_compose_language_service = {},
@@ -40,6 +37,7 @@ return {
             },
           },
         },
+        tflint = {},
         terraformls = {
           init_options = {
             terraform = {
