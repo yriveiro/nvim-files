@@ -15,13 +15,6 @@ return {
     config = true,
   },
   {
-    'norcalli/nvim-colorizer.lua',
-    event = 'VeryLazy',
-    config = function()
-      require('colorizer').setup { '*' }
-    end,
-  },
-  {
     'wakatime/vim-wakatime',
     event = 'VeryLazy',
   },
@@ -114,12 +107,13 @@ return {
       if type(opts.ensure_installed) == 'table' then
         vim.list_extend(opts.ensure_installed, {
           'dockerfile',
+          'hcl',
           'json',
           'json5',
           'jsonc',
-          'terraform',
-          'hcl',
           'markdown_inline',
+          'sql',
+          'terraform',
           'yaml',
         })
       end
