@@ -45,10 +45,12 @@ return {
         '<cmd>ObsidianYesterday<cr>',
         desc = 'Yesterday Note',
       },
-    },
-    dependencies = {
-      -- Required.
-      'nvim-lua/plenary.nvim',
+      {
+        mode = { 'n' },
+        '\\ol',
+        '<cmd>ObsidianToggleCheckbox<cr>',
+        desc = 'Ciclyng checkbox',
+      },
     },
     opts = {
       workspaces = {
@@ -87,11 +89,19 @@ return {
           end,
           opts = { noremap = false, expr = true, buffer = true, desc = '' },
         },
-        ['\\ol'] = {
+        ['\\oe'] = {
           action = function()
-            return require('obsidian').util.toggle_checkbox()
+            require('obsidian').util.toggle_checkbox()
+
+            -- Gon EOL
+            local row, _ = unpack(vim.api.nvim_win_get_cursor(0)) -- Get current cursor position
+            local line = vim.api.nvim_get_current_line() -- Get the content of the current line
+            vim.api.nvim_win_set_cursor(0, { row, #line }) -- Set the cursor to the end of the current line
+
+            -- Go insert mode
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('i', true, false, true), 'n', true)
           end,
-          opts = { buffer = true, desc = 'Toggle Checkboxes' },
+          opts = { buffer = true, desc = 'Create checkboxe entry' },
         },
       },
       templates = {
