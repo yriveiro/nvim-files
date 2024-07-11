@@ -80,7 +80,7 @@ return {
             yaml = {
               keyOrdering = false,
               format = {
-                enable = true,
+                enable = false,
               },
               validate = true,
               schemaStore = {
@@ -96,10 +96,9 @@ return {
         lua_ls = {
           settings = {
             Lua = {
-              diagnostics = {
-                globals = {
-                  'vim',
-                  'require',
+              workspace = {
+                library = {
+                  '${3rd}/luv/library',
                 },
               },
             },
