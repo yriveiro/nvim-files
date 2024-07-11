@@ -11,45 +11,51 @@ return {
     keys = {
       {
         mode = { 'n' },
-        '\\ok',
+        '<LocalLeader>ok',
         '<cmd>ObsidianDailies<cr>',
         desc = 'Open dailies',
       },
       {
         mode = { 'n' },
-        '\\oc',
+        '<LocalLeader>oc',
         '<cmd>ObsidianNew<cr>',
         desc = 'Create new note',
       },
       {
         mode = { 'n' },
-        '\\oq',
+        '<LocalLeader>oq',
         '<cmd>ObsidianQuickSwitch<cr>',
         desc = 'Switch Notes',
       },
       {
         mode = { 'n' },
-        '\\os',
+        '<LocalLeader>os',
         '<cmd>ObsidianSearch<cr>',
         desc = 'Search Notes',
       },
       {
         mode = { 'n' },
-        '\\ot',
+        '<LocalLeader>ot',
         '<cmd>ObsidianToday<cr>',
         desc = 'Today Note',
       },
       {
         mode = { 'n' },
-        '\\oy',
+        '<LocalLeader>oy',
         '<cmd>ObsidianYesterday<cr>',
         desc = 'Yesterday Note',
       },
       {
         mode = { 'n' },
-        '\\ol',
+        '<LocalLeader>ol',
         '<cmd>ObsidianToggleCheckbox<cr>',
         desc = 'Ciclyng checkbox',
+      },
+      {
+        mode = { 'n' },
+        '<LocalLeader>os',
+        '<cmd>ObsidianSearch<cr>',
+        desc = 'Search',
       },
     },
     opts = {
@@ -79,27 +85,27 @@ return {
         -- Set to false to disable completion.
         nvim_cmp = true,
         -- Trigger completion at 2 chars.
-        min_chars = 2,
+        min_chars = 3,
       },
       mappings = {
         -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-        ['\\g'] = {
+        ['<LocalLeader>g'] = {
           action = function()
             return require('obsidian').util.gf_passthrough()
           end,
           opts = { noremap = false, expr = true, buffer = true, desc = '' },
         },
-        ['\\oe'] = {
+        ['<LocalLeader>oe'] = {
           action = function()
             require('obsidian').util.toggle_checkbox()
 
-            -- Gon EOL
+            -- Go EOL
             local row, _ = unpack(vim.api.nvim_win_get_cursor(0)) -- Get current cursor position
             local line = vim.api.nvim_get_current_line() -- Get the content of the current line
-            vim.api.nvim_win_set_cursor(0, { row, #line }) -- Set the cursor to the end of the current line
 
-            -- Go insert mode
-            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('i', true, false, true), 'n', true)
+            vim.api.nvim_win_set_cursor(0, { row, #line }) -- Set the cursor to the end of the current line_hl_group
+            vim.api.nvim_set_current_line(line .. '')
+            vim.api.nvim_feedkeys('a', 'n', true)
           end,
           opts = { buffer = true, desc = 'Create checkboxe entry' },
         },
