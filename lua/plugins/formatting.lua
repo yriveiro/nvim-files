@@ -8,6 +8,7 @@ return {
         markdown = { 'markdownlint-cli2' },
         python = { 'ruff_format' },
         hcl = { 'terraform_fmt' },
+        sql = { 'sqlfluff' },
       },
     },
   },
