@@ -293,4 +293,52 @@ return {
     'kevinhwang91/nvim-bqf',
     lazy = 'VeryLazy',
   },
+  {
+    '3rd/image.nvim',
+    event = 'VeryLazy',
+    opts = {
+      backend = 'kitty',
+      integrations = {
+        markdown = {
+          enabled = true,
+          clear_in_insert_mode = false,
+          download_remote_images = true,
+          only_render_image_at_cursor = false,
+          filetypes = { 'markdown', 'vimwiki' },
+        },
+      },
+      max_width = nil,
+      max_height = nil,
+      max_width_window_percentage = nil,
+      max_height_window_percentage = 50,
+      kitty_method = 'normal',
+    },
+  },
+  {
+    'ziontee113/icon-picker.nvim',
+    event = 'VeryLazy',
+    keys = {
+      {
+        mode = { 'n' },
+        '<Leader>i',
+        '<cmd>IconPickerNormal<cr>',
+        desc = 'Icon Picker',
+      },
+      {
+        mode = { 'n' },
+        '<Leader>y',
+        '<cmd>IconPickerYank<cr>',
+        desc = 'Yank the selected icon into register',
+      },
+      {
+        mode = { 'i' },
+        '<C-i>',
+        '<cmd>IconPickerInsert<cr>',
+        desc = 'Insert Icon',
+      },
+    },
+    config = function()
+      require('icon-picker').setup { disable_legacy_commands = true }
+    end,
+  },
 }
