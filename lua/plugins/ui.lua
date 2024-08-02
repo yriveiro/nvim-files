@@ -102,7 +102,6 @@ return {
         'markdown',
         'mason',
         'neo-tree',
-        'neorg',
         'noice',
         'text',
         'spectre_panel',
