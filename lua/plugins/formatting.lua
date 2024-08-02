@@ -9,6 +9,7 @@ return {
         python = { 'ruff_format' },
         hcl = { 'terraform_fmt' },
         sql = { 'sqlfluff' },
+        cs = { 'csharpier' },
       },
     },
   },
