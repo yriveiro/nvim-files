@@ -2,7 +2,8 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-vim.cmd [[highlight ColorColumn guibg=#FF8C00]]
+vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#ff8c00' })
+vim.api.nvim_set_hl(0, 'RenderMarkdownFollowUp', { fg = '#f78c6c', bold = true })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'neo-tree', 'Outline' },
