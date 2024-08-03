@@ -12,4 +12,21 @@ return {
       },
     },
   },
+  {
+    'MeanderingProgrammer/markdown.nvim',
+    opts = {
+      checkbox = {
+        unchecked = {
+          icon = '󰄱',
+        },
+        checked = {
+          icon = '󰱒',
+        },
+        custom = {
+          cancel = { raw = '[~]', rendered = '󰰱', highlight = 'RenderMarkdownError' },
+          followup = { raw = '[>]', rendered = '', highlight = 'RenderMarkdownFollowUp' },
+        },
+      },
+    },
+  },
 }
