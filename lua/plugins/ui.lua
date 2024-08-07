@@ -314,31 +314,4 @@ return {
       kitty_method = 'normal',
     },
   },
-  {
-    'ziontee113/icon-picker.nvim',
-    event = 'VeryLazy',
-    keys = {
-      {
-        mode = { 'n' },
-        '<Leader>i',
-        '<cmd>IconPickerNormal<cr>',
-        desc = 'Icon Picker',
-      },
-      {
-        mode = { 'n' },
-        '<Leader>y',
-        '<cmd>IconPickerYank<cr>',
-        desc = 'Yank the selected icon into register',
-      },
-      {
-        mode = { 'i' },
-        '<C-i>',
-        '<cmd>IconPickerInsert<cr>',
-        desc = 'Insert Icon',
-      },
-    },
-    config = function()
-      require('icon-picker').setup { disable_legacy_commands = true }
-    end,
-  },
 }
