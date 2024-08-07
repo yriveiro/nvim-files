@@ -219,16 +219,4 @@ return {
     'towolf/vim-helm',
     event = 'VeryLazy',
   },
-  {
-    'folke/flash.nvim',
-    opts = {
-      search = {
-        modes = {
-          search = {
-            enabled = false,
-          },
-        },
-      },
-    },
-  },
 }
