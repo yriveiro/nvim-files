@@ -63,13 +63,12 @@ return {
         return newVirtText
       end
 
-      local kinds = { 'imports', 'comment' }
 
       require('ufo').setup {
         enable_get_fold_virt_text = true,
         preview = {},
         open_fold_hl_timeout = 150,
-        close_fold_kinds_for_ft = kinds, ---@diagnostic disable-line assign-type-mismatch
+        close_fold_kinds_for_ft = { default = { 'imports', 'comment' } },
         fold_virt_text_handler = handler,
         filetype_exclude = {
           'Outline',

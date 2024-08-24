@@ -115,4 +115,8 @@ return {
       jump_argument = true,
     },
   },
+  {
+    'towolf/vim-helm',
+    event = 'VeryLazy',
+  },
 }
