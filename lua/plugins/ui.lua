@@ -312,4 +312,10 @@ return {
       kitty_method = 'normal',
     },
   },
+  {
+    '3rd/diagram.nvim',
+    dependencies = {
+      '3rd/image.nvim',
+    },
+  },
 }
