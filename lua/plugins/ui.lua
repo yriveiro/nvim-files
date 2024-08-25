@@ -63,7 +63,6 @@ return {
         return newVirtText
       end
 
-
       require('ufo').setup {
         enable_get_fold_virt_text = true,
         preview = {},
@@ -71,7 +70,6 @@ return {
         close_fold_kinds_for_ft = { default = { 'imports', 'comment' } },
         fold_virt_text_handler = handler,
         filetype_exclude = {
-          'Outline',
           'trouble',
           'aerial',
           'alpha',
@@ -92,8 +90,6 @@ return {
     'm4xshen/smartcolumn.nvim',
     opts = {
       disabled_filetypes = {
-        'Outline',
-        'aerial',
         'alpha',
         'help',
         'lazy',
@@ -267,17 +263,12 @@ return {
   },
   {
     'lukas-reineke/indent-blankline.nvim',
-    opts = function(_, opts)
-      opts.indent.tab_char = '>'
-      opts.exclude.filetypes = vim.list_extend(opts.exclude.filetypes, { 'aerial' })
-    end,
   },
   {
     'echasnovski/mini.indentscope',
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {
-          'aerial',
           'lazy',
           'alpha',
         },

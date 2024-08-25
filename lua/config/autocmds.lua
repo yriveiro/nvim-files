@@ -6,7 +6,7 @@ vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#404040' })
 vim.api.nvim_set_hl(0, 'RenderMarkdownFollowUp', { fg = '#f78c6c', bold = true })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'neo-tree', 'Outline' },
+  pattern = { 'neo-tree' },
   callback = function()
     require('ufo').detach()
     vim.opt_local.foldenable = false
