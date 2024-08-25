@@ -23,12 +23,17 @@ return {
     dependencies = {
       {
         's1n7ax/nvim-window-picker',
-        lazy = true,
         opts = {
+          hint = 'statusline-winbar',
+          picker_config = {
+            statusline_winbar_picker = {
+              use_winbar = 'always',
+            },
+          },
           show_prompt = false,
           filter_rules = {
             autoselect_one = false,
-            include_current_win = true,
+            include_current_win = false,
           },
           highlights = {
             statusline = {
