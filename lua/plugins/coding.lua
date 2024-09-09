@@ -12,7 +12,7 @@ return {
       local lspkind = require 'lspkind'
 
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-        { name = 'cmp_yanky' },
+        { name = 'cmp_yanky', priority = -100 },
         { name = 'nvim_lua' },
         { name = 'emoji' },
         {
