@@ -126,84 +126,13 @@ return {
     end,
   },
   {
-    'telescope.nvim',
-    dependencies = {
-      {
-        'nvim-telescope/telescope-project.nvim',
-        event = 'VeryLazy',
-        config = function()
-          require('telescope').load_extension 'project'
-        end,
-      },
-      {
-        'ThePrimeagen/git-worktree.nvim',
-        event = 'VeryLazy',
-        keys = {
-          { -- lazy style key map
-            '<leader>cw',
-            '<cmd>Telescope git_worktree<cr>',
-            desc = 'Git worktree',
-          },
-        },
-        config = function()
-          require('telescope').load_extension 'git_worktree'
-        end,
-      },
-      {
-        'nvim-telescope/telescope-ui-select.nvim',
-        event = 'VeryLazy',
-        config = function()
-          require('telescope').load_extension 'ui-select'
-        end,
-      },
-      {
-        'debugloop/telescope-undo.nvim',
-        event = 'VeryLazy',
-        keys = {
-          { -- lazy style key map
-            '<leader>cu',
-            '<cmd>Telescope undo<cr>',
-            desc = 'undo history',
-          },
-        },
-        config = function()
-          require('telescope').load_extension 'undo'
-        end,
-      },
-    },
-    opts = {
-      pickers = {
-        find_files = {
-          hidden = true,
-        },
-      },
-      defaults = {
-        layout_strategy = 'horizontal',
-        sorting_strategy = 'ascending',
-        layout_config = {
-          horizontal = {
-            prompt_position = 'top',
-            preview_width = 0.55,
-            results_width = 0.8,
-          },
-          vertical = {
-            mirror = false,
-          },
-          width = 0.80,
-          height = 0.85,
-          preview_cutoff = 120,
-        },
-      },
-    },
-  },
-  {
     'danymat/neogen',
     dependencies = 'nvim-treesitter/nvim-treesitter',
     config = true,
     keys = {
       {
         mode = { 'v', 'n' },
-        '<Leader>cc',
+        '<Leader>cd',
         '<cmd>Neogen<cr>',
         desc = 'Create doc string for selected text or word under the cursor',
       },
