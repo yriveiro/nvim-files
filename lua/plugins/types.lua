@@ -1,3 +1,3 @@
 return {
-  { 'justinsgithub/wezterm-types' },
+  { 'gonstoll/wezterm-types' },
 }
