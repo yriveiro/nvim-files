@@ -10,14 +10,6 @@ return {
             llm = '  CodeCompanion',
             user = ' us ',
           },
-          keymaps = {
-            close = {
-              modes = {
-                n = 'q',
-                i = '<Esc>',
-              },
-            },
-          },
         },
         inline = {
           adapter = 'ollama',

@@ -59,12 +59,31 @@ return {
         GitSignsChange = { fg = colors.orange },
         GitSignsDelete = { fg = colors.red },
 
-        NvimTreeFolderIcon = { fg = colors.grey9 },
-        NvimTreeIndentMarker = { fg = colors.grey12 },
-        NvimTreeNormal = { fg = colors.grey5, bg = colors.grey14 },
+        -- NvimTreeFolderIcon = { fg = colors.grey9 },
+        -- NvimTreeIndentMarker = { fg = colors.grey12 },
+        -- NvimTreeNormal = { fg = colors.grey5, bg = colors.grey14 },
 
         NormalFloat = { bg = colors.grey14 },
         FloatBorder = { bg = colors.grey14, fg = colors.grey14 },
+
+        FzfLuaNormal = { fg = colors.blue, bg = colors.grey16 },
+        FzfLuaBorder = { bg = colors.grey16, fg = colors.grey14 },
+
+        FzfLuaCursor = { fg = colors.blue },
+        FzfLuaCursorLine = { fg = colors.blue },
+        FzfLuaCursorLineNr = { fg = colors.blue },
+
+        FzfLuaPreviewNormal = { fg = colors.grey16, bg = colors.grey16 },
+        FzfLuaPreviewBorder = { fg = colors.grey16, bg = colors.grey16 },
+
+        FzfLuaTitle = { fg = colors.blue, bg = colors.grey14 },
+        FzfLuaPreviewTitle = { fg = colors.blue },
+
+        FzfLuaFzfPrompt = { fg = colors.yellow },
+        FzfLuaFzfMarker = { fg = colors.yellow },
+        FzfLuaFzfPointer = { fg = colors.yellow },
+
+        FzfLuaBackdrop = { bg = colors.grey14 },
 
         TelescopePromptPrefix = { bg = colors.grey14 },
         TelescopePromptNormal = { bg = colors.grey14 },
