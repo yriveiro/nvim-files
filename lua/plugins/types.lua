@@ -1,0 +1,3 @@
+return {
+  { 'gonstoll/wezterm-types' },
+}

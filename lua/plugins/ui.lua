@@ -1,130 +1,145 @@
 return {
-  -- Better `vim.notify()`
   {
-    'rcarriga/nvim-notify',
+    'smoka7/multicursors.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'smoka7/hydra.nvim',
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
     keys = {
       {
-        '<leader>1',
-        function()
-          require('notify').dismiss { silent = true, pending = true }
-        end,
-        desc = 'Dismiss all Notifications',
+        mode = { 'v', 'n' },
+        '<Leader>m',
+        '<cmd>MCstart<cr>',
+        desc = 'Create a selection for selected text or word under the cursor',
+      },
+      {
+        mode = { 'n' },
+        '<Leader>mp',
+        '<cmd>MCpattern<cr>',
+        desc = 'Prompts for a pattern and selects every match in the buffer',
+      },
+      {
+        mode = { 'n', 'v' },
+        '<Leader>mc',
+        '<cmd>MCclear<cr>',
+        desc = 'Clears all the selections',
       },
     },
-    opts = {
-      timeout = 3000,
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.75)
-      end,
-    },
   },
-
-  -- better vim.ui
   {
-    'stevearc/dressing.nvim',
-    lazy = true,
-    init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.select = function(...)
-        require('lazy').load { plugins = { 'dressing.nvim' } }
-        return vim.ui.select(...)
+    'kevinhwang91/nvim-ufo',
+    dependencies = {
+      'kevinhwang91/promise-async',
+      lazy = true,
+    },
+    config = function()
+      local handler = function(virtText, lnum, endLnum, width, truncate)
+        local newVirtText = {}
+        local suffix = ('  %d '):format(endLnum - lnum)
+        local sufWidth = vim.fn.strdisplaywidth(suffix)
+        local targetWidth = width - sufWidth
+        local curWidth = 0
+        for _, chunk in ipairs(virtText) do
+          local chunkText = chunk[1]
+          local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+          if targetWidth > curWidth + chunkWidth then
+            table.insert(newVirtText, chunk)
+          else
+            chunkText = truncate(chunkText, targetWidth - curWidth)
+            local hlGroup = chunk[2]
+            table.insert(newVirtText, { chunkText, hlGroup })
+            chunkWidth = vim.fn.strdisplaywidth(chunkText)
+            -- str width returned from truncate() may less than 2nd argument, need padding
+            if curWidth + chunkWidth < targetWidth then
+              suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+            end
+            break
+          end
+          curWidth = curWidth + chunkWidth
+        end
+        table.insert(newVirtText, { suffix, 'MoreMsg' })
+        return newVirtText
       end
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.input = function(...)
-        require('lazy').load { plugins = { 'dressing.nvim' } }
-        return vim.ui.input(...)
-      end
-    end,
-  },
 
-  -- indent guides for Neovim
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    event = { 'BufReadPost', 'BufNewFile' },
-    opts = {
-      char = '│',
-      filetype_exclude = {
-        'help',
-        'alpha',
-        'dashboard',
-        'neo-tree',
-        'Trouble',
-        'noice',
-        'lazy',
-        'mason',
-        'notify',
-        'toggleterm',
-        'lazyterm',
-      },
-      show_trailing_blankline_indent = false,
-      show_current_context = false,
-    },
-  },
-
-  -- NOTE: trial, not set the value of this yet.
-  {
-    'echasnovski/mini.indentscope',
-    version = false, -- wait till new 0.7.0 release to put it back on semver
-    event = { 'BufReadPre', 'BufNewFile' },
-    opts = {
-      symbol = '│',
-      options = { try_as_border = true },
-    },
-    init = function()
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = {
-          'help',
+      require('ufo').setup {
+        enable_get_fold_virt_text = true,
+        preview = {},
+        open_fold_hl_timeout = 150,
+        close_fold_kinds_for_ft = { default = { 'imports', 'comment' } },
+        fold_virt_text_handler = handler,
+        filetype_exclude = {
+          'trouble',
+          'aerial',
           'alpha',
           'dashboard',
-          'neo-tree',
-          'Trouble',
-          'noice',
+          'help',
           'lazy',
           'mason',
-          'notify',
-          'toggleterm',
-          'lazyterm',
+          'neo-tree',
+          'spectre_panel',
         },
-        callback = function()
-          vim.b.miniindentscope_disable = true
+        provider_selector = function()
+          return { 'treesitter', 'indent' }
         end,
-      })
+      }
     end,
   },
-
-  -- keymap ui
   {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
+    'm4xshen/smartcolumn.nvim',
     opts = {
-      plugins = { spelling = true },
-      defaults = {
-        mode = { 'n', 'v' },
-        ['<leader>f'] = { name = '+Telescope' },
-        ['<leader>d'] = { name = '+Diffview' },
+      disabled_filetypes = {
+        'alpha',
+        'help',
+        'lazy',
+        'trouble',
+        'markdown',
+        'mason',
+        'neo-tree',
+        'noice',
+        'text',
+        'spectre_panel',
+        'codecompanion',
+      },
+      custom_colorcolumn = {
+        python = { '120', '200' },
       },
     },
-    config = function(_, opts)
-      local wk = require 'which-key'
-      wk.setup(opts)
-      wk.register(opts.defaults)
+  },
+  -- Custom configurations for LazyVim ones
+  {
+    'goolord/alpha-nvim',
+    optional = true,
+    opts = function(_, dashboard)
+      dashboard.section.header.val = {
+        [[ < Join Neovim, we have buffers! > ]],
+        [[ --------------------------------- ]],
+        [[        \    ,-^-.                 ]],
+        [[         \   !oYo!                 ]],
+        [[          \ /./=\.\______          ]],
+        [[               ##        )\/\      ]],
+        [[                ||-----w||         ]],
+        [[                ||      ||         ]],
+        [[                                   ]],
+        [[             Cowth Vader           ]],
+      }
+      local button = dashboard.button('m', '󰏓 ' .. ' Mason', ':Mason<CR>')
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+      table.insert(dashboard.section.buttons.val, 9, button)
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+      button = dashboard.button('op', ' ' .. ' [Obsidian] Personal', ':ObsidianWorkspace personal<CR>')
+      table.insert(dashboard.section.buttons.val, 10, button)
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+      button = dashboard.button('ow', ' ' .. ' [Obsidian] Work', ':ObsidianWorkspace work<CR>')
+      table.insert(dashboard.section.buttons.val, 11, button)
     end,
   },
-
-  -- colors
-  {
-    'NvChad/nvim-colorizer.lua',
-    event = 'VeryLazy',
-    config = true,
-  },
-
-  -- Noice
   {
     'folke/noice.nvim',
-    event = 'VeryLazy',
     opts = {
       cmdline = {
         enabled = true, -- enables the Noice cmdline UI
@@ -132,13 +147,42 @@ return {
         opts = { buf_options = { filetype = 'vim' } }, -- enable syntax highlighting in the cmdline
         ---@type table<string, CmdlineFormat>
         format = {
-          cmdline = { pattern = '^:', icon = '❯_' },
-          search_down = { kind = 'search', pattern = '^/', icon = ' ', ft = 'regex' },
-          search_up = { kind = 'search', pattern = '^%?', icon = ' ', ft = 'regex' },
-          filter = { pattern = '^:%s*!', icon = '$_', ft = 'sh' },
-          lua = { pattern = '^:%s*lua%s+', icon = '_', ft = 'lua' },
-          help = { pattern = '^:%s*h%s+', icon = '_' },
-          diff = { pattern = '^:%s*DiffviewOpen%s+', icon = '_' },
+          -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
+          -- view: (default is cmdline view)
+          -- opts: any options passed to the view
+          -- icon_hl_group: optional hl_group for the icon
+          cmdline = {
+            pattern = '^:',
+            icon = '❯_',
+            lang = 'vim',
+          },
+          search_down = {
+            kind = 'search',
+            pattern = '^/',
+            icon = ' ',
+            ft = 'regex',
+          },
+          search_up = {
+            kind = 'search',
+            pattern = '^%?',
+            icon = ' ',
+            lang = 'regex',
+          },
+          filter = {
+            pattern = '^:%s*!',
+            icon = '$_',
+            lang = 'sh',
+          },
+          lua = {
+            pattern = { '^:%s*lua%s+', '^:%s*lua%s*=%s*', '^:%s*=%s*' },
+            icon = '_',
+            lang = 'lua',
+          },
+          help = {
+            pattern = '^:%s*h%s+',
+            icon = '󱜹_',
+          },
+          -- lua = false, -- to disable a format, set to `false`
         },
       },
       views = {
@@ -152,249 +196,91 @@ return {
             width = 'auto',
             height = 'auto',
           },
-          filter_options = {},
           win_options = {
             winhighlight = {
               Normal = 'NormalFloat',
             },
           },
         },
-        notify = {
-          backend = 'notify',
-          replace = true,
-          format = 'details',
-        },
-      },
-      messages = {
-        view = 'mini',
-      },
-      notify = {
-        view = 'mini',
-      },
-      lsp = {
-        override = {
-          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
-          ['vim.lsp.util.stylize_markdown'] = true,
-          ['cmp.entry.get_documentation'] = true,
-        },
-      },
-      routes = {
-        {
-          filter = {
-            event = 'msg_show',
-            any = {
-              { find = '%d+L, %d+B' },
-              { find = '; after #%d+' },
-              { find = '; before #%d+' },
-            },
-          },
-          view = 'mini',
-        },
       },
       presets = {
-        long_message_to_split = true,
-        inc_rename = true,
+        bottom_search = false, -- use a classic bottom cmdline for search
+        command_palette = false, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true, -- add a border to hover docs and signature help
       },
     },
-    -- stylua: ignore
-    keys = {
-      { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
-      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
-      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
-      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
+  },
+  {
+    'toppair/peek.nvim',
+    event = { 'VeryLazy' },
+    build = 'deno task --quiet build:fast',
+    config = function()
+      require('peek').setup()
+      -- refer to `configuration to change defaults`
+      vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+      vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
+    end,
+  },
+  {
+    'folke/todo-comments.nvim',
+    opts = {
+      signs = true, -- show icons in the signs column
+      sign_priority = 8, -- sign priority
+      -- keywords recognized as todo comments
+      keywords = {
+        FIX = {
+          icon = ' ', -- icon used for the sign, and in search results
+          color = 'error', -- can be a hex color, or a named color (see below)
+          alt = { 'FIXME', 'BUG', 'FIXIT', 'ISSUE' }, -- a set of other keywords that all map to this FIX keywords
+          -- signs = false, -- configure signs for some keywords individually
+        },
+        TODO = { icon = ' ', color = 'info' },
+        HACK = { icon = ' ', color = 'warning' },
+        WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
+        PERF = { icon = '⚡', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
+        NOTE = { icon = 'ℹ ', color = 'hint', alt = { 'INFO' } },
+        TEST = { icon = '󰅒 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
+      },
+      highlight = {
+        before = '', -- 'fg' or 'bg' or empty
+        -- keyword = 'wide', -- 'fg', 'bg', 'wide' or empty. (wide is the same as bg, but will also highlight surrounding characters)
+        keyword = 'wide', -- 'fg', 'bg', 'wide' or empty. (wide is the same as bg, but will also highlight surrounding characters)
+        after = '', -- 'fg' or 'bg' or empty
+        pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
+        comments_only = true, -- uses treesitter to match keywords in comments only
+        max_line_len = 400, -- ignore lines longer than this
+        exclude = {}, -- list of file types to exclude highlighting
+      },
     },
   },
-
-  -- Dashboard
   {
-    'goolord/alpha-nvim',
-    event = 'VimEnter',
-    opts = function()
-      local dashboard = require 'alpha.themes.dashboard'
-      local icons = require('config').icons
-      local logo = [[
-   < Join Neovim, we have buffers! >
-   ---------------------------------
-          \    ,-^-.                
-           \   !oYo!                
-            \ /./=\.\______         
-                 ##        )\/\     
-                  ||-----w||        
-                  ||      ||        
-                                    
-               Cowth Vader          
-    ]]
-
-      dashboard.section.header.val = vim.split(logo, '\n')
-      dashboard.section.buttons.val = {
-        dashboard.button('f', ' ' .. ' Find file', ':Telescope find_files <CR>'),
-        dashboard.button('n', ' ' .. ' New file', ':ene <BAR> startinsert <CR>'),
-        dashboard.button('r', ' ' .. ' Recent files', ':Telescope oldfiles <CR>'),
-        dashboard.button('g', ' ' .. ' Find text', ':Telescope live_grep <CR>'),
-        dashboard.button('c', ' ' .. ' Config', ':e $MYVIMRC <CR>'),
-        dashboard.button('s', ' ' .. ' Restore Session', [[:lua require 'persistence'.load() <CR>]]),
-        dashboard.button('l', '󰒲 ' .. ' Lazy', ':Lazy <CR>'),
-        dashboard.button('m', ' ' .. ' Mason', ':Mason <CR>'),
-        dashboard.button(
-          'p',
-          icons.kinds.Unit .. ' Projects',
-          [[:lua require('telescope').extensions.project.project()<CR>]]
-        ),
-        dashboard.button('q', ' ' .. ' Quit', ':qa <CR>'),
-      }
-      for _, button in ipairs(dashboard.section.buttons.val) do
-        button.opts.hl = 'AlphaButtons'
-        button.opts.hl_shortcut = 'AlphaShortcut'
-      end
-      dashboard.section.header.opts.hl = 'AlphaHeader'
-      dashboard.section.buttons.opts.hl = 'AlphaButtons'
-      dashboard.section.footer.opts.hl = 'AlphaFooter'
-      return dashboard
-    end,
-    config = function(_, dashboard)
-      -- close Lazy and re-open when the dashboard is ready
-      if vim.o.filetype == 'lazy' then
-        vim.cmd.close()
-        vim.api.nvim_create_autocmd('User', {
-          pattern = 'AlphaReady',
-          callback = function()
-            require('lazy').show()
-          end,
-        })
-      end
-
-      require('alpha').setup(dashboard.opts)
-
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'LazyVimStarted',
+    'stevearc/stickybuf.nvim',
+    opts = {},
+  },
+  {
+    'onsails/lspkind.nvim',
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+  },
+  {
+    'echasnovski/mini.indentscope',
+    init = function()
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = {
+          'lazy',
+          'alpha',
+        },
         callback = function()
-          local stats = require('lazy').stats()
-          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-          dashboard.section.footer.val = '⚡ Neovim loaded ' .. stats.count .. ' plugins in ' .. ms .. 'ms'
-          pcall(vim.cmd.AlphaRedraw)
+          vim.b.miniindentscope_disable = true ---@diagnostic disable-line
         end,
       })
     end,
   },
-
-  -- status line
   {
-    'nvim-lualine/lualine.nvim',
-    event = 'VeryLazy',
-    opts = function()
-      local icons = require('config').icons
-      local Util = require 'core.util'
-
-      return {
-        options = {
-          theme = 'auto',
-          globalstatus = true,
-          disabled_filetypes = { statusline = { 'dashboard', 'alpha' } },
-        },
-        sections = {
-          lualine_a = { 'mode' },
-          lualine_b = { 'branch' },
-          lualine_c = {
-            {
-              'diagnostics',
-              symbols = {
-                error = icons.diagnostics.Error,
-                warn = icons.diagnostics.Warn,
-                info = icons.diagnostics.Info,
-                hint = icons.diagnostics.Hint,
-              },
-            },
-            { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 0 } },
-            { 'filename', path = 1, symbols = { modified = '  ', readonly = '', unnamed = '' } },
-            -- stylua: ignore
-          },
-          lualine_y = {
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.command.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = Util.fg("Statement"),
-          },
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = Util.fg("Constant"),
-          },
-          -- stylua: ignore
-          {
-            function() return "  " .. require("dap").status() end,
-            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = Util.fg("Debug"),
-          },
-            { require('lazy.status').updates, cond = require('lazy.status').has_updates, color = Util.fg 'Special' },
-            {
-              'diff',
-              symbols = {
-                added = icons.git.added,
-                modified = icons.git.modified,
-                removed = icons.git.removed,
-              },
-            },
-          },
-          lualine_z = {
-            { 'progress', separator = ' ', padding = { left = 1, right = 0 } },
-            { 'location', padding = { left = 0, right = 1 } },
-          },
-        },
-        extensions = { 'neo-tree', 'lazy' },
-      }
-    end,
+    'kevinhwang91/nvim-bqf',
+    lazy = 'VeryLazy',
   },
-
-  --  smart column
-  {
-    'm4xshen/smartcolumn.nvim',
-    event = 'VeryLazy',
-    opts = {
-      disabled_filetypes = {
-        'help',
-        'text',
-        'markdown',
-        'alpha',
-        'lazy',
-        'mason',
-        'neorg',
-      },
-      custom_colorcolumn = {
-        python = { '120', '200' },
-      },
-    },
-  },
-
-  -- symbols
-  {
-    'simrat39/symbols-outline.nvim',
-    event = 'VeryLazy',
-    -- stylua: ignore
-    keys = {
-      { ",§", '<cmd>SymbolsOutline<CR>', desc = 'Tree like view for symbols' },
-    },
-    config = true,
-  },
-
-  -- window management
-  {
-    's1n7ax/nvim-window-picker',
-    name = 'window-picker',
-    event = 'VeryLazy',
-    version = '2.*',
-    config = function()
-      require('window-picker').setup()
-    end,
-  },
-
-  -- icons
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
-
-  -- ui components
-  { 'MunifTanjim/nui.nvim', lazy = true },
 }
