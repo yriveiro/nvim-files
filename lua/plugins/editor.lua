@@ -153,4 +153,10 @@ return {
     'towolf/vim-helm',
     event = 'VeryLazy',
   },
+  {
+    'folke/which-key.nvim',
+    opts = {
+      preset = 'classic',
+    },
+  },
 }

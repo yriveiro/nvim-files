@@ -104,6 +104,13 @@ return {
             },
           },
         },
+        typos_lsp = {
+          settings = {
+            init_options = {
+              config = '~/.config/typos/typos.toml',
+            },
+          },
+        },
       },
     },
   },
