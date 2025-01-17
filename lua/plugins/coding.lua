@@ -3,12 +3,18 @@ return {
     'saghen/blink.cmp',
     opts = {
       sources = {
-        default = { 'codecompanion' },
+        default = { 'emoji', 'codecompanion' },
         providers = {
           codecompanion = {
             name = 'CodeCompanion',
             module = 'codecompanion.providers.completion.blink',
             enabled = true,
+          },
+          emoji = {
+            module = 'blink-emoji',
+            name = 'Emoji',
+            score_offset = 15, -- Tune by preference
+            opts = { insert = true }, -- Insert emoji (default) or complete its name
           },
         },
       },
@@ -29,6 +35,7 @@ return {
       },
     },
   },
+  { 'moyiz/blink-emoji.nvim' },
   {
     'folke/lazydev.nvim',
     ft = 'lua',
