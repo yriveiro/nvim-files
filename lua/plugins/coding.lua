@@ -3,7 +3,7 @@ return {
     'saghen/blink.cmp',
     opts = {
       sources = {
-        default = { 'emoji', 'codecompanion' },
+        default = { 'emoji', 'codecompanion', 'env' },
         providers = {
           codecompanion = {
             name = 'CodeCompanion',
@@ -13,8 +13,18 @@ return {
           emoji = {
             module = 'blink-emoji',
             name = 'Emoji',
-            score_offset = 15, -- Tune by preference
+            score_offset = -9999, -- Tune by preference
             opts = { insert = true }, -- Insert emoji (default) or complete its name
+          },
+          env = {
+            module = 'blink-cmp-env',
+            name = 'Env',
+            opts = {
+              eval_on_confirm = false,
+              item_kind = require('blink.cmp.types').CompletionItemKind.Variable,
+              show_braces = false,
+              show_documentation_window = true,
+            },
           },
         },
       },
@@ -36,6 +46,7 @@ return {
     },
   },
   { 'moyiz/blink-emoji.nvim' },
+  { 'bydlw98/blink-cmp-env' },
   {
     'folke/lazydev.nvim',
     ft = 'lua',
