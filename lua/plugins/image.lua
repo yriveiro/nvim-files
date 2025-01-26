@@ -53,4 +53,16 @@ return {
       { '<LocalLeader>p', '<cmd>PasteImage<cr>', desc = 'Paste image from system clipboard' },
     },
   },
+  {
+    'yriveiro/plantuml.nvim',
+    dependencies = {
+      '3rd/image.nvim',
+    },
+    keys = {
+      { '<LocalLeader>pp', '<cmd>PlantUMLPreview<cr>', desc = 'Preview Plantuml file' },
+    },
+    config = function()
+      require('plantuml').setup {}
+    end,
+  },
 }
