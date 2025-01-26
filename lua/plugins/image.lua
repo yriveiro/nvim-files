@@ -12,11 +12,9 @@ return {
           filetypes = { 'markdown', 'vimwiki' },
         },
       },
-      max_width = nil,
-      max_height = nil,
-      max_width_window_percentage = nil,
-      max_height_window_percentage = 50,
-      kitty_method = 'unicode-placeholders',
+      max_width_window_percentage = 100,
+      max_height_window_percentage = 100,
+      scale_factor = 2.0,
     },
   },
   {
@@ -53,5 +51,17 @@ return {
     keys = {
       { '<LocalLeader>p', '<cmd>PasteImage<cr>', desc = 'Paste image from system clipboard' },
     },
+  },
+  {
+    'yriveiro/plantuml.nvim',
+    dependencies = {
+      '3rd/image.nvim',
+    },
+    keys = {
+      { '<LocalLeader>pp', '<cmd>PlantUMLPreview<cr>', desc = 'Preview Plantuml file' },
+    },
+    config = function()
+      require('plantuml').setup {}
+    end,
   },
 }

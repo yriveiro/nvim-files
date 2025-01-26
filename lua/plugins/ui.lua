@@ -242,6 +242,7 @@ return {
         PERF = { icon = '⚡', alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' } },
         NOTE = { icon = 'ℹ ', color = 'hint', alt = { 'INFO' } },
         TEST = { icon = '󰅒 ', color = 'test', alt = { 'TESTING', 'PASSED', 'FAILED' } },
+        DEPR = { icon = ' ', color = 'error', alt = { 'DEPRECATION' } },
       },
       highlight = {
         before = '', -- 'fg' or 'bg' or empty
