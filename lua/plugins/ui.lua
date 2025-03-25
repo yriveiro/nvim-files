@@ -100,7 +100,7 @@ return {
         'noice',
         'text',
         'spectre_panel',
-        'codecompanion',
+        'Avante',
       },
       custom_colorcolumn = {
         python = { '120', '200' },
