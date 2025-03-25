@@ -1,87 +1,17 @@
 return {
   {
-    'olimorris/codecompanion.nvim',
-    cmd = { 'CodeCompanion', 'CodeCompanionActions', 'CodeCompanionAdd', 'CodeCompanionChat' },
-    opts = {
-      adapters = {
-        ollama = function()
-          return require('codecompanion.adapters').extend('ollama', {
-            env = {
-              url = 'https://ollama.4425017.work',
-            },
-            headers = {
-              ['Content-Type'] = 'application/json',
-            },
-            parameters = {
-              sync = true,
-            },
-
-            schema = {
-              model = {
-                default = 'llama3.2',
-              },
-            },
-          })
-        end,
-      },
-      strategies = {
-        chat = {
-          adapter = 'ollama',
-          roles = {
-            llm = '  CodeCompanion',
-            user = ' us ',
-          },
-        },
-        inline = {
-          adapter = 'ollama',
-        },
-        agent = {
-          adapter = 'ollama',
-        },
-      },
-    },
-
-    keys = {
-      { '<leader>a', '', desc = '+ai', mode = { 'n', 'v' } },
-      { '<leader>ap', '<cmd>CodeCompanionActions<cr>', mode = { 'n', 'v' }, desc = 'Prompt Actions (CodeCompanion)' },
-      { '<leader>aa', '<cmd>CodeCompanionChat<cr>', mode = { 'n', 'v' }, desc = 'Toggle (CodeCompanion)' },
-      { '<leader>ac', '<cmd>CodeCompanionAdd<cr>', mode = 'v', desc = 'Add code to CodeCompanion' },
-      { '<leader>ai', '<cmd>CodeCompanion<cr>', mode = 'n', desc = 'Inline prompt (CodeCompanion)' },
-    },
-  },
-  {
     'yetone/avante.nvim',
     event = 'VeryLazy',
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
       provider = 'ollama',
+      auto_suggestions_provider = 'ollama',
+      debug = false,
       use_absolute_path = true,
-      vendors = {
-        ollama = {
-          ['local'] = true,
-          endpoint = 'https://ollama.4425017.work',
-          model = 'llama3.2:latest',
-          parse_curl_args = function(opts, code_opts)
-            return {
-              url = opts.endpoint .. '/v1/chat/completions',
-              headers = {
-                ['Accept'] = 'application/json',
-                ['Content-Type'] = 'application/json',
-                ['x-api-key'] = 'ollama',
-              },
-              body = {
-                model = opts.model,
-                messages = require('avante.providers').copilot.parse_messages(code_opts), -- you can make your own message, but this is very advanced
-                max_tokens = 4096,
-                stream = true,
-              },
-            }
-          end,
-          parse_response_data = function(data_stream, event_state, opts)
-            require('avante.providers').openai.parse_response(data_stream, event_state, opts)
-          end,
-        },
+      ollama = {
+        endpoint = 'http://192.168.1.78:11434',
+        model = 'deepseek-r1:8b', -- Specify your model here
       },
       behaviour = {
         auto_suggestions = false, -- Experimental stage
@@ -124,6 +54,12 @@ return {
         sidebar_header = {
           align = 'center', -- left, center, right for title
           rounded = true,
+        },
+        file_selector = {
+          --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string
+          provider = 'fzf',
+          -- Options override for custom providers
+          provider_opts = {},
         },
       },
       highlights = {
