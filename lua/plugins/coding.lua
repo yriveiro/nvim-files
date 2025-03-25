@@ -1,15 +1,14 @@
 return {
   {
     'saghen/blink.cmp',
+    dependencies = {
+      { 'saghen/blink.compat', lazy = true, version = false },
+    },
     opts = {
       sources = {
-        default = { 'emoji', 'codecompanion', 'env' },
+        default = { 'emoji' },
+        compat = { 'obsidian', 'obsidian_new', 'obsidian_tags', 'avante_commands', 'avante_mentions', 'avante_files' },
         providers = {
-          codecompanion = {
-            name = 'CodeCompanion',
-            module = 'codecompanion.providers.completion.blink',
-            enabled = true,
-          },
           emoji = {
             module = 'blink-emoji',
             name = 'Emoji',
@@ -25,6 +24,24 @@ return {
               show_braces = false,
               show_documentation_window = true,
             },
+          },
+          avante_commands = {
+            name = 'avante_commands',
+            module = 'blink.compat.source',
+            score_offset = 90, -- show at a higher priority than lsp
+            opts = {},
+          },
+          avante_files = {
+            name = 'avante_files',
+            module = 'blink.compat.source',
+            score_offset = 100, -- ~40 points higher than LSP ()
+            opts = {},
+          },
+          avante_mentions = {
+            name = 'avante_mentions',
+            module = 'blink.compat.source',
+            score_offset = 1000, -- show at a higher priority than lsp
+            opts = {},
           },
         },
       },
