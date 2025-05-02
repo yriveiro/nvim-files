@@ -47,7 +47,14 @@ return {
       },
       appearance = {
         -- use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'FiraCode Nerd Font Mono',
+        nerd_font_variant = (function()
+          local hostname = io.popen('hostname'):read '*l'
+          if string.sub(hostname, 1, 2) == 'MB' then
+            return 'FiraCode Nerd Font Mono'
+          else
+            return 'MyFont Nerd Font Mono'
+          end
+        end)(),
       },
       completion = {
         menu = {
