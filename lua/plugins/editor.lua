@@ -14,10 +14,10 @@ return {
     },
     config = true,
   },
-  {
-    'wakatime/vim-wakatime',
-    event = 'VeryLazy',
-  },
+  -- {
+  --   'wakatime/vim-wakatime',
+  --   event = 'VeryLazy',
+  -- },
   {
     'nvim-neo-tree/neo-tree.nvim',
     dependencies = {
@@ -155,6 +155,7 @@ return {
   },
   {
     'folke/which-key.nvim',
+    event = 'VeryLazy',
     opts = {
       preset = 'classic',
     },

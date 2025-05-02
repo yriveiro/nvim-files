@@ -1,6 +1,9 @@
 return {
   {
     'epwalsh/obsidian.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = { 'markdown', 'alpha' },
@@ -53,9 +56,9 @@ return {
       },
       {
         mode = { 'n' },
-        '<LocalLeader>os',
-        '<cmd>ObsidianSearch<cr>',
-        desc = 'Search',
+        '<LocalLeader>of',
+        '<cmd>ObsidianFollowLink<cr>',
+        desc = 'Follow Link',
       },
     },
     opts = {
@@ -65,8 +68,8 @@ return {
           path = '~/vaults/work',
         },
         {
-          name = 'personal',
-          path = '~/vaults/personal',
+          name = 'jarvis-dev',
+          path = '~/Development/gitlab/dgt/jarvis/jarvis-dev',
         },
       },
       notes_subdir = 'notes',
@@ -81,12 +84,12 @@ return {
         -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
         template = nil,
       },
-      -- completion = {
-      --   -- Set to false to disable completion.
-      --   nvim_cmp = true,
-      --   -- Trigger completion at 2 chars.
-      --   min_chars = 3,
-      -- },
+      completion = {
+        -- Set to false to disable completion.
+        nvim_cmp = true,
+        -- Trigger completion at 2 chars.
+        min_chars = 2,
+      },
       mappings = {
         -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
         ['<LocalLeader>g'] = {
@@ -110,13 +113,15 @@ return {
           opts = { buffer = true, desc = 'Create checkboxe entry' },
         },
       },
-      templates = {
-        subdir = 'templates',
-        date_format = '%Y-%m-%d',
-        time_format = '%H:%M',
-        -- A map for custom variables, the key should be the variable and the value a function
-        substitutions = {},
-      },
+      -- templates = {
+      --   subdir = 'templates',
+      --   date_format = '%Y-%m-%d',
+      --   time_format = '%H:%M',
+      --   -- A map for custom variables, the key should be the variable and the value a function
+      --   substitutions = {
+      --     alias = { '%MMMM %d, %yyyy' },
+      --   },
+      -- },
       ui = {
         enable = false, -- set to false to disable all additional syntax features
         update_debounce = 200, -- update delay after a text change (in milliseconds)

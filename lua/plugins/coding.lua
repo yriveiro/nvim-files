@@ -47,7 +47,7 @@ return {
       },
       appearance = {
         -- use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'MyFont Nerd Font Mono',
+        nerd_font_variant = 'FiraCode Nerd Font Mono',
       },
       completion = {
         menu = {

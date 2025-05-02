@@ -11,10 +11,10 @@ return {
       use_absolute_path = true,
       ollama = {
         endpoint = 'http://192.168.1.78:11434',
-        model = 'deepseek-r1:8b', -- Specify your model here
+        model = 'mistral',
       },
       behaviour = {
-        auto_suggestions = false, -- Experimental stage
+        auto_suggestions = false,
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
@@ -27,8 +27,8 @@ return {
           all_theirs = 'ca',
           both = 'cb',
           cursor = 'cc',
-          next = ']x',
-          prev = '[x',
+          next = '\\>x',
+          prev = '\\<x',
         },
         suggestion = {
           accept = '<M-l>',
@@ -37,8 +37,8 @@ return {
           dismiss = '<C-]>',
         },
         jump = {
-          next = ']]',
-          prev = '[[',
+          next = '\\<',
+          prev = '\\>',
         },
         submit = {
           normal = '<CR>',
@@ -113,5 +113,14 @@ return {
         ft = { 'markdown', 'Avante' },
       },
     },
+  },
+  {
+    'sourcegraph/sg.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('sg').setup { accept_tos = true }
+    end,
   },
 }
