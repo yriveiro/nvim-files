@@ -4,12 +4,18 @@ return {
     opts = {
       formatters_by_ft = {
         yaml = { 'yamlfmt' },
+        xml = { 'xmlformatter' },
         toml = { 'taplo' },
         markdown = { 'markdownlint-cli2' },
         python = { 'ruff_format' },
         hcl = { 'terraform_fmt' },
         sql = { 'sqlfluff' },
         cs = { 'csharpier' },
+      },
+      formatters = {
+        xmlformatter = {
+          prepend_args = { '--blanks' },
+        },
       },
     },
   },
