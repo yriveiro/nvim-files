@@ -88,4 +88,17 @@ return {
       },
     },
   },
+  {
+    'aznhe21/actions-preview.nvim',
+    config = true,
+    keys = {
+      {
+        '<Leader>cp',
+        function()
+          require('actions-preview').code_actions {}
+        end,
+        desc = 'Code Actions Preview',
+      },
+    },
+  },
 }
