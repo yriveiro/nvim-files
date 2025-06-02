@@ -1,6 +1,6 @@
 return {
   {
-    'epwalsh/obsidian.nvim',
+    'obsidian-nvim/obsidian.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
@@ -66,10 +66,6 @@ return {
         {
           name = 'work',
           path = '~/vaults/work',
-        },
-        {
-          name = 'jarvis-dev',
-          path = '~/Development/gitlab/dgt/jarvis/jarvis-dev',
         },
       },
       notes_subdir = 'notes',
