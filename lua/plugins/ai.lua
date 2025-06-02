@@ -1,20 +1,46 @@
 return {
   {
+    'GeorgesAlkhouri/nvim-aider',
+    cmd = {
+      'AiderTerminalToggle',
+      'AiderHealth',
+    },
+    keys = {
+      { '<leader>a/', '<cmd>AiderTerminalToggle<cr>', desc = 'Open Aider' },
+      { '<leader>as', '<cmd>AiderTerminalSend<cr>', desc = 'Send to Aider', mode = { 'n', 'v' } },
+      { '<leader>ac', '<cmd>AiderQuickSendCommand<cr>', desc = 'Send Command To Aider' },
+      { '<leader>ab', '<cmd>AiderQuickSendBuffer<cr>', desc = 'Send Buffer To Aider' },
+      { '<leader>a+', '<cmd>AiderQuickAddFile<cr>', desc = 'Add File to Aider' },
+      { '<leader>a-', '<cmd>AiderQuickDropFile<cr>', desc = 'Drop File from Aider' },
+      { '<leader>ar', '<cmd>AiderQuickReadOnlyFile<cr>', desc = 'Add File as Read-Only' },
+      { '<leader>a+', '<cmd>AiderTreeAddFile<cr>', desc = 'Add File from Tree to Aider', ft = 'NvimTree' },
+      { '<leader>a-', '<cmd>AiderTreeDropFile<cr>', desc = 'Drop File from Tree from Aider', ft = 'NvimTree' },
+    },
+    dependencies = {
+      'folke/snacks.nvim',
+      --- The below dependencies are optional
+      'catppuccin/nvim',
+      'nvim-tree/nvim-tree.lua',
+    },
+    config = true,
+  },
+  {
     'yetone/avante.nvim',
     event = 'VeryLazy',
     lazy = false,
-    version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = 'ollama',
+      providers = {
+        ollama = {
+          endpoint = 'http://ollama.4425017.work',
+          model = 'mistral',
+        },
+      },
       auto_suggestions_provider = 'ollama',
       debug = false,
       use_absolute_path = true,
-      ollama = {
-        endpoint = 'http://192.168.1.78:11434',
-        model = 'mistral',
-      },
       behaviour = {
-        auto_suggestions = false,
+        auto_suggestions = false, -- Experimental stage
+        enable_cursor_planning_mode = true,
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
@@ -37,8 +63,8 @@ return {
           dismiss = '<C-]>',
         },
         jump = {
-          next = '\\<',
-          prev = '\\>',
+          next = '\\>',
+          prev = '\\<',
         },
         submit = {
           normal = '<CR>',
@@ -63,7 +89,6 @@ return {
         },
       },
       highlights = {
-        ---@type AvanteConflictHighlights
         diff = {
           current = 'DiffText',
           incoming = 'DiffAdd',
@@ -74,6 +99,10 @@ return {
         autojump = true,
         ---@type string | fun(): any
         list_opener = 'copen',
+      },
+      web_search_engine = {
+        provider = 'kagi',
+        proxy = nil,
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -114,13 +143,13 @@ return {
       },
     },
   },
-  {
-    'sourcegraph/sg.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    config = function()
-      require('sg').setup { accept_tos = true }
-    end,
-  },
+  -- {
+  --   'sourcegraph/sg.nvim',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  --   config = function()
+  --     require('sg').setup { accept_tos = true }
+  --   end,
+  -- },
 }
