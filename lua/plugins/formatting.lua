@@ -4,7 +4,7 @@ return {
     opts = {
       formatters_by_ft = {
         yaml = { 'yamlfmt' },
-        xml = { 'xmlformatter' },
+        xml = { 'lemminx' },
         toml = { 'taplo' },
         markdown = { 'markdownlint-cli2' },
         python = { 'ruff_format' },
