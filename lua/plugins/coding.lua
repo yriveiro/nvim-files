@@ -7,7 +7,7 @@ return {
     opts = {
       sources = {
         default = { 'emoji' },
-        compat = { 'obsidian', 'obsidian_new', 'obsidian_tags', 'avante_commands', 'avante_mentions', 'avante_files' },
+        compat = { 'obsidian', 'obsidian_new', 'obsidian_tags', 'avante' },
         providers = {
           emoji = {
             module = 'blink-emoji',
@@ -25,24 +25,47 @@ return {
               show_documentation_window = true,
             },
           },
-          avante_commands = {
-            name = 'avante_commands',
-            module = 'blink.compat.source',
-            score_offset = 90, -- show at a higher priority than lsp
-            opts = {},
+          -- avante_commands = {
+          --   name = 'avante_commands',
+          --   module = 'blink.compat.source',
+          --   score_offset = 90, -- show at a higher priority than lsp
+          --   opts = {},
+          -- },
+          avante = {
+            module = 'blink-cmp-avante',
+            name = 'Avante',
+            opts = {
+              -- add avante here
+              avante = {
+                command = {
+                  get_kind_name = function(_)
+                    return 'AvanteCmd'
+                  end,
+                },
+                mention = {
+                  get_kind_name = function(_)
+                    return 'AvanteMention'
+                  end,
+                },
+              },
+              kind_icons = {
+                AvanteCmd = '',
+                AvanteMention = '',
+              },
+            },
           },
-          avante_files = {
-            name = 'avante_files',
-            module = 'blink.compat.source',
-            score_offset = 100, -- ~40 points higher than LSP ()
-            opts = {},
-          },
-          avante_mentions = {
-            name = 'avante_mentions',
-            module = 'blink.compat.source',
-            score_offset = 1000, -- show at a higher priority than lsp
-            opts = {},
-          },
+          -- avante_files = {
+          --   name = 'avante_files',
+          --   module = 'blink.compat.source',
+          --   score_offset = 100, -- ~40 points higher than LSP ()
+          --   opts = {},
+          -- },
+          -- avante_mentions = {
+          --   name = 'avante_mentions',
+          --   module = 'blink.compat.source',
+          --   score_offset = 1000, -- show at a higher priority than lsp
+          --   opts = {},
+          -- },
         },
       },
       appearance = {
@@ -71,6 +94,7 @@ return {
   },
   { 'moyiz/blink-emoji.nvim' },
   { 'bydlw98/blink-cmp-env' },
+  { 'Kaiser-Yang/blink-cmp-avante' },
   {
     'folke/lazydev.nvim',
     ft = 'lua',
