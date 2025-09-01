@@ -160,4 +160,29 @@ return {
       preset = 'classic',
     },
   },
+  {
+    'shahshlok/vim-coach.nvim',
+    dependencies = {
+      'folke/snacks.nvim',
+    },
+    config = function()
+      require('vim-coach').setup()
+    end,
+    keys = {
+      { '<leader>?', '<cmd>VimCoach<cr>', desc = 'Vim Coach' },
+    },
+  },
+  {
+    'alex-popov-tech/store.nvim',
+    dependencies = {
+      'OXY2DEV/markview.nvim', -- optional, for pretty readme preview / help window
+    },
+    cmd = 'Store',
+    keys = {
+      { '<LocalLeader>1', '<cmd>Store<cr>', desc = 'Open Plugin Store' },
+    },
+    opts = {
+      -- optional configuration here
+    },
+  },
 }
