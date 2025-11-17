@@ -16,9 +16,21 @@ return {
           references = {
             includeDecompliedSources = true,
           },
+          saveActions = {
+            organizeImports = true,
+          },
           format = {
             settings = {
               url = '/Users/yagoriveiro/.config/java-style.xml',
+            },
+          },
+        },
+      },
+      capabilities = {
+        textDocument = {
+          completion = {
+            completionItem = {
+              snippetSupport = true,
             },
           },
         },

@@ -9,12 +9,16 @@ return {
         markdown = { 'markdownlint-cli2' },
         python = { 'ruff_format' },
         hcl = { 'terraform_fmt' },
-        sql = { 'sqlfluff' },
+        sql = { 'sqruff' },
         cs = { 'csharpier' },
       },
       formatters = {
         xmlformatter = {
           prepend_args = { '--blanks' },
+        },
+        yamlfmt = {
+          command = 'yamlfmt',
+          args = { '--formatter', 'retain_line_breaks=true' },
         },
       },
     },
@@ -33,6 +37,10 @@ return {
           cancel = { raw = '[~]', rendered = '󰰱', highlight = 'RenderMarkdownError' },
           followup = { raw = '[>]', rendered = '', highlight = 'RenderMarkdownFollowUp' },
         },
+      },
+      completions = {
+        lsp = { enabled = true },
+        blink = { enabled = true },
       },
     },
   },

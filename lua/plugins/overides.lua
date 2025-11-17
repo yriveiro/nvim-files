@@ -1,12 +1,12 @@
 return {
-  {
-    'folke/snacks.nvim',
-    opts = {
-      picker = {
-        hidden = true,
-      },
-    },
-  },
+  -- {
+  --   'folke/snacks.nvim',
+  --   opts = {
+  --     picker = {
+  --       hidden = true,
+  --     },
+  --   },
+  -- },
   {
     'ibhagwan/fzf-lua',
     opts = {

@@ -59,6 +59,7 @@ return {
         winbar = true,
       },
       filesystem = {
+        follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
       },
       default_component_configs = {
@@ -77,33 +78,6 @@ return {
             conflict = '',
           },
         },
-      },
-    },
-    keys = {
-      {
-        'º',
-        function()
-          require('neo-tree.command').execute {
-            position = 'left',
-            source = 'filesystem',
-            toggle = true,
-            focused = true,
-          }
-        end,
-        desc = 'Explorer NeoTree',
-      },
-      {
-        '\\º',
-        function()
-          require('neo-tree.command').execute {
-            position = 'left',
-            reveal = true,
-            source = 'filesystem',
-            toggle = true,
-            focused = true,
-          }
-        end,
-        desc = 'Explorer NeoTree',
       },
     },
   },
@@ -174,9 +148,6 @@ return {
   },
   {
     'alex-popov-tech/store.nvim',
-    dependencies = {
-      'OXY2DEV/markview.nvim', -- optional, for pretty readme preview / help window
-    },
     cmd = 'Store',
     keys = {
       { '<LocalLeader>1', '<cmd>Store<cr>', desc = 'Open Plugin Store' },
@@ -184,5 +155,10 @@ return {
     opts = {
       -- optional configuration here
     },
+  },
+  {
+    'chrisgrieser/nvim-recorder',
+    dependencies = 'rcarriga/nvim-notify', -- optional
+    opts = {}, -- required even with default settings, since it calls `setup()`
   },
 }

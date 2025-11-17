@@ -80,6 +80,7 @@ return {
           'mason',
           'neo-tree',
           'spectre_panel',
+          'sidekick_terminal',
         },
         provider_selector = function()
           return { 'treesitter', 'indent' }
@@ -102,9 +103,11 @@ return {
         'text',
         'spectre_panel',
         'Avante',
+        'sidekick_terminal',
       },
       custom_colorcolumn = {
         python = { '120', '200' },
+        java = { '120', '200' },
       },
     },
   },
@@ -268,7 +271,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
   },
   {
-    'echasnovski/mini.indentscope',
+    'nvim-mini/mini.indentscope',
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {

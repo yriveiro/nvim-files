@@ -5,49 +5,50 @@ return {
       backend = 'kitty',
       integrations = {
         markdown = {
-          enabled = true,
           clear_in_insert_mode = true,
           download_remote_images = true,
-          only_render_image_at_cursor = true,
-          filetypes = { 'markdown', 'vimwiki' },
+          enabled = false,
+          filetypes = { 'markdown' },
         },
       },
-      max_width_window_percentage = 100,
-      max_height_window_percentage = 100,
-      scale_factor = 2.0,
     },
   },
   {
     '3rd/diagram.nvim',
+    event = 'VeryLazy',
+
     dependencies = {
       '3rd/image.nvim',
     },
-    config = function()
-      require('diagram').setup {
-        integrations = {
-          require 'diagram.integrations.markdown',
+    opts = {
+      events = {
+        render_buffer = {},
+        clear_buffer = { 'BufLeave' },
+      },
+      renderer_options = {
+        mermaid = {
+          theme = 'dark',
+          scale = 2,
+          clear_in_insert_mode = true,
         },
-        renderer_options = {
-          mermaid = {
-            theme = 'forest',
-          },
-          plantuml = {
-            charset = 'utf-8',
-          },
-          d2 = {
-            theme_id = 1,
-          },
-        },
-      }
-    end,
+      },
+    },
+    keys = {
+      {
+        '<LocalLeader>m',
+        function()
+          require('diagram').show_diagram_hover()
+        end,
+        mode = 'n',
+        ft = { 'markdown' },
+        desc = 'Show diagram in new tab',
+      },
+    },
   },
   {
     'HakonHarnes/img-clip.nvim',
     event = 'VeryLazy',
-    opts = {
-      -- add options here
-      -- or leave it empty to use the default settings
-    },
+    opts = {},
     keys = {
       { '<LocalLeader>p', '<cmd>PasteImage<cr>', desc = 'Paste image from system clipboard' },
     },
