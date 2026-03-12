@@ -6,8 +6,15 @@ return {
         yaml = { 'yamlfmt' },
         xml = { 'lemminx' },
         toml = { 'taplo' },
-        markdown = { 'markdownlint-cli2' },
-        python = { 'ruff_format' },
+        markdown = { 'rumdl' },
+        python = {
+          -- To fix auto-fixable lint errors.
+          'ruff_fix',
+          -- To run the Ruff formatter.
+          'ruff_format',
+          -- To organize the imports.
+          'ruff_organize_imports',
+        },
         hcl = { 'terraform_fmt' },
         sql = { 'sqruff' },
         cs = { 'csharpier' },

@@ -9,3 +9,8 @@ vim.opt.foldlevelstart = -1
 vim.opt.laststatus = 3
 vim.opt.swapfile = false
 vim.opt.cmdheight = 0
+vim.opt.autoread = true
+
+vim.g.lazyvim_python_lsp = 'ty'
+vim.g.lazyvim_python_ruff = 'ruff'
+vim.g.lazygit_config = true

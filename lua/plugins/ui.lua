@@ -68,7 +68,9 @@ return {
         enable_get_fold_virt_text = true,
         preview = {},
         open_fold_hl_timeout = 150,
-        close_fold_kinds_for_ft = { default = { 'imports', 'comment' } },
+        close_fold_kinds_for_ft = {
+          default = { 'imports', 'comment' },
+        },
         fold_virt_text_handler = handler,
         filetype_exclude = {
           'trouble',
@@ -134,11 +136,11 @@ return {
       table.insert(dashboard.section.buttons.val, 9, button)
       button.opts.hl = 'AlphaButtons'
       button.opts.hl_shortcut = 'AlphaShortcut'
-      button = dashboard.button('op', ' ' .. ' [Obsidian] Personal', ':ObsidianWorkspace personal<CR>')
+      button = dashboard.button('op', ' ' .. ' [Obsidian] Personal', ':Obsidian workspace personal<CR>')
       table.insert(dashboard.section.buttons.val, 10, button)
       button.opts.hl = 'AlphaButtons'
       button.opts.hl_shortcut = 'AlphaShortcut'
-      button = dashboard.button('ow', ' ' .. ' [Obsidian] Work', ':ObsidianWorkspace work<CR>')
+      button = dashboard.button('ow', ' ' .. ' [Obsidian] Work', ':Obsidian workspace work<CR>')
       table.insert(dashboard.section.buttons.val, 11, button)
     end,
   },

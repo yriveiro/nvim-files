@@ -152,13 +152,10 @@ return {
     keys = {
       { '<LocalLeader>1', '<cmd>Store<cr>', desc = 'Open Plugin Store' },
     },
-    opts = {
-      -- optional configuration here
-    },
+    opts = {},
   },
   {
     'chrisgrieser/nvim-recorder',
-    dependencies = 'rcarriga/nvim-notify', -- optional
-    opts = {}, -- required even with default settings, since it calls `setup()`
+    opts = {},
   },
 }

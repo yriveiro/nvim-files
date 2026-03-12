@@ -25,47 +25,6 @@ return {
               show_documentation_window = true,
             },
           },
-          -- avante_commands = {
-          --   name = 'avante_commands',
-          --   module = 'blink.compat.source',
-          --   score_offset = 90, -- show at a higher priority than lsp
-          --   opts = {},
-          -- },
-          avante = {
-            module = 'blink-cmp-avante',
-            name = 'Avante',
-            opts = {
-              -- add avante here
-              avante = {
-                command = {
-                  get_kind_name = function(_)
-                    return 'AvanteCmd'
-                  end,
-                },
-                mention = {
-                  get_kind_name = function(_)
-                    return 'AvanteMention'
-                  end,
-                },
-              },
-              kind_icons = {
-                AvanteCmd = '',
-                AvanteMention = '',
-              },
-            },
-          },
-          -- avante_files = {
-          --   name = 'avante_files',
-          --   module = 'blink.compat.source',
-          --   score_offset = 100, -- ~40 points higher than LSP ()
-          --   opts = {},
-          -- },
-          -- avante_mentions = {
-          --   name = 'avante_mentions',
-          --   module = 'blink.compat.source',
-          --   score_offset = 1000, -- show at a higher priority than lsp
-          --   opts = {},
-          -- },
         },
       },
       appearance = {
@@ -131,5 +90,14 @@ return {
         desc = 'Code Actions Preview',
       },
     },
+  },
+  {
+    'clabby/difftastic.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    config = function()
+      require('difftastic-nvim').setup {
+        download = true, -- Auto-download pre-built binary
+      }
+    end,
   },
 }

@@ -15,49 +15,49 @@ return {
       {
         mode = { 'n' },
         '<LocalLeader>ok',
-        '<cmd>ObsidianDailies<cr>',
+        '<cmd>Obsidian dailies<cr>',
         desc = 'Open dailies',
       },
       {
         mode = { 'n' },
         '<LocalLeader>oc',
-        '<cmd>ObsidianNew<cr>',
+        '<cmd>Obsidian new<cr>',
         desc = 'Create new note',
       },
       {
         mode = { 'n' },
         '<LocalLeader>oq',
-        '<cmd>ObsidianQuickSwitch<cr>',
+        '<cmd>Obsidian quick_switch<cr>',
         desc = 'Switch Notes',
       },
       {
         mode = { 'n' },
         '<LocalLeader>os',
-        '<cmd>ObsidianSearch<cr>',
+        '<cmd>Obsidian search<cr>',
         desc = 'Search Notes',
       },
       {
         mode = { 'n' },
         '<LocalLeader>ot',
-        '<cmd>ObsidianToday<cr>',
+        '<cmd>Obsidian today<cr>',
         desc = 'Today Note',
       },
       {
         mode = { 'n' },
         '<LocalLeader>oy',
-        '<cmd>ObsidianYesterday<cr>',
+        '<cmd>Obsidian yesterday<cr>',
         desc = 'Yesterday Note',
       },
       {
         mode = { 'n' },
         '<LocalLeader>ol',
-        '<cmd>ObsidianToggleCheckbox<cr>',
+        '<cmd>Obsidian toggle_checkbox<cr>',
         desc = 'Ciclyng checkbox',
       },
       {
         mode = { 'n' },
         '<LocalLeader>of',
-        '<cmd>ObsidianFollowLink<cr>',
+        '<cmd>Obsidian follow_link<cr>',
         desc = 'Follow Link',
       },
       {
@@ -89,6 +89,7 @@ return {
       },
     },
     opts = {
+      legacy_commands = false,
       workspaces = {
         {
           name = 'work',
@@ -162,7 +163,7 @@ return {
         -- The default folder to place images in via `:ObsidianPasteImg`.
         -- If this is a relative path it will be interpreted as relative to the vault root.
         -- You can always override this per image by passing a full path to the command instead of just a filename.
-        img_folder = 'assets/imgs', -- This is the default
+        folder = 'assets/imgs', -- This is the default
         -- A function that determines the text to insert in the note when pasting an image.
         -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
         -- This is the default implementation.
