@@ -1,25 +1,9 @@
 return {
   {
-    'sindrets/diffview.nvim',
-    event = 'VeryLazy',
-    dependencies = {
-      {
-        'nvim-lua/plenary.nvim',
-        lazy = true,
-      },
-      {
-        'nvim-tree/nvim-web-devicons',
-        lazy = true,
-      },
-    },
-    config = true,
-  },
-  -- {
-  --   'wakatime/vim-wakatime',
-  --   event = 'VeryLazy',
-  -- },
-  {
     'nvim-neo-tree/neo-tree.nvim',
+    keys = {
+      { '<LocalLeader>f', '<cmd>Neotree focus<cr>', desc = 'Focus on Neotree' },
+    },
     dependencies = {
       {
         's1n7ax/nvim-window-picker',
@@ -55,6 +39,11 @@ return {
     opts = {
       hidden = true,
       close_if_last_window = true,
+      window = {
+        mappings = {
+          ['<Tab>'] = { 'toggle_preview', config = { use_float = true } },
+        },
+      },
       source_selector = {
         winbar = true,
       },
@@ -89,7 +78,6 @@ return {
           'dockerfile',
           'hcl',
           'json',
-          'json5',
           'jsonc',
           'markdown_inline',
           'sql',
@@ -128,31 +116,14 @@ return {
     event = 'VeryLazy',
   },
   {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    opts = {
-      preset = 'classic',
-    },
-  },
-  {
     'shahshlok/vim-coach.nvim',
     dependencies = {
       'folke/snacks.nvim',
     },
-    config = function()
-      require('vim-coach').setup()
-    end,
+    opts = {},
     keys = {
       { '<leader>?', '<cmd>VimCoach<cr>', desc = 'Vim Coach' },
     },
-  },
-  {
-    'alex-popov-tech/store.nvim',
-    cmd = 'Store',
-    keys = {
-      { '<LocalLeader>1', '<cmd>Store<cr>', desc = 'Open Plugin Store' },
-    },
-    opts = {},
   },
   {
     'chrisgrieser/nvim-recorder',

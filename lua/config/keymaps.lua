@@ -19,7 +19,5 @@ map('n', '\\w', function()
   vim.api.nvim_set_current_win(picked_window_id)
 end, { desc = 'Pick window' })
 
-map('n', '\\f', '<cmd>Neotree focus<cr>', { desc = 'Focus on Neotree' })
 map('n', '<tab>l', '<cmd>tabnex<cr>', { desc = 'Next tab' })
 map('n', '<tab>h', '<cmd>tabprev<cr>', { desc = 'Previous tab' })
-map('n', '\\st', '<cmd>OpenDoc<cr>', { desc = 'Open Terraform Doc' })

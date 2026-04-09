@@ -51,6 +51,7 @@ return {
     'rmehri01/onenord.nvim',
     lazy = false,
     priority = 10000,
+    main = 'onenord',
     opts = {
       borders = false,
       fade_nc = true,
@@ -74,10 +75,6 @@ return {
         GitSignsAdd = { fg = colors.green },
         GitSignsChange = { fg = colors.orange },
         GitSignsDelete = { fg = colors.red },
-
-        -- NvimTreeFolderIcon = { fg = colors.grey9 },
-        -- NvimTreeIndentMarker = { fg = colors.grey12 },
-        -- NvimTreeNormal = { fg = colors.grey5, bg = colors.grey14 },
 
         NormalFloat = { bg = colors.grey14 },
         FloatBorder = { bg = colors.grey14, fg = colors.grey14 },

@@ -1,8 +1,11 @@
 return {
   {
     'saghen/blink.cmp',
+    event = 'VeryLazy',
     dependencies = {
       { 'saghen/blink.compat', lazy = true, version = false },
+      { 'moyiz/blink-emoji.nvim' },
+      { 'bydlw98/blink-cmp-env' },
     },
     opts = {
       sources = {
@@ -28,7 +31,6 @@ return {
         },
       },
       appearance = {
-        -- use_nvim_cmp_as_default = true,
         nerd_font_variant = (function()
           local hostname = io.popen('hostname'):read '*l'
           if string.sub(hostname, 1, 2) == 'MB' then
@@ -51,14 +53,12 @@ return {
       },
     },
   },
-  { 'moyiz/blink-emoji.nvim' },
-  { 'bydlw98/blink-cmp-env' },
-  { 'Kaiser-Yang/blink-cmp-avante' },
   {
     'folke/lazydev.nvim',
+    event = 'VeryLazy',
     ft = 'lua',
     dependencies = {
-      { 'gonstoll/wezterm-types', lazy = true },
+      { 'DrKJeff16/wezterm-types', lazy = true },
     },
     opts = {
       library = {
@@ -93,11 +93,28 @@ return {
   },
   {
     'clabby/difftastic.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    config = function()
-      require('difftastic-nvim').setup {
-        download = true, -- Auto-download pre-built binary
-      }
-    end,
+    cmd = { 'Difft', 'DifftPick', 'DifftPickRange', 'DifftClose', 'DifftUpdate' },
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'folke/snacks.nvim',
+    },
+    opts = {
+      download = true,
+      vcs = 'git',
+      snacks_picker = {
+        enabled = true,
+      },
+      keymaps = {
+        next_file = 'fn',
+        prev_file = 'fp',
+        next_hunk = 'n',
+        prev_hunk = 'p',
+        close = 'q',
+        focus_tree = '<LocalLeader>df',
+        focus_diff = '<Tab>',
+        select = '<CR>',
+        goto_file = 'gf',
+      },
+    },
   },
 }

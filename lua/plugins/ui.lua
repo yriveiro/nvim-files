@@ -92,6 +92,7 @@ return {
   },
   {
     'm4xshen/smartcolumn.nvim',
+    event = 'VeryLazy',
     opts = {
       disabled_filetypes = {
         'alpha',
@@ -104,7 +105,6 @@ return {
         'noice',
         'text',
         'spectre_panel',
-        'Avante',
         'sidekick_terminal',
       },
       custom_colorcolumn = {
@@ -264,13 +264,16 @@ return {
   },
   {
     'stevearc/stickybuf.nvim',
+    event = 'VeryLazy',
     opts = {},
   },
   {
     'onsails/lspkind.nvim',
+    event = 'VeryLazy',
   },
   {
     'lukas-reineke/indent-blankline.nvim',
+    event = 'VeryLazy',
   },
   {
     'nvim-mini/mini.indentscope',

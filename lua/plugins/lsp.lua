@@ -104,10 +104,20 @@ return {
             },
           },
         },
-        typos_lsp = {
+        -- typos_lsp = {
+        --   settings = {
+        --     init_options = {
+        --       config = '~/.config/typos/typos.toml',
+        --     },
+        --   },
+        -- },
+        harper_ls = {
           settings = {
-            init_options = {
-              config = '~/.config/typos/typos.toml',
+            ['harper-ls'] = {
+              linters = {
+                SentenceCapitalization = false,
+              },
+              dialects = 'British',
             },
           },
         },
@@ -116,14 +126,20 @@ return {
   },
   {
     'Afourcat/treesitter-terraform-doc.nvim',
+    cmd = 'OpenDoc',
+    keys = {
+      {
+        '<LocalLeader>st',
+        '<cmd>OpenDoc<cr>',
+        mode = 'n',
+        ft = { 'terraform' },
+        desc = 'Open Terraform documentation for word under the cursor',
+      },
+    },
     opts = {
       command_name = 'OpenDoc',
       url_opener_command = '!open',
       jump_argument = true,
     },
-  },
-  {
-    'towolf/vim-helm',
-    event = 'VeryLazy',
   },
 }

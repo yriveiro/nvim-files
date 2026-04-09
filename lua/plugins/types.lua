@@ -1,3 +1,0 @@
-return {
-  { 'gonstoll/wezterm-types' },
-}
